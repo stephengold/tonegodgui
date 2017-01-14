@@ -867,7 +867,7 @@ public abstract class Button extends Element implements Control, MouseButtonList
 			removeEffect(Effect.EffectEvent.LoseTabFocus);
 		}
 
-	//	defaultSize = style.getVector2f(“defaultSize”);
+	//	defaultSize = style.getVector2f("defaultSize");
 		setDimensions(getOrgDimensions());
 		getModel().updateDimensions(getWidth(), getHeight());
 
