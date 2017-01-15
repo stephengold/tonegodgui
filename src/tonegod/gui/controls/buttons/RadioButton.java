@@ -21,7 +21,6 @@ public class RadioButton extends CheckBox {
 	 * Creates a new instance of the RadioButton control
 	 * 
 	 * @param screen The screen control the Element is to be added to
-	 * @param position A Vector2f containing the x/y position of the Element
 	 */
 	public RadioButton(ElementManager screen) {
 		this(screen, UIDUtil.getUID(), Vector2f.ZERO,

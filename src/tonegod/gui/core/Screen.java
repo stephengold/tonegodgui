@@ -1365,7 +1365,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	//<editor-fold desc="SubScreen Support (OSR Collision)">
 	/**
 	 *  Adds an Element to the Screen and scene graph
-	 * @param element The Element to add
+	 * @param subscreen The Element to add
 	 */
 	public void addSubScreen(SubScreen subscreen) {
 		if (getSubScreenById(subscreen.getUID()) != null) {
@@ -1382,7 +1382,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	
 	/**
 	 * Removes an Element from the Screen and scene graph
-	 * @param element The Element to remove
+	 * @param subscreen The Element to remove
 	 */
 	public void removeSubScreen(SubScreen subscreen) {
 		subscreens.remove(subscreen.getUID());
@@ -2753,12 +2753,6 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	//</editor-fold>
 	
 	//<editor-fold desc="Node Event Methods">
-	/**
-	 * Determines and returns the current mouse focus Node
-	 * @param x The current mouse X coord
-	 * @param y The current mouse Y coord
-	 * @return Element eventElement
-	 */
 	public void addScene(Node scene) {
 		scenes.add(scene);
 	}
@@ -2768,6 +2762,12 @@ public class Screen implements ElementManager, Control, RawInputListener {
 			scenes.remove(scene);
 	}
 	
+	/**
+	 * Determines and returns the current mouse focus Node
+	 * @param x The current mouse X coord
+	 * @param y The current mouse Y coord
+	 * @return node
+	 */
 	private Node getEventNode(float x, float y) {
 		Node testEl = null, el = null;
 		

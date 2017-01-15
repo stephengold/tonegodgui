@@ -275,7 +275,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	
 	/**
 	 * Remove the first ListItem that contains the provided caption
-	 * @param value Object
+	 * @param caption
 	 */
 	public int removeListItem(String caption) {
 		if (!listItems.isEmpty()) {
@@ -389,7 +389,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	
 	/**
 	 * Returns the entire list of selected indexes
-	 * @return List<Integer>
+	 * @return List
 	 */
 	public List<Integer> getSelectedIndexes() {
 		return this.selectedIndexes;
@@ -439,7 +439,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	
 	/**
 	 * Returns a List containing all ListItems corresponding to the list of selectedIndexes
-	 * @return List<ListItem>
+	 * @return List
 	 */
 	public List<ListItem> getSelectedListItems() {
 		List<ListItem> ret = new ArrayList();

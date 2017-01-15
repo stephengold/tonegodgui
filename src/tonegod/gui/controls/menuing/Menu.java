@@ -351,7 +351,7 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	
 	/**
 	 * Remove the first MenuItem that contains the provided caption
-	 * @param value Object
+	 * @param caption
 	 */
 	public void removeMenuItem(String caption) {
 		if (!menuItems.isEmpty()) {
@@ -619,7 +619,7 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	
 	/**
 	 * Returns a list of all MenuItems associated with this menu
-	 * @return List<MenuItem>
+	 * @return List
 	 */
 	public List<MenuItem> getMenuItems() {
 		return this.menuItems;

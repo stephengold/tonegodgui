@@ -33,22 +33,20 @@ import tonegod.gui.core.utils.UIDUtil;
 import tonegod.gui.effects.Effect;
 
 /**
- * <p>
  * The Element class is the primitive in which all controls in the GUI portion or the library 
  * are built upon.  Unlink the overloaded common constructor(s) you will find throughout the library, 
- * the library, there is a single verbose constructor:<br/>
- * </br>
+ * the library, there is a single verbose constructor:
+ *
  * @see #Element(tonegod.gui.core.ElementManager, java.lang.String, com.jme3.math.Vector2f, com.jme3.math.Vector2f, com.jme3.math.Vector4f, java.lang.String)
- * </p>
- * <p>
+ *
  * Element is backed by a 9-patch style Mesh and can be both movable and resizable
  * by simply flagging them as such.  There is no need to add Listeners to leverage 
- * this default behavior.<br/>
- * <br/>
- * See both:<br/>
+ * this default behavior.
+ *
+ * See both:
  * @see #setIsMovable(boolean)
  * @see #setIsResizable(boolean)
- * </p>
+ *
  * @author t0neg0d
  */
 public class Element extends Node {
@@ -455,7 +453,7 @@ public class Element extends Node {
 	
 	/**
 	 * Returns a list of all children that are an instance of DragElement
-	 * @return List<Element>
+	 * @return List
 	 */
 	public List<Element> getDraggableChildren() {
 		List<Element> ret = new ArrayList();
@@ -663,7 +661,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Element will ignore mouse left & right button events
+	 * Element will ignore mouse left and right button events
 	 * @param ignoreMouseButtons 
 	 */
 	public void setIgnoreMouseButtons(boolean ignoreMouseButtons) {
@@ -773,7 +771,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element ignores touch down, up, move & fling events
+	 * Returns if the element ignores touch down, up, move and fling events
 	 * @return 
 	 */
 	public boolean getIgnoreTouchEvents() { return (getIgnoreTouch() && getIgnoreTouchMove() && getIgnoreFling()); }
@@ -1188,7 +1186,7 @@ public class Element extends Node {
 	
 	//<editor-fold desc="Drag & Drop Support">
 	/**
-	 * Flags Element as Drag Element for Drag & Drop interaction
+	 * Flags Element as Drag Element for Drag and Drop interaction
 	 * @param isDragElement boolean
 	 */
 	public void setIsDragDropDragElement(boolean isDragElement) {
@@ -1198,7 +1196,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the Element is currently flagged as a Drag Element for Drag & Drop interaction
+	 * Returns if the Element is currently flagged as a Drag Element for Drag and Drop interaction
 	 * @return boolean
 	 */
 	public boolean getIsDragDropDragElement() {
@@ -1206,7 +1204,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Flags Element as Drop Element for Drag & Drop interaction
+	 * Flags Element as Drop Element for Drag and Drop interaction
 	 * @param isDropElement boolean
 	 */
 	public void setIsDragDropDropElement(boolean isDropElement) {
@@ -1216,7 +1214,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the Element is currently flagged as a Drop Element for Drag & Drop interaction
+	 * Returns if the Element is currently flagged as a Drop Element for Drag and Drop interaction
 	 * @return boolean
 	 */
 	public boolean getIsDragDropDropElement() {
@@ -2256,9 +2254,10 @@ public class Element extends Node {
 	public boolean getUseLocalTexture() { return this.useLocalTexture; }
 	
 	/**
-	 * Will set the textures WrapMode to repeat if enabled.<br/><br/>
+	 * Will set the textures WrapMode to repeat if enabled.
+         * 
 	 * NOTE: This only works when texture atlasing has not been enabled.
-	 * For info on texture atlas usage, see both:<br/>
+	 * For info on texture atlas usage, see both:
 	 * @see Screen#setUseTextureAtlas(boolean enable, String path) 
 	 * @see #setTextureAtlasImage(com.jme3.texture.Texture tex, java.lang.String path) 
 	 * @param tileImage 
@@ -2730,7 +2729,7 @@ public class Element extends Node {
 	
 	/**
 	 * Sets the elements clipping layer to the provided element.
-	 * @param clippingLayer The element that provides the clipping boundaries.
+	 * @param secondaryClippingLayer The element that provides the clipping boundaries.
 	 */
 	@Deprecated
 	public void setSecondaryClippingLayer(Element secondaryClippingLayer) {
@@ -2760,7 +2759,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Recursive update of all child Elements clipping & secondary clipping layers
+	 * Recursive update of all child Elements clipping and secondary clipping layers
 	 * @param clippingLayer The clipping layer to apply
 	 * @param secondaryClippingLayer The clipping layer's parent clipping layer to apply
 	 */
@@ -3286,7 +3285,7 @@ public class Element extends Node {
 	
 	/**
 	 * For internal use - DO NOT CALL THIS METHOD
-	 * @param hasFocus boolean
+	 * @param isGlobalModal boolean
 	 */
 	public void setIsGlobalModal(boolean isGlobalModal) {
 		this.isGlobalModal = isGlobalModal;
@@ -3294,7 +3293,6 @@ public class Element extends Node {
 	
 	/**
 	 * For internal use - DO NOT CALL THIS METHOD
-	 * @param hasFocus boolean
 	 */
 	public boolean getIsGlobalModal() {
 		return this.isGlobalModal;

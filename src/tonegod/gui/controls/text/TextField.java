@@ -821,7 +821,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	}
 	
 	/**
-	 * Sets the ColorRGBA value used for text & caret
+	 * Sets the ColorRGBA value used for text and caret
 	 * @param fontColor ColorRGBA
 	 */
 	public final void setTextFieldFontColor(ColorRGBA fontColor) {
@@ -905,7 +905,6 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	
 	/**
 	 * Forces all text input to lowercase
-	 * @return boolean
 	 */
 	public void setForceLowerCase(boolean forceLowerCase) {
 		this.forceLowerCase = forceLowerCase;

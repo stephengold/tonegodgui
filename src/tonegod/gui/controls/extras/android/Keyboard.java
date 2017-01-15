@@ -39,7 +39,6 @@ public class Keyboard extends Panel {
 	 * Creates a new instance of the Panel control
 	 * 
 	 * @param screen The screen control the Element is to be added to
-	 * @param position A Vector2f containing the x/y position of the Element
 	 */
 	public Keyboard(ElementManager screen) {
 		this(screen, UIDUtil.getUID(),

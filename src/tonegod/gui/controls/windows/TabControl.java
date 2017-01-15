@@ -291,8 +291,8 @@ public abstract class TabControl extends Element {
 	}
 	
 	/**
-	 * Sets the default tab height
-	 * @param tabHeight 
+	 * Sets the default tab size
+	 * @param size 
 	 */
 	public void setTabSize(float size) {
 		if (orientation == Orientation.HORIZONTAL)

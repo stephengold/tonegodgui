@@ -41,7 +41,6 @@ public class SpriteElement extends Element implements Control {
 	 * Creates a new instance of the Menu control
 	 * 
 	 * @param screen The screen control the Element is to be added to
-	 * @param position A Vector2f containing the x/y position of the Element
 	 */
 	public SpriteElement(ElementManager screen) {
 		this(screen, UIDUtil.getUID(), Vector2f.ZERO,
@@ -70,7 +69,6 @@ public class SpriteElement extends Element implements Control {
 	 * @param screen The screen control the Element is to be added to
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
-	 * @param isScrollable Boolean defining if the menu is a scrollable list
 	 */
 	public SpriteElement(ElementManager screen, Vector2f position, Vector2f dimensions) {
 		this(screen, UIDUtil.getUID(), position, dimensions,
@@ -85,9 +83,8 @@ public class SpriteElement extends Element implements Control {
 	 * @param screen The screen control the Element is to be added to
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
-	 * @param resizeBorders A Vector4f containg the border information used when resizing the default image (x = N, y = W, z = E, w = S)
+	 * @param resizeBorders A Vector4f containing the border information used when resizing the default image (x = N, y = W, z = E, w = S)
 	 * @param defaultImg The default image to use for the Slider's track
-	 * @param isScrollable Boolean defining if the menu is a scrollable list
 	 */
 	public SpriteElement(ElementManager screen, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg) {
 		this(screen, UIDUtil.getUID(), position, dimensions, resizeBorders, defaultImg);
@@ -99,7 +96,6 @@ public class SpriteElement extends Element implements Control {
 	 * @param screen The screen control the Element is to be added to
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
-	 * @param isScrollable Boolean defining if the menu is a scrollable list
 	 */
 	public SpriteElement(ElementManager screen, String UID, Vector2f position) {
 		this(screen, UID, position,
@@ -116,7 +112,6 @@ public class SpriteElement extends Element implements Control {
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
-	 * @param isScrollable Boolean defining if the menu is a scrollable list
 	 */
 	public SpriteElement(ElementManager screen, String UID, Vector2f position, Vector2f dimensions) {
 		this(screen, UID, position, dimensions,
@@ -134,7 +129,6 @@ public class SpriteElement extends Element implements Control {
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
 	 * @param resizeBorders A Vector4f containg the border information used when resizing the default image (x = N, y = W, z = E, w = S)
 	 * @param defaultImg The default image to use for the Slider's track
-	 * @param isScrollable Boolean defining if the menu is a scrollable list
 	 */
 	public SpriteElement(ElementManager screen, String UID, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg) {
 		super(screen, UID, position, dimensions, resizeBorders, defaultImg);

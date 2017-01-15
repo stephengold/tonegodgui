@@ -43,12 +43,10 @@ import tonegod.gui.listeners.TabFocusListener;
  * <li>Hideable header</li>
  * <li>Keyboard navigation</li>
  * </ul>
- * </p>
  * <p>
  * Cells are either strings, or you may use any {@link Element}.
- * <h4>Example of a simple Table using string cells</h4>
+ * <h1>Example of a simple Table using string cells</h1>
  * <code>
- * <pre>
  * Panel panel = new Panel(screen, "Panel",
  *          new Vector2f(8, 8), new Vector2f(372f, 300));
  *
@@ -69,15 +67,14 @@ import tonegod.gui.listeners.TabFocusListener;
  *     table.addRow(row);
  * }
  * panel.addChild(table);
- * </pre> </code>
- * </p>
- * <h4>Example of a Tree Table</h4>
+ * </code>
+ *
+ * <h1>Example of a Tree Table</h1>
  * <p>
  * To configure as a <i>Tree Table</i> features, you need set a row as NOT being a 'leaf', and then
  * add child rows to the other rows :-
  * 
  * <code>
- * <pre>
  *     final Table table = new TreeTable(screen, new Vector2f(10, 40)) {
  *         public void onChange() {
  *         }
@@ -98,17 +95,14 @@ import tonegod.gui.listeners.TabFocusListener;
  *     childRow.addCell("Bb", "22");
  *     childRow.addCell("CC", "33");
  *     childRow.addRow(childRow);
- * 
- * </pre>
  * </code>
  * 
- * <h4>Example of a Tree</h4>
+ * <h1>Example of a Tree</h1>
  * <p>
  * To configure as a <i>Tree</i> , it is much the same as a Tree Table,
  * except just add a single column, and hide the headers. :-
  * 
  * <code>
- * <pre>
  *     final Table table = new Table(screen, new Vector2f(10, 40)) {
  *         public void onChange() {
  *         }
@@ -124,17 +118,14 @@ import tonegod.gui.listeners.TabFocusListener;
  *     Table.TableRow childRow = new Table.TableRow(screen, table);
  *     childRow.addCell("AA", "11");
  *     childRow.addRow(childRow);
- * 
- * </pre>
  * </code>
  * 
- * <h4>Example of a List</h4>
+ * <h1>Example of a List</h1>
  * <p>
  * As an alternative to the building in lists, you can use this control, turn off
  * the headers and add on a single column, to a single depth. :-
  * 
  * <code>
- * <pre>
  *     final Table table = new Table(screen, new Vector2f(10, 40)) {
  *         public void onChange() {
  *         }
@@ -149,9 +140,6 @@ import tonegod.gui.listeners.TabFocusListener;
  *     Table.TableRow row2 = new Table.TableRow(screen, table); 
  *     parentRow.addCell("B", "2");
  *     table.addRow(row2);
- * 
- * 
- * </pre>
  * </code>
  *
  * @author rockfire
@@ -950,9 +938,9 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     /**
-     * Sets the current selected row and colum indexes
+     * Sets the current selected row and column indexes
      *
-     * @param index int
+     * @param rowIndex
      */
     public void setSelectedCellIndexes(Integer rowIndex, Integer... columnIndexes) {
         if (rowIndex < 0) {
@@ -993,7 +981,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
      * Adds specific cells of the specified row to the list of selected indexes
      *
      * @param rowIndex row index
-     * @param columnIndex column
+     * @param columnIndexes columns
      */
     public void addSelectedCellIndexes(Integer rowIndex, Integer... columnIndexes) {
         if (columnIndexes.length == 0) {
@@ -1045,7 +1033,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Removes the specified cells from the list of selected indexes
      *
-     * @param index int
+     * @param rowIndex
      */
     public void removeSelectedCellIndexes(Integer rowIndex, Integer... columnIndexes) {
         if (columnIndexes.length == 0) {
@@ -1094,7 +1082,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Get the list of column indexes that are selected for the row.
      *
-     * @return List<Integer>
+     * @return List
      */
     public List<Integer> getSelectedColumnIndexes(int rowIndex) {
         if (selectedCells.containsKey(rowIndex)) {
@@ -1108,7 +1096,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Returns the entire list of selected indexes
      *
-     * @return List<Integer>
+     * @return List
      */
     public List<Integer> getSelectedRowIndexes() {
         return this.selectedRows;
@@ -1175,7 +1163,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
      * Returns a List containing all ListItems corresponding to the list of
      * selectedIndexes
      *
-     * @return List<ListItem>
+     * @return List
      */
     public List<TableRow> getSelectedRows() {
         List<TableRow> ret = new ArrayList();

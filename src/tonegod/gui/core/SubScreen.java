@@ -859,15 +859,15 @@ public class SubScreen implements ElementManager, Control {
 		mousePressed = false;
 	}
 	
+	@Override
+	public CollisionResult getLastCollision() { return screen.getLastCollision(); }
+	
 	/**
 	 * Determines and returns the current mouse focus Element
 	 * @param x The current mouse X coord
 	 * @param y The current mouse Y coord
 	 * @return Element eventElement
 	 */
-	@Override
-	public CollisionResult getLastCollision() { return screen.getLastCollision(); }
-	
 	private Element getEventElement(float x, float y) {
 		guiRayOrigin.set(x, y, 0f);
 		

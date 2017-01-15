@@ -534,7 +534,7 @@ public abstract class ComboBox extends TextField {
 	
 	/**
 	 * Returns a List of all ListItems 
-	 * @return List<MenuItem>
+	 * @return List
 	 */
 	public List<MenuItem> getListItems() {
                 if(DDList != null) {
