@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'eclipse'
-apply plugin: "idea"
+apply plugin: 'idea'
 apply plugin: 'maven'
 
 
@@ -15,10 +15,8 @@ sourceCompatibility = 1.7
 repositories {
 	mavenLocal()
 	mavenCentral()
-	maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-	maven { url "https://oss.sonatype.org/content/repositories/releases/" }
 	maven { url 'http://updates.jmonkeyengine.org/maven' }
-	maven { url "https://jitpack.io" }
+        maven { url "https://jcenter.bintray.com" }
 }
 
 //mainClassName = 'app.MainRTS'
