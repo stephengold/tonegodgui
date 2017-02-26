@@ -129,6 +129,7 @@ public class ElementEmitter implements Control, Transformable {
 	 * @param c The Influencer class
 	 * @return 
 	 */
+        @SuppressWarnings("unchecked")
 	public <T extends Influencer> T getInfluencer(Class<T> c) {
 		return (T) influencers.get(c.getName());
 	}

@@ -7,7 +7,7 @@ import com.jme3.util.SafeArrayList;
  * @author t0neg0d
  */
 public class Pool<T> {
-	SafeArrayList<PoolResource<T>> pool = new SafeArrayList(PoolResource.class);
+	SafeArrayList<PoolResource> pool = new SafeArrayList<>(PoolResource.class);
 	PoolObjectFactory<T> factory;
 	
 	/**
@@ -18,7 +18,7 @@ public class Pool<T> {
 	public Pool(PoolObjectFactory<T> factory, int initSize) {
 		this.factory = factory;
 		for (int i = 0; i < initSize; i++) {
-			pool.add(new PoolResource<T>(factory.newPoolObject()));
+			pool.add(new PoolResource<>(factory.newPoolObject()));
 		}
 	}
 	
@@ -27,6 +27,7 @@ public class Pool<T> {
 	 * NOTE: It is important that any resource retrieved from this method is passed to @freePoolObject when no longer in use.
 	 * @return An instance of T from the Pool that is currently not in use by the application.
 	 */
+        @SuppressWarnings("unchecked")
 	public T getNextAvailable() {
 		T ret = null;
 		for (PoolResource<T> resource : pool.getArray()) {
@@ -52,7 +53,7 @@ public class Pool<T> {
 	 */
 	public boolean freePoolObject(T poolObject) {
 		boolean ret = false;
-		for (PoolResource<T> resource : pool.getArray()) {
+		for (PoolResource resource : pool.getArray()) {
 			if (resource.getResource() == poolObject) {
 				resource.setInUse(false);
 				ret = true;

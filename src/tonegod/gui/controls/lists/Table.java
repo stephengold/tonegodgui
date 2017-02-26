@@ -295,6 +295,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public int compareTo(TableCell o) {
             if (value instanceof Comparable && o.value instanceof Comparable) {
                 return ((Comparable) value).compareTo((Comparable) o.value);
@@ -623,6 +624,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
         selectedRows.clear();
         Collections.sort(rows, new Comparator<TableRow>() {
             @Override
+            @SuppressWarnings("unchecked")
             public int compare(TableRow o1, TableRow o2) {
                 Element e1 = new ArrayList<Element>(o1.getElements()).get(columnIndex);
                 Element e2 = new ArrayList<Element>(o2.getElements()).get(columnIndex);

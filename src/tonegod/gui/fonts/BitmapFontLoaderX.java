@@ -20,8 +20,7 @@ import java.io.InputStreamReader;
 public class BitmapFontLoaderX implements AssetLoader {
 
     private BitmapFont load(AssetManager assetManager, String folder, InputStream in) throws IOException{
-        MaterialDef spriteMat = 
-                (MaterialDef) assetManager.loadAsset(new AssetKey("tonegod/gui/shaders/Unshaded.j3md"));
+        MaterialDef spriteMat = (MaterialDef) assetManager.loadAsset("tonegod/gui/shaders/Unshaded.j3md");
 
         BitmapCharacterSet charSet = new BitmapCharacterSet();
         Material[] matPages = null;

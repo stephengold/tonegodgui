@@ -609,7 +609,8 @@ public abstract class AnimElement extends Node implements Transformable {
 	public <T extends Object> void setDataStruct(T dataStruct) {
 		this.dataStruct = dataStruct;
 	}
-	
+
+        @SuppressWarnings("unchecked")
 	public <T extends Object> T getDataStruct() {
 		return (T)dataStruct;
 	}

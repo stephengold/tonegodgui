@@ -66,35 +66,35 @@ public class LayoutParam {
 		if (type != null) {
 			switch(type) {
 				case clip:
-					values.put("clip",new Value(Unit.Boolean, true));
+					values.put("clip",new Value<Boolean>(Unit.Boolean, true));
 					break;
 				case pad:
-					values.put("left",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("right",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("top",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("bottom",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("left",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("right",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("top",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("bottom",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				case margin:
-					values.put("left",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("right",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("top",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("bottom",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("left",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("right",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("top",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("bottom",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				case min:
-					values.put("x",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("y",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("x",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("y",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				case max:
-					values.put("x",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("y",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("x",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("y",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				case pref:
-					values.put("x",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("y",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("x",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("y",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				default:
 					while (st.hasMoreTokens()) {
-						values.put(type.name(),new Value(Unit.Float, Float.valueOf(st.nextToken())));
+						values.put(type.name(),new Value<Float>(Unit.Float, Float.valueOf(st.nextToken())));
 					}
 					break;
 			}

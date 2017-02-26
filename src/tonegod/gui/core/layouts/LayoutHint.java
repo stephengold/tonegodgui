@@ -93,45 +93,45 @@ public class LayoutHint {
 		if (type != null) {
 			switch(type) {
 				case cell:
-					values.put("row",new Value(Unit.Integer, Integer.parseInt(st.nextToken())));
-					values.put("col",new Value(Unit.Integer, Integer.parseInt(st.nextToken())));
+					values.put("row",new Value<Integer>(Unit.Integer, Integer.parseInt(st.nextToken())));
+					values.put("col",new Value<Integer>(Unit.Integer, Integer.parseInt(st.nextToken())));
 					break;
 				case span:
-					values.put("x",new Value(Unit.Integer, Integer.parseInt(st.nextToken())));
-					values.put("y",new Value(Unit.Integer, Integer.parseInt(st.nextToken())));
+					values.put("x",new Value<Integer>(Unit.Integer, Integer.parseInt(st.nextToken())));
+					values.put("y",new Value<Integer>(Unit.Integer, Integer.parseInt(st.nextToken())));
 					break;
 				case pad:
-					values.put("left",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("right",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("top",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("bottom",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("left",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("right",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("top",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("bottom",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				case grow:
-					values.put("x",new Value(Unit.Boolean, Boolean.parseBoolean(st.nextToken())));
-					values.put("y",new Value(Unit.Boolean, Boolean.parseBoolean(st.nextToken())));
+					values.put("x",new Value<Boolean>(Unit.Boolean, Boolean.parseBoolean(st.nextToken())));
+					values.put("y",new Value<Boolean>(Unit.Boolean, Boolean.parseBoolean(st.nextToken())));
 					break;
 				case fill:
-					values.put("x",new Value(Unit.Boolean, Boolean.parseBoolean(st.nextToken())));
-					values.put("y",new Value(Unit.Boolean, Boolean.parseBoolean(st.nextToken())));
+					values.put("x",new Value<Boolean>(Unit.Boolean, Boolean.parseBoolean(st.nextToken())));
+					values.put("y",new Value<Boolean>(Unit.Boolean, Boolean.parseBoolean(st.nextToken())));
 					break;
 				case wrap:
-					values.put("wrap",new LayoutHint.Value(LayoutHint.Unit.Boolean, true));
+					values.put("wrap",new LayoutHint.Value<Boolean>(LayoutHint.Unit.Boolean, true));
 					break;
 				case dock:
-					values.put("align",new Value(Unit.Align, Align.valueOf(st.nextToken())));
-					values.put("valign",new Value(Unit.VAlign, VAlign.valueOf(st.nextToken())));
+					values.put("align",new Value<Align>(Unit.Align, Align.valueOf(st.nextToken())));
+					values.put("valign",new Value<VAlign>(Unit.VAlign, VAlign.valueOf(st.nextToken())));
 					break;
 				case min:
-					values.put("x",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("y",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("x",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("y",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				case max:
-					values.put("x",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("y",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("x",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("y",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				case pref:
-					values.put("x",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
-					values.put("y",new Value(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("x",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
+					values.put("y",new Value<Float>(Unit.Float, SizeUnit.absolute, Float.parseFloat(st.nextToken())));
 					break;
 				case width:
 					
@@ -144,7 +144,7 @@ public class LayoutHint {
 					break;
 				default:
 					while (st.hasMoreTokens()) {
-						values.put(type.name(),new Value(Unit.Float, Float.valueOf(st.nextToken())));
+						values.put(type.name(),new Value<Float>(Unit.Float, Float.valueOf(st.nextToken())));
 					}
 					break;
 			}

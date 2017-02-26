@@ -427,6 +427,7 @@ public class QuadData implements Transformable {
 		this.dataStruct = dataStruct;
 	}
 	
+        @SuppressWarnings("unchecked")
 	public <T extends Object> T getDataStruct() {
 		return (T)dataStruct;
 	}
