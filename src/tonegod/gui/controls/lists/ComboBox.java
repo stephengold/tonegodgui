@@ -182,8 +182,7 @@ public abstract class ComboBox extends TextField {
 			}
 		};
 		btnArrowDown.setButtonIcon(18, 18, screen.getStyle("Common").getString("arrowDown"));
-		btnArrowDown.setDockS(true);
-		btnArrowDown.setDockW(true);
+		btnArrowDown.setDocking(Docking.SW);
 		this.addChild(btnArrowDown);
 	}
 	

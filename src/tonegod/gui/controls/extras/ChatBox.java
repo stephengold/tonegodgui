@@ -169,8 +169,7 @@ public abstract class ChatBox extends Panel {
 		};
 		tfChatInput.setScaleEW(true);
 		tfChatInput.setScaleNS(false);
-		tfChatInput.setDockS(true);
-		tfChatInput.setDockW(true);
+		tfChatInput.setDocking(Docking.SW);
 		
 		btnChatSendMsg = new ButtonAdapter(
 			screen,
@@ -185,8 +184,7 @@ public abstract class ChatBox extends Panel {
 		};
 		btnChatSendMsg.setScaleEW(false);
 		btnChatSendMsg.setScaleNS(false);
-		btnChatSendMsg.setDockS(true);
-		btnChatSendMsg.setDockE(true);
+		btnChatSendMsg.setDocking(Docking.SE);
 		btnChatSendMsg.setText("Send");
 		
 		addChild(btnChatSendMsg);

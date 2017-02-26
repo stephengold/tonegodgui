@@ -80,8 +80,7 @@ public abstract class Joystick extends Element implements Control {
 				deltaY /= maxDistance;
 			}
 		};
-		thumb.setDockS(true);
-		thumb.setDockW(true);
+		thumb.setDocking(Docking.SW);
 		thumb.setIsMovable(true);
 		thumb.clearAltImages();
 		thumb.removeEffect(Effect.EffectEvent.Hover);

@@ -156,8 +156,7 @@ public abstract class Dial extends ButtonAdapter {
 		((Geometry)elCenter.getChild(0)).center();
 		elCenter.setScaleNS(false);
 		elCenter.setScaleEW(false);
-		elCenter.setDockS(true);
-		elCenter.setDockW(true);
+		elCenter.setDocking(Docking.SW);
 		elCenter.setIgnoreMouse(true);
 		addChild(elCenter);
 		
@@ -172,8 +171,7 @@ public abstract class Dial extends ButtonAdapter {
 		((Geometry)elIndicator.getChild(0)).center();
 		elIndicator.setScaleNS(false);
 		elIndicator.setScaleEW(false);
-		elIndicator.setDockS(true);
-		elIndicator.setDockW(true);
+		elIndicator.setDocking(Docking.SW);
 		elIndicator.setIgnoreMouse(true);
 		elCenter.addChild(elIndicator);
 		
