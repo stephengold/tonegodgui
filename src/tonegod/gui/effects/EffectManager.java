@@ -23,9 +23,9 @@ public class EffectManager implements Control {
 	Screen screen;
 	Spatial spatial;
 //	private Map<String, Effect> currentEffects = new HashMap();
-	private List<Effect> currentEffects = new ArrayList();
-	private List<EffectQueue> currentEffectQueues = new ArrayList();
-	private List<BatchEffect> currentBatchEffects = new ArrayList();
+	private List<Effect> currentEffects = new ArrayList<>();
+	private List<EffectQueue> currentEffectQueues = new ArrayList<>();
+	private List<BatchEffect> currentBatchEffects = new ArrayList<>();
 	
 	public EffectManager(Screen screen) {
 		this.screen = screen;

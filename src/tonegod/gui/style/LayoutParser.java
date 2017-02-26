@@ -69,7 +69,7 @@ public class LayoutParser {
         Screen screen;
         AbstractAppState state;
         
-        List<Class> controls = new ArrayList();
+        List<Class> controls = new ArrayList<>();
         
         public LayoutParser(Screen screen) {
                 this.screen = screen;

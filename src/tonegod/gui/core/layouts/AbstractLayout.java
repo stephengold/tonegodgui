@@ -16,7 +16,7 @@ import tonegod.gui.core.ElementManager;
  * @author t0neg0d
  */
 public abstract class AbstractLayout implements Layout {
-	public Map<String,LayoutParam> params = new HashMap();
+	public Map<String,LayoutParam> params = new HashMap<>();
 	protected ElementManager screen;
 	protected Element owner;
 	protected Vector4f margins = new Vector4f(10,10,10,10);

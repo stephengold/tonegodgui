@@ -556,9 +556,9 @@ public abstract class ComboBox extends TextField {
 	 */
 	public void sortList() {
 		Object[] orgList = DDList.getMenuItems().toArray();
-		List<MenuItem> currentList = new ArrayList();
-		List<MenuItem> finalList = new ArrayList();
-		List<String> map = new ArrayList();
+		List<MenuItem> currentList = new ArrayList<>();
+		List<MenuItem> finalList = new ArrayList<>();
+		List<String> map = new ArrayList<>();
 		for (int i = 0; i < orgList.length; i++) {
 			currentList.add((MenuItem)orgList[i]);
 			map.add(((MenuItem)orgList[i]).getCaption());
@@ -587,9 +587,9 @@ public abstract class ComboBox extends TextField {
 	 */
 	public void sortListNumeric() {
 		Object[] orgList = DDList.getMenuItems().toArray();
-		List<MenuItem> currentList = new ArrayList();
-		List<MenuItem> finalList = new ArrayList();
-		List<Integer> map = new ArrayList();
+		List<MenuItem> currentList = new ArrayList<>();
+		List<MenuItem> finalList = new ArrayList<>();
+		List<Integer> map = new ArrayList<>();
 		for (int i = 0; i < orgList.length; i++) {
 			currentList.add((MenuItem)orgList[i]);
 			

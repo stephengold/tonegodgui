@@ -35,7 +35,7 @@ public class SpriteElement extends Element implements Control {
 	private int currentIndex = 0;
 	private int[] frames;
 	private int currentFramesIndex = 0;
-	private List<String> sprites = new ArrayList();
+	private List<String> sprites = new ArrayList<>();
 	
 	/**
 	 * Creates a new instance of the Menu control

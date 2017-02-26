@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class EffectQueue {
 	EffectManager effectManager;
-	List<EffectQueueItem> queue = new LinkedList();
+	List<EffectQueueItem> queue = new LinkedList<>();
 	EffectQueueItem currentEffectItem = null;
 	float currentDelay;
 	float updateTime = 0;

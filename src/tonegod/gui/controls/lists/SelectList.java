@@ -32,9 +32,9 @@ import tonegod.gui.listeners.TabFocusListener;
  * @author t0neg0d
  */
 public abstract class SelectList extends ScrollArea implements MouseMovementListener, MouseButtonListener, TabFocusListener, KeyboardListener {
-	private List<ListItem> listItems = new ArrayList();
-	private List<Integer> selectedIndexes = new ArrayList();
-	private List<Element> highlights = new ArrayList();
+	private List<ListItem> listItems = new ArrayList<>();
+	private List<Integer> selectedIndexes = new ArrayList<>();
+	private List<Element> highlights = new ArrayList<>();
 	
 	private boolean isMultiselect = false;
 	private float initWidth;
@@ -324,8 +324,8 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	}
 	
 	public void removeAllListItems() {
-		this.listItems = new ArrayList();
-		this.selectedIndexes = new ArrayList();
+		this.listItems = new ArrayList<>();
+		this.selectedIndexes = new ArrayList<>();
 		pack();
 	}
 	
@@ -336,7 +336,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	public void setSelectedIndex(Integer index) {
 		if (index < 0) index = 0;
 		else if (index >= listItems.size()) index = listItems.size()-1;
-		selectedIndexes = new ArrayList();
+		selectedIndexes = new ArrayList<>();
 		selectedIndexes.add(index);
 		displayHighlights();
 		onChange();
@@ -442,7 +442,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	 * @return List
 	 */
 	public List<ListItem> getSelectedListItems() {
-		List<ListItem> ret = new ArrayList();
+		List<ListItem> ret = new ArrayList<>();
 		for (Integer i : selectedIndexes) {
 			ret.add(getListItem(i));
 		}
@@ -586,7 +586,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 			if (currentListItemIndex >= 0 && currentListItemIndex < listItems.size())
 				setSelectedIndex(currentListItemIndex);
 			else
-				selectedIndexes = new ArrayList();
+				selectedIndexes = new ArrayList<>();
 		}
 		evt.setConsumed();
 	}

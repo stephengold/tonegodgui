@@ -29,7 +29,7 @@ public abstract class Spinner extends TextField {
 		HORIZONTAL
 	}
 	*/
-	protected List<String> stepValues = new ArrayList();
+	protected List<String> stepValues = new ArrayList<>();
 	private boolean cycle = false;
 	private int selectedIndex = -1;
 	private Orientation orientation;

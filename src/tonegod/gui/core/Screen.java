@@ -94,18 +94,18 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	}
 	private Application app;
 	protected Spatial spatial;
-	private Map<String, Element> elements = new LinkedHashMap();
-	private Map<String, SubScreen> subscreens = new HashMap();
+	private Map<String, Element> elements = new LinkedHashMap<>();
+	private Map<String, SubScreen> subscreens = new HashMap<>();
 	private Ray elementZOrderRay = new Ray();
 	private Vector3f guiRayOrigin = new Vector3f();
 	private CollisionResults results;
 	
 	private boolean useMultiTouch = false;
 	private Vector2f tempElementOffset = new Vector2f();
-	private Map<Integer,Vector2f> elementOffsets = new HashMap();
-	private Map<Integer,Element> contactElements = new HashMap();
-	private Map<Integer,Element> eventElements = new HashMap();
-	private Map<Integer,Borders> eventElementResizeDirections = new HashMap();
+	private Map<Integer,Vector2f> elementOffsets = new HashMap<>();
+	private Map<Integer,Element> contactElements = new HashMap<>();
+	private Map<Integer,Element> eventElements = new HashMap<>();
+	private Map<Integer,Borders> eventElementResizeDirections = new HashMap<>();
 	
 	private Element eventElement = null;
 	private Element targetElement = null;
@@ -180,7 +180,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	private Keyboard virtualKeys;
 	
 	// AnimLayer & 2D framework support
-	private Map<String, AnimLayer> layers = new LinkedHashMap();
+	private Map<String, AnimLayer> layers = new LinkedHashMap<>();
 	private float layerZOrderCurrent = .4999f;
 	private AnimElement eventAnimElement = null;
 	private QuadData eventQuad = null;
@@ -217,8 +217,8 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	private Node mouseFocusNode = null;
 	private Node eventNode = null;
 	private Node previousMouseFocusNode = null;
-	private SafeArrayList<Node> scenes = new SafeArrayList(Node.class);
-	private Map<Integer,Node> eventNodes = new HashMap();
+	private SafeArrayList<Node> scenes = new SafeArrayList<>(Node.class);
+	private Map<Integer,Node> eventNodes = new HashMap<>();
 	
 	// Android input scaling
 	float inputScale = 1;

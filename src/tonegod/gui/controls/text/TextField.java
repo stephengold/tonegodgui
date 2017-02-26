@@ -64,7 +64,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	protected int caretIndex = 0, head = 0, tail = 0;
 	protected int rangeHead = -1, rangeTail = -1;
 	protected int visibleHead = -1, visibleTail = -1;
-	protected List<String> textFieldText = new ArrayList();
+	protected List<String> textFieldText = new ArrayList<>();
 	protected String finalText = "", visibleText = "", textRangeText = "";
 	protected BitmapText widthTest;
 	private boolean hasTabFocus = false;

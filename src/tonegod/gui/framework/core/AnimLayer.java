@@ -24,7 +24,7 @@ import tonegod.gui.core.utils.UIDUtil;
  */
 public class AnimLayer extends Element implements Control {
 	private Map<String, AnimElement> animElements = new LinkedHashMap<String, AnimElement>();
-	private List<AnimElement> tempElements = new LinkedList();
+	private List<AnimElement> tempElements = new LinkedList<>();
 	private float childZOrder = -1;
 	private float zOrderStepMid = 0.001f;
 	private Spatial spatial;

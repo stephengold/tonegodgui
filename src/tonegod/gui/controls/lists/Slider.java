@@ -23,7 +23,7 @@ import tonegod.gui.effects.Effect;
  * @author t0neg0d
  */
 public abstract class Slider extends ButtonAdapter {
-	protected List<Object> stepValues = new ArrayList();
+	protected List<Object> stepValues = new ArrayList<>();
 	private Element elThumbLock;
 	private ButtonAdapter elThumb;
 	

@@ -159,7 +159,7 @@ public class Element extends Node {
 	private ColorRGBA defaultColor = new ColorRGBA(1,1,1,0);
 	
 	private Element elementParent = null;
-	protected Map<String, Element> elementChildren = new LinkedHashMap();
+	protected Map<String, Element> elementChildren = new LinkedHashMap<>();
 	
 	// Clipping
 	protected boolean isClipped = false;
@@ -170,8 +170,8 @@ public class Element extends Node {
 	private Vector4f textClipPadding = new Vector4f(0,0,0,0);
 	
 	// New Clipping
-	protected List<ClippingDefine> clippingLayers = new ArrayList();
-	private List<ClippingDefine> remClippingLayers = new ArrayList();
+	protected List<ClippingDefine> clippingLayers = new ArrayList<>();
+	private List<ClippingDefine> remClippingLayers = new ArrayList<>();
 	private Vector4f clipTest = new Vector4f();
 	
 	protected boolean isVisible = true;
@@ -185,7 +185,7 @@ public class Element extends Node {
 	
 	private float zOrder;
 	private boolean effectZOrder = true;
-	private Map<Effect.EffectEvent, Effect> effects = new HashMap();
+	private Map<Effect.EffectEvent, Effect> effects = new HashMap<>();
 	
 	private OSRBridge bridge;
 	
@@ -456,7 +456,7 @@ public class Element extends Node {
 	 * @return List
 	 */
 	public List<Element> getDraggableChildren() {
-		List<Element> ret = new ArrayList();
+		List<Element> ret = new ArrayList<>();
 		for (Element el : elementChildren.values()) {
 			if (el instanceof DragElement) {
 				ret.add(el);
@@ -1701,7 +1701,7 @@ public class Element extends Node {
 	public void sizeToContent() {
 		float innerX = 10000, innerY = 10000, innerW = -10000, innerH = -10000;
 		float currentHeight = getHeight();
-		Map<Element,Float> newY = new HashMap();
+		Map<Element,Float> newY = new HashMap<>();
 		for (Element child : elementChildren.values()) {
 			float x = child.getX();
 			float y = currentHeight-(child.getY()+child.getHeight());

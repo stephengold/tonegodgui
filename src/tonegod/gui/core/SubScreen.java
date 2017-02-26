@@ -63,15 +63,15 @@ public class SubScreen implements ElementManager, Control {
 	private Geometry geom;
 	
 	protected Spatial spatial;
-	private Map<String, Element> elements = new HashMap();
+	private Map<String, Element> elements = new HashMap<>();
 	private Ray elementZOrderRay = new Ray();
 	private Vector3f guiRayOrigin = new Vector3f();
 	
 	private Vector2f tempElementOffset = new Vector2f();
-	private Map<Integer,Vector2f> elementOffsets = new HashMap();
-	private Map<Integer,Element> contactElements = new HashMap();
-	private Map<Integer,Element> eventElements = new HashMap();
-	private Map<Integer,Borders> eventElementResizeDirections = new HashMap();
+	private Map<Integer,Vector2f> elementOffsets = new HashMap<>();
+	private Map<Integer,Element> contactElements = new HashMap<>();
+	private Map<Integer,Element> eventElements = new HashMap<>();
+	private Map<Integer,Borders> eventElementResizeDirections = new HashMap<>();
 	
 	private Element eventElement = null;
 	private Element targetElement = null;
@@ -110,7 +110,7 @@ public class SubScreen implements ElementManager, Control {
 	private ElementQuadGrid mesh;
 	
 	// AnimLayer & 2D framework support
-	private Map<String, AnimLayer> layers = new LinkedHashMap();
+	private Map<String, AnimLayer> layers = new LinkedHashMap<>();
 	private float layerZOrderCurrent = .4999f;
 	private AnimElement eventAnimElement = null;
 	private QuadData eventQuad = null;

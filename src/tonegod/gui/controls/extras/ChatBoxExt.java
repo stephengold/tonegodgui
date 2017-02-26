@@ -50,12 +50,12 @@ public abstract class ChatBoxExt extends Panel {
 
 	private int sendKey;
 	private int chatHistorySize = 30;
-	protected List<ChatMessage> chatMessages = new ArrayList();
+	protected List<ChatMessage> chatMessages = new ArrayList<>();
 
-	protected List<ChatChannel> channels = new ArrayList();
+	protected List<ChatChannel> channels = new ArrayList<>();
 	private String defaultCommand;
 
-	List<Label> displayMessages = new ArrayList();
+	List<Label> displayMessages = new ArrayList<>();
 
 	/**
 	 * Creates a new instance of the ChatBoxExt control

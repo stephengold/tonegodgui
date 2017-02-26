@@ -44,7 +44,7 @@ public class SlideTray extends Element {
 	private Element elTray;
 	private float btnSize;
 	
-	protected List<Element> trayElements = new ArrayList();
+	protected List<Element> trayElements = new ArrayList<>();
 	protected int currentElementIndex = 0;
 	
 	protected float trayPadding = 5;

@@ -35,7 +35,7 @@ public class LayoutParam {
 	}
 	
 	public ParamType type = null;
-	public Map<String,Value> values = new HashMap();
+	public Map<String,Value> values = new HashMap<>();
 	
 	public LayoutParam(String param) {
 		StringTokenizer st = new StringTokenizer(param, " ");

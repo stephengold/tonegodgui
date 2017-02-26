@@ -34,7 +34,7 @@ public abstract class ChatBox extends Panel {
 	
 	private int sendKey;
 	private int chatHistorySize = 30;
-	protected List<String> chatMessages = new ArrayList();
+	protected List<String> chatMessages = new ArrayList<>();
 	
 	/**
 	 * Creates a new instance of the ChatBox control

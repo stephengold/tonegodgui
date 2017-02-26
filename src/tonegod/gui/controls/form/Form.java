@@ -15,7 +15,7 @@ import tonegod.gui.core.ElementManager;
  */
 public class Form {
 	private ElementManager screen;
-	private List<Element> elements = new ArrayList();
+	private List<Element> elements = new ArrayList<>();
 	private int nextIndex = 0;
 	private int currentTabIndex = 0;
 	

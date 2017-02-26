@@ -15,7 +15,7 @@ public class BatchEffect {
 	private boolean isActive = true;
 	private EffectManager effectManager;
 	
-	List<Effect> effects = new ArrayList();
+	List<Effect> effects = new ArrayList<>();
 	
 	public BatchEffect() {
 		

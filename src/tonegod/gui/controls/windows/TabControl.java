@@ -36,8 +36,8 @@ import tonegod.gui.framework.core.AnimText;
  */
 public abstract class TabControl extends Element {
 	private Orientation orientation = Orientation.HORIZONTAL;
-	protected List<Button> tabs = new ArrayList();
-	protected Map<Integer,ITabPanel> tabPanels = new HashMap();
+	protected List<Button> tabs = new ArrayList<>();
+	protected Map<Integer,ITabPanel> tabPanels = new HashMap<>();
 	protected int tabButtonIndex = 0;
 	protected float tabWidth, tabHeight, tabInc;
 	protected RadioButtonGroup tabButtonGroup;

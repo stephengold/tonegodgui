@@ -17,7 +17,7 @@ import tonegod.gui.effects.Effect;
  * @author t0neg0d
  */
 public class Style {
-	Map<String, Object> styleTags = new HashMap();
+	Map<String, Object> styleTags = new HashMap<>();
 	
 	public Style() {  }
 	

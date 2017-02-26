@@ -13,7 +13,7 @@ import tonegod.gui.core.layouts.LayoutHint.Value;
  * @author t0neg0d
  */
 public class LayoutHints {
-	public Map<String,LayoutHint> params = new HashMap();
+	public Map<String,LayoutHint> params = new HashMap<>();
 	
 	public LayoutHints(String... params) {
 		for (String param : params) {

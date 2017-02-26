@@ -33,11 +33,11 @@ public abstract class AnimElement extends Node implements Transformable {
 		Both,
 		None
 	}
-	public List<TemporalAction> actions = new ArrayList();
-	protected Map<String, QuadData> quads = new LinkedHashMap();
-	private List<QuadData> tempQuads = new LinkedList();
+	public List<TemporalAction> actions = new ArrayList<>();
+	protected Map<String, QuadData> quads = new LinkedHashMap<>();
+	private List<QuadData> tempQuads = new LinkedList<>();
 	protected Texture tex;
-	protected Map<String, TextureRegion> uvs = new HashMap();
+	protected Map<String, TextureRegion> uvs = new HashMap<>();
 	protected AnimElementMesh mesh;
 	protected Vector2f position = new Vector2f(0,0);
 	protected float z = 1;

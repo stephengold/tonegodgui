@@ -168,10 +168,10 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
             return this.equals(MULTIPLE_CELLS) || this.equals(MULTIPLE_ROWS);
         }
     }
-    private List<TableRow> rows = new ArrayList();
-    private List<Integer> selectedRows = new ArrayList();
-    private Map<Integer, List<Integer>> selectedCells = new HashMap();
-    private List<Element> highlights = new ArrayList();
+    private List<TableRow> rows = new ArrayList<>();
+    private List<Integer> selectedRows = new ArrayList<>();
+    private Map<Integer, List<Integer>> selectedCells = new HashMap<>();
+    private List<Element> highlights = new ArrayList<>();
     private SelectionMode selectionMode = SelectionMode.ROW;
     private float tablePadding = 1;
     private ColorRGBA highlightColor;
@@ -954,7 +954,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
         selectedRows.clear();
         selectedCells.clear();
         if (columnIndexes.length > 0) {
-            selectedCells.put(rowIndex, new ArrayList(Arrays.asList(columnIndexes)));
+            selectedCells.put(rowIndex, new ArrayList<>(Arrays.asList(columnIndexes)));
             selectedRows.add(rowIndex);
         }
         displayHighlights();
@@ -1166,7 +1166,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
      * @return List
      */
     public List<TableRow> getSelectedRows() {
-        List<TableRow> ret = new ArrayList();
+        List<TableRow> ret = new ArrayList<>();
         for (Integer i : selectedRows) {
             ret.add(getRow(i));
         }
@@ -1387,7 +1387,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     public void selectAll() {
         selectedCells.clear();
         selectedRows.clear();
-        List<Integer> l = new ArrayList();
+        List<Integer> l = new ArrayList<>();
         for (int i = 0; i < rows.size(); i++) {
             l.add(i);
         }
@@ -1873,7 +1873,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     private List<Integer> getAllColumnIndexes() {
-        List<Integer> l = new ArrayList();
+        List<Integer> l = new ArrayList<>();
         for (int i = 0; i < columns.size(); i++) {
             l.add(i);
         }

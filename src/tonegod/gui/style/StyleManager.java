@@ -53,9 +53,9 @@ public class StyleManager {
 	}
 	Screen screen;
 	Application app;
-	private Map<String, Style> styles = new HashMap();
-	private Map<CursorType, JmeCursor> cursors = new HashMap();
-	private Map<String, AudioNode> audioNodes = new HashMap();
+	private Map<String, Style> styles = new HashMap<>();
+	private Map<CursorType, JmeCursor> cursors = new HashMap<>();
+	private Map<String, AudioNode> audioNodes = new HashMap<>();
 	private String styleMap;
 	
 	public StyleManager(Screen screen, String styleMap) {
@@ -69,7 +69,7 @@ public class StyleManager {
 	}
 	
 	public void parseStyles(String path) {
-		List<String> docPaths = new ArrayList();
+		List<String> docPaths = new ArrayList<>();
 		try {
 			// Cursors
 			Document doc = app.getAssetManager().loadAsset(new AssetKey<Document>(path));

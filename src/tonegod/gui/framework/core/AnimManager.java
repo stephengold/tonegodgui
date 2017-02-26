@@ -19,12 +19,12 @@ import tonegod.gui.framework.core.util.GameTimer;
  */
 public class AnimManager extends AbstractControl {
 	private Screen screen;
-	private List<ActionItem> queue = new ArrayList();
-	private List<ActionItem> remove = new ArrayList();
-	private List<ActionItem> active = new ArrayList();
+	private List<ActionItem> queue = new ArrayList<>();
+	private List<ActionItem> remove = new ArrayList<>();
+	private List<ActionItem> active = new ArrayList<>();
 	
-	private List<GameTimer> timers = new ArrayList();
-	private List<GameTimer> removeTimers = new ArrayList();
+	private List<GameTimer> timers = new ArrayList<>();
+	private List<GameTimer> removeTimers = new ArrayList<>();
 	
 	float time;
 	

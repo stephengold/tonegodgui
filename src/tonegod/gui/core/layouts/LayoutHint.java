@@ -52,7 +52,7 @@ public class LayoutHint {
 	}
 	
 	public ParamType type = null;
-	public Map<String,Value> values = new HashMap();
+	public Map<String,Value> values = new HashMap<>();
 	
 	public LayoutHint(String param) {
 		StringTokenizer st = new StringTokenizer(param, " ");

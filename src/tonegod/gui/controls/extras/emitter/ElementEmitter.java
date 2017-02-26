@@ -37,7 +37,7 @@ import tonegod.gui.framework.core.Transformable;
  * @author t0neg0d
  */
 public class ElementEmitter implements Control, Transformable {
-	private List<TemporalAction> actions = new ArrayList();
+	private List<TemporalAction> actions = new ArrayList<>();
 	private Screen screen;
 	private Application app;
 	private int particlesPerSecond;
@@ -46,7 +46,7 @@ public class ElementEmitter implements Control, Transformable {
 	private boolean isEnabled = false;
 	private boolean isActive = true;
 	private boolean centerVelocity = true;
-	protected Map<String, Influencer> influencers = new LinkedHashMap();
+	protected Map<String, Influencer> influencers = new LinkedHashMap<>();
 	protected ElementParticle[] quads;
 	protected AnimElement particles;
 	private float emitterWidth, emitterHeight;
@@ -800,7 +800,7 @@ public class ElementEmitter implements Control, Transformable {
 		public boolean rotateDir;
 		public boolean active = false;
 		public float blend;
-		private Map<String,Object> data = new HashMap();
+		private Map<String,Object> data = new HashMap<>();
 		private float diffX, diffY;
 		
 		public void update(float tpf) {

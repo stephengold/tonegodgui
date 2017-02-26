@@ -17,7 +17,7 @@ import tonegod.gui.core.utils.UIDUtil;
 public abstract class RadioButtonGroup {
 	private ElementManager screen;
 	private String UID;
-	protected List<Button> radioButtons = new ArrayList();
+	protected List<Button> radioButtons = new ArrayList<>();
 	protected int selectedIndex = -1;
 	private Button selected = null;
 	

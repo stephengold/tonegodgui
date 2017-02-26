@@ -37,7 +37,7 @@ public class AnimText extends AnimElement {
 		Italic,
 		Bold
 	}
-	private LinkedList<Tag> tags = new LinkedList();
+	private LinkedList<Tag> tags = new LinkedList<>();
 	protected BitmapFont font;
 	private String text;
 	private int imgHeight;

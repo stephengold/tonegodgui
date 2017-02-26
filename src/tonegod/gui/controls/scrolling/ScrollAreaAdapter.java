@@ -19,8 +19,8 @@ import tonegod.gui.core.utils.UIDUtil;
  * @author t0neg0d
  */
 public class ScrollAreaAdapter extends ScrollArea {
-	Map<String, ChildInfo> childInfo = new HashMap();
-	List<Element> scrollableChildren = new ArrayList();
+	Map<String, ChildInfo> childInfo = new HashMap<>();
+	List<Element> scrollableChildren = new ArrayList<>();
 	
 	/**
 	 * Creates a new instance of the ScrollAreaAdapter control

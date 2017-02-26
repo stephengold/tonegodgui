@@ -33,7 +33,7 @@ public class Keyboard extends Panel {
 	private boolean Shift = false;
 	private boolean Symbol = false;
 	
-	private List<KeyboardKey> keys = new ArrayList();
+	private List<KeyboardKey> keys = new ArrayList<>();
 	
 	/**
 	 * Creates a new instance of the Panel control

@@ -26,7 +26,7 @@ import tonegod.gui.effects.Effect;
  */
 public abstract class Dial extends ButtonAdapter {
 	Element elCenter, elPosition, elIndicator;
-	protected List<Object> stepValues = new ArrayList();
+	protected List<Object> stepValues = new ArrayList<>();
 	
 	int selectedIndex = 0;
 	boolean isStepped = false;

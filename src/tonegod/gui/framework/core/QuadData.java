@@ -15,7 +15,7 @@ import tonegod.gui.framework.animation.TemporalAction;
  * @author t0neg0d
  */
 public class QuadData implements Transformable {
-	public List<TemporalAction> actions = new ArrayList();
+	public List<TemporalAction> actions = new ArrayList<>();
 	public AnimElement element;
 	public QuadData parent;
 	public String key;
