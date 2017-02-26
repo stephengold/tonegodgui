@@ -5,6 +5,7 @@
 package tonegod.gui.controls.extras.emitter;
 
 import com.jme3.math.Vector2f;
+import tonegod.gui.controls.extras.Portability;
 import tonegod.gui.controls.extras.emitter.ElementEmitter.ElementParticle;
 
 /**
@@ -29,8 +30,10 @@ public class DestinationInfluencer extends InfluencerBase {
 			if (destination != Vector2f.ZERO) {
 				temp.set(p.initialPosition);
 				temp2.set(destination).subtractLocal(p.particle.getOrigin());
-				temp.interpolate(temp2, p.blend);
-				p.position.interpolate(temp, strength);
+                                Portability.interpolate(temp, temp2, 
+                                        p.blend, temp);
+                                Portability.interpolate(p.position, temp, 
+                                        strength, p.position);
 			}
 		}
 	}

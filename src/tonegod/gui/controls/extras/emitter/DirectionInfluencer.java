@@ -5,6 +5,7 @@
 package tonegod.gui.controls.extras.emitter;
 
 import com.jme3.math.Vector2f;
+import tonegod.gui.controls.extras.Portability;
 import tonegod.gui.controls.extras.emitter.ElementEmitter.ElementParticle;
 
 /**
@@ -32,7 +33,8 @@ public class DirectionInfluencer extends InfluencerBase {
 		if (isEnabled) {
 			if (direction != Vector2f.ZERO) {
 				temp.set(direction.normalize()).multLocal(particle.randforce*strength);
-				particle.velocity.interpolate(particle.velocity, temp, 0.5f);
+                                Portability.interpolate(particle.velocity, temp, 
+                                        0.5f, particle.velocity);
 			}
 		}
 	}

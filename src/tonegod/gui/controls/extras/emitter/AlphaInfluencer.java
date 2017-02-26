@@ -5,6 +5,7 @@
 package tonegod.gui.controls.extras.emitter;
 
 import com.jme3.math.Vector2f;
+import tonegod.gui.controls.extras.Portability;
 import tonegod.gui.controls.extras.emitter.ElementEmitter.ElementParticle;
 import tonegod.gui.framework.animation.Interpolation;
 
@@ -29,7 +30,8 @@ public class AlphaInfluencer extends InfluencerBase {
 		if (isEnabled) {
 			tempV2a.set(startAlpha, startAlpha);
 			tempV2b.set(endAlpha, endAlpha);
-			tempV2a.interpolate(tempV2b, interpolation.apply(particle.blend));
+                        Portability.interpolate(tempV2a, tempV2b, 
+                                interpolation.apply(particle.blend), tempV2a);
 			
 			particle.color.set(
 				particle.color.r,

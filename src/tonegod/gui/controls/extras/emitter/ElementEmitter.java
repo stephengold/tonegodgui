@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import tonegod.gui.controls.extras.Portability;
 import tonegod.gui.core.Screen;
 import tonegod.gui.framework.animation.Interpolation;
 import tonegod.gui.framework.animation.TemporalAction;
@@ -861,9 +862,11 @@ public class ElementEmitter implements Control, Transformable {
 				velocity.subtractLocal(0.5f,0.5f);
 			}
 			
-			if (useFixedDirection)
-				velocity.interpolate(fixedDirection, fixedDirectionStrength);
-			
+			if (useFixedDirection) {
+                                Portability.interpolate(velocity, 
+                                        fixedDirection, fixedDirectionStrength, 
+                                        velocity);
+                        }		
 			velocity.multLocal(randforce);
 			
 			if (useFixedLife)

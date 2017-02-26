@@ -6,6 +6,7 @@ package tonegod.gui.controls.extras.emitter;
 
 import com.jme3.math.FastMath;
 import com.jme3.math.Vector2f;
+import tonegod.gui.controls.extras.Portability;
 import tonegod.gui.controls.extras.emitter.ElementEmitter.ElementParticle;
 
 /**
@@ -30,7 +31,8 @@ public class ImpulseInfluencer extends InfluencerBase {
 			float incY = FastMath.nextRandomFloat();
 			if (FastMath.rand.nextBoolean()) incY = -incY;
 			temp.set(particle.velocity).addLocal(incX, incY);
-			particle.velocity.interpolate(temp, (variationStrength));
+                        Portability.interpolate(particle.velocity, temp, 
+                                variationStrength, particle.velocity);
 		}
 	}
 
