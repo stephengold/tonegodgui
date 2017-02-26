@@ -37,10 +37,6 @@ public class Portability {
      * @param goalFraction weight given to 2nd vector (typically &ge;0, &le;1)
      * @param storeVector result stored here (not null, modified)
      *
-     * @see com.jme3.math.Vector2f#interpolateLocal(com.jme3.math.Vector2f,
-     * float)
-     * @see com.jme3.math.Vector2f#interpolateLocal(com.jme3.math.Vector2f,
-     * com.jme3.math.Vector2f, float)
      */
     public static void interpolate(Vector2f baseVector, Vector2f goalVector,
             float goalFraction, Vector2f storeVector) {
@@ -60,10 +56,6 @@ public class Portability {
      * @param goalFraction weight given to 2nd color (typically &ge;0, &le;1)
      * @param storeColor result stored here (not null, modified)
      *
-     * @see com.jme3.math.ColorRGBA#interpolateLocal(com.jme3.math.ColorRGBA,
-     * float)
-     * @see com.jme3.math.ColorRGBA#interpolateLocal(com.jme3.math.ColorRGBA,
-     * com.jme3.math.ColorRGBA, float)
      */
     public static void interpolate(ColorRGBA baseColor, ColorRGBA goalColor,
             float goalFraction, ColorRGBA storeColor) {
