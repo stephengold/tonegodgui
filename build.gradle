@@ -73,8 +73,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 
 // add javadoc/source jar tasks as artifacts
 artifacts {
-	archives sourcesJar
-	//, javadocJar
+	archives sourcesJar, javadocJar
 }
 
 task wrapper(type: Wrapper) {
