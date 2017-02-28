@@ -165,8 +165,8 @@ public class OSRViewPort extends Element implements MouseButtonListener, MouseMo
 	}
 
 	/**
-	 * Sets the rotation control to respond to the left mouse button
-	 * @param useLeftMouseRotate 
+	 * Alters whether the rotation control responds to the left mouse button.
+	 * @param useLeftMouseRotate true &rarr; respond, false &rarr; don't respond
 	 */
 	public void setLeftMouseButtonRotation(boolean useLeftMouseRotate) {
 		this.useLeftMouseRotate = useLeftMouseRotate;
@@ -174,7 +174,7 @@ public class OSRViewPort extends Element implements MouseButtonListener, MouseMo
 	
 	/**
 	 * Sets the background color of the OSRViewPort (default is transparent)
-	 * @param color 
+	 * @param color desired background color
 	 */
 	public void setBackgroundColor(ColorRGBA color) {
 		bridge.getViewPort().setBackgroundColor(color);
@@ -182,46 +182,47 @@ public class OSRViewPort extends Element implements MouseButtonListener, MouseMo
 	
 	/**
 	 * Sets the default distance between the camera and the focus node
-	 * @param distance 
+	 * @param distance desired distance
 	 */
 	public void setCameraDistance(float distance) {
 		bridge.getChaseCamera().setDefaultDistance(distance);
 	}
 
 	/**
-	 * Sets the default horizontal rotation of the camera.
-	 * @param angleInRads 
+	 * Alter the default horizontal rotation of the camera.
+	 * @param angleInRads desired rotation angle (in radians)
 	 */
 	public void setCameraHorizonalRotation(float angleInRads) {
 		bridge.getChaseCamera().setDefaultHorizontalRotation(angleInRads);
 	}
 
 	/**
-	 * Sets the default vertical rotation of the camera
-	 * @param angleInRads 
+	 * Alter the default vertical rotation of the camera.
+	 * @param angleInRads desired angle (in radians)
 	 */
 	public void setCameraVerticalRotation(float angleInRads) {
 		bridge.getChaseCamera().setDefaultVerticalRotation(angleInRads);
 	}
 
 	/**
-	 * Sets the minumum zoom distance between the camera and the focus node
-	 * @param distance 
+	 * Alter the minimum distance between the camera and the focus node.
+	 * @param distance zoom distance
 	 */
 	public void setCameraMinDistance(float distance) {
 		bridge.getChaseCamera().setMinDistance(distance);
 	}
 
 	/**
-	 * Sets the maximum zoom distance between the camera and the focus node
+	 * Alter the maximum distance between the camera and the focus node.
+         * @param distance zoom distance
 	 */
 	public void setCameraMaxDistance(float distance) {
 		bridge.getChaseCamera().setMaxDistance(distance);
 	}
 
 	/**
-	 * Sets the minimum limit for vertical camera rotation
-	 * @param angleInRads 
+	 * Alter the minimum limit for vertical camera rotation.
+	 * @param angleInRads desired minimum angle (in radians)
 	 */
 	public void setCameraMinVerticalRotation(float angleInRads) {
 		bridge.getChaseCamera().setMinVerticalRotation(angleInRads);
@@ -229,23 +230,23 @@ public class OSRViewPort extends Element implements MouseButtonListener, MouseMo
 
 	/**
 	 * Sets the maximum limit for vertical camera rotation
-	 * @param angleInRads 
+	 * @param angleInRads desired maximum angle (in radians)
 	 */
 	public void setCameraMaxVerticalRotation(float angleInRads) {
 		bridge.getChaseCamera().setMaxVerticalRotation(angleInRads);
 	}
 	
 	/**
-	 * Enables/disables camera rotation control for the OSRViewPort
-	 * @param rotateEnabled 
+	 * Enable/disable camera rotation control for the OSRViewPort.
+	 * @param rotateEnabled true &rarr; enable, false &rarr; disable
 	 */
 	public void setUseCameraControlRotate(boolean rotateEnabled) {
 		this.rotateEnabled = rotateEnabled;
 	}
 	
 	/**
-	 * Enables/disables camera zoom control for the OSRViewPort
-	 * @param zoomEnabled 
+	 * Enable/disable camera zoom control for the OSRViewPort
+	 * @param zoomEnabled true &rarr; enable, false &rarr; disable
 	 */
 	public void setUseCameraControlZoom(boolean zoomEnabled) {
 		this.zoomEnabled = zoomEnabled;

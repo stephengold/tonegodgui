@@ -236,7 +236,7 @@ public abstract class ChatBox extends Panel {
 	
 	/**
 	 * Sets the keyboard key code to use to send messages
-	 * @param sendKey 
+	 * @param sendKey key code
 	 */
 	public void setSendKey(int sendKey) {
 		this.sendKey = sendKey;
@@ -244,21 +244,21 @@ public abstract class ChatBox extends Panel {
 	
 	/**
 	 * Abstract event method that is called when the user sends a message
-	 * @param msg 
+	 * @param msg message text
 	 */
 	public abstract void onSendMsg(String msg);
 	
 	/**
-	 * Sets the ToolTip text for mouse focus of the TextField input
-	 * @param tip 
+	 * Sets the ToolTip text for mouse focus over the TextField input.
+	 * @param tip ToolTip text
 	 */
 	public void setToolTipTextInput(String tip) {
 		this.tfChatInput.setToolTipText(tip);
 	}
 	
 	/**
-	 * Sets the ToolTip text for mouse focus of the Send button
-	 * @param tip 
+	 * Sets the ToolTip text for mouse focus over the Send button.
+	 * @param tip ToolTip text
 	 */
 	public void setToolTipSendButton(String tip) {
 		this.btnChatSendMsg.setToolTipText(tip);

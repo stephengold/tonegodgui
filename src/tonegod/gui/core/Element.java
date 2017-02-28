@@ -347,8 +347,9 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Adds the specified Element as a child to this Element.
-	 * @param child The Element to add as a child
+	 * Add the specified Element as a child of this Element.
+	 * @param child the Element to add as a child
+         * @param hide true &rarr; hide the child, false &rarr; don't hide it
 	 */
 	public void addChild(Element child, boolean hide) {
 		child.elementParent = this;
@@ -613,8 +614,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Sets the Elements zOrder (I would suggest NOT using this method)
-	 * @param zOrder 
+	 * Sets the Element's zOrder (I would suggest NOT using this method)
+	 * @param zOrder value for zOrder
 	 */
 	public void setZOrder(float zOrder) {
 		this.zOrder = zOrder;
@@ -661,8 +662,9 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Element will ignore mouse left and right button events
-	 * @param ignoreMouseButtons 
+	 * Alter whether the Element ignores mouse left and right button events.
+	 * @param ignoreMouseButtons true &rarr; ignore all such events, false 
+         * &rarr; don't ignore any such events
 	 */
 	public void setIgnoreMouseButtons(boolean ignoreMouseButtons) {
 		setIgnoreMouseLeftButton(ignoreMouseButtons);
@@ -677,8 +679,9 @@ public class Element extends Node {
 	public boolean getIgnoreMouseButtons() { return (getIgnoreMouseLeftButton() && getIgnoreMouseRightButton()); }
 	
 	/**
-	 * Element will ignore mouse left button events
-	 * @param ignoreMouseLeftButton 
+	 * Alter whether the Element ignores mouse left button events.
+	 * @param ignoreMouseLeftButton true &rarr; ignore such events, false 
+         * &rarr; don't ignore such events
 	 */
 	public void setIgnoreMouseLeftButton(boolean ignoreMouseLeftButton) {
 		this.ignoreMouseLeftButton = ignoreMouseLeftButton;
@@ -691,8 +694,9 @@ public class Element extends Node {
 	public boolean getIgnoreMouseLeftButton() { return this.ignoreMouseLeftButton; }
 	
 	/**
-	 * Element will ignore mouse right button events
-	 * @param ignoreMouseRightButton 
+	 * Alter whether the Element ignores mouse right button events.
+	 * @param ignoreMouseRightButton true &rarr; ignore such events, false 
+         * &rarr; don't ignore such events
 	 */
 	public void setIgnoreMouseRightButton(boolean ignoreMouseRightButton) {
 		this.ignoreMouseRightButton = ignoreMouseRightButton;
@@ -705,8 +709,9 @@ public class Element extends Node {
 	public boolean getIgnoreMouseRightButton() { return this.ignoreMouseRightButton; }
 	
 	/**
-	 * Element will ignore mouse focus
-	 * @param ignoreMouseFocus 
+	 * Alter whether the Element ignores mouse focus.
+	 * @param ignoreMouseFocus true &rarr; ignore such events, false 
+         * &rarr; don't ignore such events
 	 */
 	public void setIgnoreMouseFocus(boolean ignoreMouseFocus) {
 		this.ignoreMouseFocus = ignoreMouseFocus;
@@ -719,8 +724,9 @@ public class Element extends Node {
 	public boolean getIgnoreMouseFocus() { return this.ignoreMouseFocus; }
 	
 	/**
-	 * Element will ignore mouse wheel click and move events
-	 * @param ignoreMouseWheel 
+	 * Alter whether the Element ignores mouse-wheel click and move events
+	 * @param ignoreMouseWheel true &rarr; ignore all such events, false 
+         * &rarr; don't ignore any such events
 	 */
 	public void setIgnoreMouseWheel(boolean ignoreMouseWheel) {
 		setIgnoreMouseWheelClick(ignoreMouseWheel);
@@ -735,8 +741,9 @@ public class Element extends Node {
 	public boolean getIgnoreMouseWheel() { return (getIgnoreMouseWheelClick() && getIgnoreMouseWheelMove()); }
 	
 	/**
-	 * Element will ignore mouse wheel click events
-	 * @param ignoreMouseWheelClick 
+	 * Alter whether the Element ignores mouse-wheel click events.
+	 * @param ignoreMouseWheelClick true &rarr; ignore such events, false 
+         * &rarr; don't ignore such events
 	 */
 	public void setIgnoreMouseWheelClick(boolean ignoreMouseWheelClick) {
 		this.ignoreMouseWheelClick = ignoreMouseWheelClick;
@@ -749,8 +756,9 @@ public class Element extends Node {
 	public boolean getIgnoreMouseWheelClick() { return this.ignoreMouseWheelClick; }
 	
 	/**
-	 * Element will ignore mouse wheel mouse events;
-	 * @param ignoreMouseWheelMove 
+	 * Alter whether the Element ignores mouse wheel move events;
+	 * @param ignoreMouseWheelMove true &rarr; ignore such events, false 
+         * &rarr; don't ignore such events
 	 */
 	public void setIgnoreMouseWheelMove(boolean ignoreMouseWheelMove) {
 		this.ignoreMouseWheelMove = ignoreMouseWheelMove;
@@ -763,8 +771,10 @@ public class Element extends Node {
 	public boolean getIgnoreMouseWheelMove() { return this.ignoreMouseWheelMove; }
 	
 	/**
-	 * Element will ignore touch down up move and fling events
-	 * @param ignoreTouchEvents 
+	 * Alter whether the Element ignores touch down/up, move, and fling 
+         * events.
+	 * @param ignoreTouchEvents true &rarr; ignore all such events, false 
+         * &rarr; don't ignore any such events
 	 */
 	public void setIgnoreTouchEvents(boolean ignoreTouchEvents) {
 		setIgnoreTouch(ignoreTouchEvents);
@@ -773,42 +783,45 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Test whether the element ignores touch down, up, move and fling 
+	 * Test whether the element ignores touch down/up, move, and fling 
          * events.
 	 * @return true if ignoring all such events, otherwise false
 	 */
 	public boolean getIgnoreTouchEvents() { return (getIgnoreTouch() && getIgnoreTouchMove() && getIgnoreFling()); }
 	
 	/**
-	 * Element will ignore touch down and up events
-	 * @param ignoreTouch 
+	 * Alter whether the Element ignores touch down/up events.
+	 * @param ignoreTouch true &rarr; ignore such events, false 
+         * &rarr; don't ignore such events
 	 */
 	public void setIgnoreTouch(boolean ignoreTouch) {
 		this.ignoreTouch = ignoreTouch;
 	}
 	
 	/**
-	 * Test whether the element ignores touch down and up events.
+	 * Test whether the element ignores touch down/up events.
 	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreTouch() { return ignoreTouch; }
 	/**
-	 * element will ignore touch move events
-	 * @param ignoreTouchMove 
+	 * Alter whether the Element ignores touch move events.
+	 * @param ignoreTouchMove true &rarr; ignore such events, false 
+         * &rarr; don't ignore such events
 	 */
 	public void setIgnoreTouchMove(boolean ignoreTouchMove) {
 		this.ignoreTouchMove = ignoreTouchMove;
 	}
 	
 	/**
-	 * Test whether the element ignores touch move events.
+	 * Test whether the Element ignores touch move events.
 	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreTouchMove() { return this.ignoreTouchMove; }
 	
 	/**
-	 * Element will ignore touch fling events
-	 * @param ignoreFling 
+	 * Alter whether the Element ignores touch fling events.
+	 * @param ignoreFling true &rarr; ignore such events, false 
+         * &rarr; don't ignore such events
 	 */
 	public void setIgnoreFling(boolean ignoreFling) {
 		this.ignoreFling = ignoreFling;
@@ -917,12 +930,13 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Sets how the element will docking to it's parent element during resize events.
+	 * Sets how the element will dock to its parent element during resize 
+         * events.
 	 * NW = Top Left of parent element
 	 * NE = Top Right of parent element
 	 * SW = Bottom Left of parent element
 	 * SE = Bottom Right of parent element
-	 * @param docking 
+	 * @param docking docking value
 	 */
 	public void setDocking(Docking docking) {
 		this.docking = docking;
@@ -1052,7 +1066,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Determines if the element should scale with parent when resized vertically.
+	 * Alter whether the element should scale with parent when resized vertically.
 	 * @param scaleNS boolean
 	 */
 	public void setScaleNS(boolean scaleNS) {
@@ -1499,6 +1513,7 @@ public class Element extends Node {
 	
 	/**
 	 * Stubbed for future use.
+         * @return true if initialized, otherwise false
 	 */
 	public boolean getInitialized() { return this.initialized; }
 	
@@ -1792,19 +1807,19 @@ public class Element extends Node {
 	
 	//<editor-fold desc="Resze Borders">
 	/**
-	 * Set the north, west, east and south borders in number of pixels
-	 * @param borderSize 
+	 * Set the north, west, east and south borders to a single value.
+	 * @param borderSize number of pixels
 	 */
 	public void setResizeBorders(float borderSize) {
 		borders.set(borderSize,borderSize,borderSize,borderSize);
 	}
 	
 	/**
-	 * Set the north, west, east and south borders in number of pixels
-	 * @param nBorder float
-	 * @param wBorder float
-	 * @param eBorder float
-	 * @param sBorder float
+	 * Set the north, west, east and south borders to separate values.
+	 * @param nBorder number of pixels
+	 * @param wBorder number of pixels
+	 * @param eBorder number of pixels
+	 * @param sBorder number of pixels
 	 */
 	public void setResizeBorders(float nBorder, float wBorder, float eBorder, float sBorder) {
 		borders.setX(nBorder);
@@ -1963,9 +1978,9 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Sets the element's text layer horizontal alignment
+	 * Sets the element's text-layer horizontal alignment
 	 * 
-	 * @param textAlign 
+	 * @param textAlign desired horizontal alignment
 	 */
 	public void setTextAlign(BitmapFont.Align textAlign) {
 		this.textAlign = textAlign;
@@ -1985,7 +2000,7 @@ public class Element extends Node {
 	/**
 	 * Sets the element's text layer vertical alignment
 	 * 
-	 * @param textVAlign 
+	 * @param textVAlign desired vertical alignment
 	 */
 	public void setTextVAlign(BitmapFont.VAlign textVAlign) {
 		this.textVAlign = textVAlign;
@@ -2022,7 +2037,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Sets the elements text layer position
+	 * Sets the Element's text-layer position.
 	 * @param x Position's x coord
 	 * @param y Position's y coord
 	 */
@@ -2031,7 +2046,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns the current x, y coords of the element's text layer
+	 * Returns the current X-Y coordinates of the Element's text layer.
 	 * @return Vector2f textPosition
 	 */
 	public Vector2f getTextPosition() {
@@ -2039,8 +2054,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Sets the padding set for the element's text layer
-	 * @param textPadding 
+	 * Sets the padding values for the Element's text layer.
+	 * @param textPadding desired value for all sides
 	 */
 	public void setTextPadding(float textPadding) {
 		setTextPadding(textPadding,textPadding,textPadding,textPadding);
@@ -2055,7 +2070,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns the ammount of padding set for the elements text layer
+	 * Returns the amount of padding set for the Element's text layer.
 	 * @return float textPadding
 	 */
 	public float getTextPadding() {
@@ -2067,7 +2082,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Updates the element's textlayer position and boundary
+	 * Updates the Element's text-layer position and boundary
 	 */
 	protected void updateTextElement() {
 		if (textElement != null) {
@@ -2258,13 +2273,13 @@ public class Element extends Node {
 	public boolean getUseLocalTexture() { return this.useLocalTexture; }
 	
 	/**
-	 * Will set the textures WrapMode to repeat if enabled.
+	 * Alter the texture's WrapMode.
          * 
 	 * NOTE: This only works when texture atlasing has not been enabled.
 	 * For info on texture atlas usage, see both:
 	 * @see Screen#setUseTextureAtlas(boolean enable, String path) 
 	 * @see #setTextureAtlasImage(com.jme3.texture.Texture tex, java.lang.String path) 
-	 * @param tileImage 
+	 * @param tileImage true &rarr; Repeat, false &rarr; Clamp
 	 */
 	public void setTileImage(boolean tileImage) {
 		this.useLocalTexture = true;
@@ -2325,14 +2340,14 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * A way to override the default material of the element.
+	 * Alter and apply the Element's default material.
 	 * 
 	 * NOTE: It is important that the shader used with the new material is either:
 	 * A: The provided Unshaded material contained with this library, or
 	 * B: The custom shader contains the caret, text range, clipping and effect 
 	 *    handling provided in the default shader.
 	 * 
-	 * @param mat The Material to use for rendering this Element.
+	 * @param mat the Material to use for rendering this Element
 	 */
 	public void setLocalMaterial(Material mat) {
 		this.mat = mat;
@@ -2340,15 +2355,15 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns the default material for the element
-	 * @param mat 
+	 * Alter the Element's default material without applying it.
+	 * @param mat the Material to use for rendering this Element
 	 */
 	public void setElementMaterial(Material mat) {
 		this.mat = mat;
 	}
 	
 	/**
-	 * Returns a pointer to the Material used for rendering this Element.
+	 * Access the Material used to render this Element.
 	 * 
 	 * @return Material mat
 	 */
@@ -2357,7 +2372,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns the default Texture for the Element
+	 * Access the default Texture for this Element.
 	 * 
 	 * @return Texture defaultTexture
 	 */
@@ -2658,8 +2673,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Hides or shows the element (true = show, false = hide)
-	 * @param visibleState 
+	 * Alter this element's visibility.
+	 * @param visibleState true &rarr; show, false &rarr; hide
 	 */
 	public void setIsVisible(boolean visibleState) {
 		if (visibleState) {
@@ -3109,18 +3124,18 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Removes the Effect associated with the Effect.EffectEvent specified
-	 * @param effectEvent 
+	 * Remove the Effect associated with the specified EffectEvent.
+	 * @param effectEvent which event
 	 */
 	public void removeEffect(Effect.EffectEvent effectEvent) {
 		effects.remove(effectEvent);
 	}
 	
 	/**
-	 * Retrieves the Effect associated with the specified Effect.EffectEvent
+	 * Copy the Effect associated with the specified EffectEvent.
 	 * 
-	 * @param effectEvent
-	 * @return effect
+	 * @param effectEvent which event
+	 * @return a new instance
 	 */
 	public Effect getEffect(Effect.EffectEvent effectEvent) {
 		Effect effect = null;
@@ -3164,7 +3179,7 @@ public class Element extends Node {
 	//<editor-fold desc="Alpha">
 	/**
 	 * Overrides the screen global alpha with the specified value. setIngoreGlobalAlpha must be enabled prior to calling this method.
-	 * @param globalAlpha 
+	 * @param globalAlpha desired alpha value
 	 */
 	public void setGlobalAlpha(float globalAlpha) {
 		if (!ignoreGlobalAlpha) {
@@ -3178,8 +3193,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Will enable or disable the use of the screen defined global alpha setting.
-	 * @param ignoreGlobalAlpha 
+	 * Alter the effect of the screen-defined global alpha.
+	 * @param ignoreGlobalAlpha true &rarr; ignore it, false &rarr; use it
 	 */
 	public void setIgnoreGlobalAlpha(boolean ignoreGlobalAlpha) {
 		this.ignoreGlobalAlpha = ignoreGlobalAlpha;
@@ -3272,16 +3287,16 @@ public class Element extends Node {
 	
 	//<editor-fold desc="Modal">
 	/**
-	 * Enables standard modal mode for the Element.
-	 * @param isModal 
+	 * Enable or disable standard modal mode for the Element.
+	 * @param isModal true &rarr; make modal, false &rarr; make non-modal
 	 */
 	public void setIsModal(boolean isModal) {
 		this.isModal = isModal;
 	}
 	
 	/**
-	 * Returns if the Element is currently modal
-	 * @return Ret
+	 * Tests whether the Element is currently modal.
+	 * @return true if modal, otherwise false
 	 */
 	public boolean getIsModal() {
 		return this.isModal;
@@ -3297,6 +3312,7 @@ public class Element extends Node {
 	
 	/**
 	 * For internal use - DO NOT CALL THIS METHOD
+         * @return true if set, otherwise false
 	 */
 	public boolean getIsGlobalModal() {
 		return this.isGlobalModal;
@@ -3324,8 +3340,8 @@ public class Element extends Node {
 	Vector2f origin = new Vector2f(0,0);
 	/**
 	 * Stubbed for future use
-	 * @param originX
-	 * @param originY 
+	 * @param originX desired x-coordinate of origin
+	 * @param originY desired y-coordinate of origin
 	 */
 	public void setOrigin(float originX, float originY) {
 		origin.set(originX, originY);
@@ -3333,7 +3349,7 @@ public class Element extends Node {
 	
 	/**
 	 * Stubbed for future use.
-	 * @return the pre-existing instance
+	 * @return the pre-existing vector
 	 */
 	public Vector2f getOrigin() {
 		return this.origin;

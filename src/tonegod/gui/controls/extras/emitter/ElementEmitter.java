@@ -117,8 +117,8 @@ public class ElementEmitter implements Control, Transformable {
 	}
 	
 	/**
-	 * Adds the provided influencer to the emitter's influencer chain
-	 * @param influencer 
+	 * Adds the specified influencer to the emitter's influencer chain
+	 * @param influencer which influencer to add
 	 */
 	public final void addInfluencer(Influencer influencer) {
 		influencers.put(influencer.getClass().getName(), influencer);

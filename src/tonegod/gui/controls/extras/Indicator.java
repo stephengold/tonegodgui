@@ -34,7 +34,8 @@ public abstract class Indicator extends Element {
 	/**
 	 * Creates a new instance of the Indicator control
 	 * 
-	 * @param screen The screen control the Element is to be added to
+	 * @param screen screen control to which the Element should be added
+         * @param orientation desired orientation
 	 */
 	public Indicator(ElementManager screen, Orientation orientation) {
 		this(screen, UIDUtil.getUID(), Vector2f.ZERO,
@@ -50,6 +51,7 @@ public abstract class Indicator extends Element {
 	 * 
 	 * @param screen The screen control the Element is to be added to
 	 * @param position A Vector2f containing the x/y position of the Element
+         * @param orientation desired orientation
 	 */
 	public Indicator(ElementManager screen, Vector2f position, Orientation orientation) {
 		this(screen, UIDUtil.getUID(), position,
@@ -66,6 +68,8 @@ public abstract class Indicator extends Element {
 	 * @param screen The screen control the Element is to be added to
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
+         * @param orientation desired orientation
+         * @param useOverlay true &rarr; use, false &rarr; don't use
 	 */
 	public Indicator(ElementManager screen, Vector2f position, Vector2f dimensions, Orientation orientation, boolean useOverlay) {
 		this(screen, UIDUtil.getUID(), position, dimensions,
@@ -83,6 +87,7 @@ public abstract class Indicator extends Element {
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
 	 * @param resizeBorders A Vector4f containing the border information used when resizing the default image (x = N, y = W, z = E, w = S)
 	 * @param defaultImg The default image to use for the Element
+         * @param orientation desired orientation
 	 */
 	public Indicator(ElementManager screen, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg, Orientation orientation) {
 		this(screen, UIDUtil.getUID(), position, dimensions, resizeBorders, defaultImg, orientation, true);
@@ -94,6 +99,7 @@ public abstract class Indicator extends Element {
 	 * @param screen The screen control the Element is to be added to
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
+         * @param orientation desired orientation
 	 */
 	public Indicator(ElementManager screen, String UID, Vector2f position, Orientation orientation) {
 		this(screen, UID, position,
@@ -111,6 +117,7 @@ public abstract class Indicator extends Element {
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
+         * @param orientation desired orientation
 	 */
 	public Indicator(ElementManager screen, String UID, Vector2f position, Vector2f dimensions, Orientation orientation) {
 		this(screen, UID, position, dimensions,
@@ -129,6 +136,8 @@ public abstract class Indicator extends Element {
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
 	 * @param resizeBorders A Vector4f containing the border information used when resizing the default image (x = N, y = W, z = E, w = S)
 	 * @param defaultImg The default image to use for the Indicator
+         * @param orientation desired orientation
+         * @param useOverlay true &rarr; use, false &rarr; don't use
 	 */
 	public Indicator(ElementManager screen, String UID, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg, Orientation orientation, boolean useOverlay) {
 		super(screen, UID, position, dimensions, resizeBorders, null);
@@ -215,9 +224,10 @@ public abstract class Indicator extends Element {
 	}
 	
 	/**
-	 * Use this method in place of setScaleEW and setScaleNE
-	 * @param scaleNS
-	 * @param scaleEW 
+         * Alter whether the element should scale with parent when resized.
+	 * Use this method in place of setScaleEW and setScaleNS.
+	 * @param scaleNS true &rarr; scale, false &rarr; don't scale
+	 * @param scaleEW true &rarr; scale, false &rarr; don't scale
 	 */
 	public void setScaling(boolean scaleNS, boolean scaleEW) {
 		setScaleNS(scaleNS);
@@ -243,8 +253,8 @@ public abstract class Indicator extends Element {
 	}
 	
 	/**
-	 * Sets the ColorRGBA value of the Indicator
-	 * @param indicatorColor 
+	 * Alter the color of the Indicator.
+	 * @param indicatorColor desired color
 	 */
 	public void setIndicatorColor(ColorRGBA indicatorColor) {
 		this.indicatorColor = indicatorColor;
@@ -252,8 +262,8 @@ public abstract class Indicator extends Element {
 	}
 	
 	/**
-	 * Set the maximum value (e.g. float  = 100%)
-	 * @param maxValue 
+	 * Alter the maximum value of the Indicator (e.g. float  = 100%)
+	 * @param maxValue desired maximum value
 	 */
 	public void setMaxValue(float maxValue) {
 		this.maxValue = maxValue;
@@ -261,16 +271,16 @@ public abstract class Indicator extends Element {
 	}
 	
 	/**
-	 * Returns the maximum value set for the Indicator
-	 * @return maxValue
+	 * Read the maximum value for the Indicator.
+	 * @return maxValue desired maximum value
 	 */
 	public float getMaxValue() {
 		return this.maxValue;
 	}
 	
 	/**
-	 * Sets the current value of the Indicator
-	 * @param currentValue 
+	 * Alter the current value of the Indicator
+	 * @param currentValue desired value
 	 */
 	public void setCurrentValue(float currentValue) {
 		this.currentValue = currentValue;
@@ -282,7 +292,7 @@ public abstract class Indicator extends Element {
 	}
 	
 	/**
-	 * Returns the current value of the Indicator
+	 * Read the current value of the Indicator.
 	 * @return currentValue
 	 */
 	public float getCurrentValue() {
@@ -324,7 +334,7 @@ public abstract class Indicator extends Element {
 	
 	/**
 	 * Use setAlphaMap instead
-	 * @param alphaMapPath 
+	 * @param alphaMapPath desired path
 	 */
 	@Deprecated
 	public void setIndicatorAlphaMap(String alphaMapPath) {
@@ -334,7 +344,7 @@ public abstract class Indicator extends Element {
 	
 	/**
 	 * Applies an alpha map to the indicator, allowing for curved shapes
-	 * @param alphaMapPath 
+	 * @param alphaMapPath desired path
 	 */
 	@Override
 	public void setAlphaMap(String alphaMapPath) {
@@ -384,7 +394,7 @@ public abstract class Indicator extends Element {
 	
 	/**
 	 * Set the image to use behind the indicator
-	 * @param imgPath 
+	 * @param imgPath path to desired image
 	 */
 	public void setBaseImage(String imgPath) {
 		setColorMap(imgPath);
@@ -392,7 +402,7 @@ public abstract class Indicator extends Element {
 	
 	/**
 	 * Set the image to use in front of the indicator
-	 * @param imgPath
+	 * @param imgPath path to desired image
 	 */
 	public void setOverlayImage(String imgPath) {
 		elOverlay.setColorMap(imgPath);

@@ -323,7 +323,7 @@ public abstract class ChatBoxExt extends Panel {
 	}
 
 	/**
-	 * Access the chat input TextField
+	 * Access the chat input TextField.
 	 * @return the pre-existing instance
 	 */
 	public TextField getChatInput() {
@@ -331,16 +331,16 @@ public abstract class ChatBoxExt extends Panel {
 	}
 	
 	/**
-	 * Sets the default validation type for the chat input TextField
-	 * @param type 
+	 * Alter the default validation type for the chat input TextField.
+	 * @param type desired validation type
 	 */
 	public void setValidationType(TextField.Type type) {
 		this.tfChatInput.setType(type);
 	}
 	
 	/**
-	 * Sets the validation string for the chat input TextField
-	 * @param grabBag 
+	 * Alter the custom validation string for the chat input TextField.
+	 * @param grabBag desired validation string
 	 */
 	public void setCustomValidation(String grabBag) {
 		this.tfChatInput.setCustomValidation(grabBag);
@@ -435,8 +435,8 @@ public abstract class ChatBoxExt extends Panel {
 	}
 
 	/**
-	 * Sets the keyboard key code to send messages (in place of the send button)
-	 * @param sendKey 
+	 * Alter the key code to send messages (in place of the send button).
+	 * @param sendKey desired keyboard key code
 	 */
 	public void setSendKey(int sendKey) {
 		this.sendKey = sendKey;
@@ -456,7 +456,7 @@ public abstract class ChatBoxExt extends Panel {
 	 * @param command The command associated with the ChatChannel (e.g. /group /say /ooc etc)
 	 * @param filterDisplayText The text to display for this ChatChannel in the Chat Filters window
 	 * @param color The ColorRGBA to use when displaying messages associated with the ChatChannel
-	 * @param visibleToUser 
+	 * @param visibleToUser true &rarr; visible, false &rarr; hidden
 	 */
 	public final void addChatChannel(String UID, String name, Object command, String filterDisplayText, ColorRGBA color, boolean visibleToUser) {
 		channels.add(new ChatChannel(UID, name, command, filterDisplayText, color, visibleToUser));
@@ -509,8 +509,8 @@ public abstract class ChatBoxExt extends Panel {
 	}
 
 	/**
-	 * Hides/Shows the Filter Window button
-	 * @param showFilterButton 
+	 * Alter visibility of the Filter Window button.
+	 * @param showFilterButton true &rarr; show, false &rarr; hide
 	 */
 	public void showFilterButton(boolean showFilterButton) {
 		if (showFilterButton) {
@@ -540,8 +540,8 @@ public abstract class ChatBoxExt extends Panel {
 	}
 
 	/**
-	 * Hides/Shows the Send Button
-	 * @param showSendButton 
+	 * Alter visibility of the Send Button
+	 * @param showSendButton true &rarr; show, false &rarr; hide
 	 */
 	public void showSendButton(boolean showSendButton) {
 		if (showSendButton) {
@@ -616,8 +616,8 @@ public abstract class ChatBoxExt extends Panel {
 
 	/**
 	 * Called by the Chat Filter Window.
-	 * @param channel
-	 * @param filter 
+	 * @param channel which channel
+	 * @param filter desired setting
 	 */
 	public void setChannelFiltered(ChatChannel channel, boolean filter) {
 		channel.setIsFiltered(filter);
@@ -692,16 +692,16 @@ public abstract class ChatBoxExt extends Panel {
 	}
 
 	/**
-	 * Sets the ToolTip text to display for mouse focus of the TextField input
-	 * @param tip 
+	 * Alter the ToolTip for mouse focus on the TextField input.
+	 * @param tip text to display
 	 */
 	public void setToolTipTextInput(String tip) {
 		this.tfChatInput.setToolTipText(tip);
 	}
 
 	/**
-	 * Sets the ToolTip text to display for mouse focus of the Send button
-	 * @param tip 
+	 * Alter the ToolTip for mouse focus on the Send button.
+	 * @param tip text to display
 	 */
 	public void setToolTipSendButton(String tip) {
 		this.btnChatSendMsg.setToolTipText(tip);
