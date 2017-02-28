@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.lists;
 
 import com.jme3.font.BitmapFont;
@@ -92,7 +88,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
 	 * @param resizeBorders A Vector4f containg the border information used when resizing the default image (x = N, y = W, z = E, w = S)
-	 * @param defaultImg The default image to use for the Menu
+	 * @param defaultImg default image to use
 	 */
 	public SelectList(ElementManager screen, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg) {
 		this(screen, UIDUtil.getUID(), position, dimensions, resizeBorders, defaultImg);
@@ -135,7 +131,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
-	 * @param resizeBorders A Vector4f containg the border information used when resizing the default image (x = N, y = W, z = E, w = S)
+	 * @param resizeBorders A Vector4f containing the border information used when resizing the default image (x = N, y = W, z = E, w = S)
 	 * @param defaultImg The default image to use for the Slider's track
 	 */
 	public SelectList(ElementManager screen, String UID, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg) {
@@ -181,9 +177,10 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 		return this.isMultiselect;
 	}
 	/**
-	 * Adds a ListItem to the Menu
-	 * @param caption The display caption of the MenuItem
-	 * @param value The value to associate with the MenuItem
+	 * Add a ListItem to the list.
+	 * @param caption display caption for the ListItem
+	 * @param value value to associate with the ListItem
+         * @return index of the last item
 	 */
 	public int addListItem(String caption, Object value) {
 		this.getVScrollBar().hide();
@@ -200,10 +197,10 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	}
 	
 	/**
-	 * Inserts a new ListItem at the provided index
-	 * @param index The index to insert into
-	 * @param caption The display caption of the MenuItem
-	 * @param value The value to associate with the MenuItem
+	 * Insert a new ListItem at the specified index.
+	 * @param index where to insert
+	 * @param caption display caption for the ListItem
+	 * @param value value to associate with the ListItem
 	 */
 	public void insertListItem(int index, String caption, Object value) {
 		if (!listItems.isEmpty()) {
@@ -237,7 +234,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	}
 	
 	/**
-	 * Remove the ListItem at the provided index
+	 * Remove the ListItem at the specified index.
 	 * @param index int
 	 */
 	public void removeListItem(int index) {
@@ -251,8 +248,9 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	}
 	
 	/**
-	 * Remove the first ListItem that contains the provided value
+	 * Remove the first ListItem that contains the specified value
 	 * @param value Object
+         * @return index of the item removed, or -1 if unsuccessful
 	 */
 	public int removeListItem(Object value) {
 		if (!listItems.isEmpty()) {
@@ -274,8 +272,9 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	}
 	
 	/**
-	 * Remove the first ListItem that contains the provided caption
-	 * @param caption
+	 * Remove the first ListItem with the specified caption.
+	 * @param caption display caption to find
+         * @return index of the item removed, or -1 if unsuccessful
 	 */
 	public int removeListItem(String caption) {
 		if (!listItems.isEmpty()) {
@@ -301,6 +300,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	
 	/**
 	 * Removes the first ListItem in the SelectList
+         * @return index of the item removed, or -1 if unsuccessful
 	 */
 	public int removeFirstListItem() {
 		if (!listItems.isEmpty()) {
@@ -313,6 +313,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	
 	/**
 	 * Removes the last ListItem in the SelectList
+         * @return index of the item removed, or -1 if unsuccessful
 	 */
 	public int removeLastListItem() {
 		if (!listItems.isEmpty()) {
@@ -344,7 +345,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	
 	/**
 	 * Sets the current list of selected indexes to the specified indexes
-	 * @param indexes 
+	 * @param indexes indices to select
 	 */
 	public void setSelectedIndexes(Integer... indexes) {
 		for (int i = 0; i < indexes.length; i++) {

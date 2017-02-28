@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.buttons;
 
 import java.util.ArrayList;
@@ -41,7 +37,7 @@ public abstract class RadioButtonGroup {
 	
 	/**
 	 * Adds any Button or extended class and enables the Button's Radio state
-	 * @param button 
+	 * @param button which Button to add
 	 */
 	public void addButton(Button button) {
 		button.setRadioButtonGroup(this);
@@ -52,8 +48,8 @@ public abstract class RadioButtonGroup {
 	}
 	
 	/**
-	 * Sets the current selected Radio Button to the Button associated with the provided index
-	 * @param index 
+	 * Alter which Radio Button is selected.
+	 * @param index index of button to select
 	 */
 	public void setSelected(int index) {
 		if (this.selectedIndex != index) {
@@ -73,8 +69,8 @@ public abstract class RadioButtonGroup {
 	}
 	
 	/**
-	 * Sets the current selected Radio Button to the Button instance provided
-	 * @param button 
+	 * Alter which Radio Button is selected.
+	 * @param button button instance to select
 	 */
 	public void setSelected(Button button) {
 		if (this.selected != button) {

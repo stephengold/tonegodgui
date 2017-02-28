@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.lists;
 
 import com.jme3.font.BitmapFont.Align;
@@ -379,8 +375,8 @@ public class SlideTray extends Element {
 	public float getTrayPadding() { return this.trayPadding; }
 	
 	/**
-	 * Sets the padding between slide tray elements
-	 * @param trayPadding 
+	 * Alter the padding between slide tray elements
+	 * @param trayPadding desired amount of padding
 	 */
 	public void setTrayPadding(float trayPadding) {
 		this.trayPadding = trayPadding;
@@ -388,7 +384,7 @@ public class SlideTray extends Element {
 	
 	/**
 	 * Enables/disables the use of the SlideTo effect when using next/previous buttons
-	 * @param useSlideEffect 
+	 * @param useSlideEffect true &rarr; enable, false &rarr; disable
 	 */
 	public void setUseSlideEffect(boolean useSlideEffect) {
 		this.useSlideEffect = useSlideEffect;
@@ -396,7 +392,7 @@ public class SlideTray extends Element {
 	
 	/**
 	 * Adds the provided Element as a tray item
-	 * @param element 
+	 * @param element element to add
 	 */
 	public void addTrayElement(Element element) {
 		if (orientation == Orientation.HORIZONTAL) {

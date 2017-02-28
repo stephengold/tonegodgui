@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.buttons;
 
 import com.jme3.font.BitmapFont;
@@ -636,16 +632,16 @@ public abstract class Button extends Element implements Control, MouseButtonList
 	}
 	
 	/**
-	 * Enables/disbale hover effect sound
-	 * @param useHoverSound 
+	 * Enables/disable hover sound effect.
+	 * @param useHoverSound true &rarr; enable, false &rarr; disable
 	 */
 	public void setUseButtonHoverSound(boolean useHoverSound) {
 		this.useHoverSound = useHoverSound;
 	}
 	
 	/**
-	 * Enable/disable pressed effect sound
-	 * @param usePressedSound 
+	 * Enable/disable pressed sound effect.
+	 * @param usePressedSound true &rarr; enable, false &rarr; disable
 	 */
 	public void setUseButtonPressedSound(boolean usePressedSound) {
 		this.usePressedSound = usePressedSound;

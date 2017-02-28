@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.lists;
 
 import com.jme3.input.KeyInput;
@@ -232,7 +228,7 @@ public abstract class ComboBox extends TextField {
 	
 	/**
 	 * Removes the List Item at the specified index
-	 * @param index 
+	 * @param index index of item to remove
 	 */
 	public void removeListItem(int index) {
 		if (DDList != null) {
@@ -244,7 +240,7 @@ public abstract class ComboBox extends TextField {
 	
 	/**
 	 * Removes the first instance of a list item with the specified caption
-	 * @param caption 
+	 * @param caption caption text to search for
 	 */
 	public void removeListItem(String caption) {
 		if (DDList != null) {
@@ -254,7 +250,7 @@ public abstract class ComboBox extends TextField {
 	
 	/**
 	 * Removes the first instance of a list item with the specified value
-	 * @param value 
+	 * @param value item to remove
 	 */
 	public void removeListItem(Object value) {
 		if (DDList != null) {
@@ -348,7 +344,7 @@ public abstract class ComboBox extends TextField {
 	
 	/**
 	 * Selects the List Item at the specified index and call the onChange event
-	 * @param selectedIndex 
+	 * @param selectedIndex index of item to select
 	 */
 	public void setSelectedIndexWithCallback(int selectedIndex) {
 		if (validateListSize()) {
@@ -382,8 +378,8 @@ public abstract class ComboBox extends TextField {
 	}
 	
 	/**
-	 * Selects the List Item at the specified index
-	 * @param selectedIndex 
+	 * Select the List Item at the specified index.
+	 * @param selectedIndex index of item to select
 	 */
 	public void setSelectedIndex(int selectedIndex) {
 		if (validateListSize()) {
@@ -501,13 +497,13 @@ public abstract class ComboBox extends TextField {
 	
 	/**
 	 * Abstract event method called when a list item is selected/navigated to.
-	 * @param selectedIndex
-	 * @param value 
+	 * @param selectedIndex index of item
+	 * @param value value of item
 	 */
 	public abstract void onChange(int selectedIndex, Object value);
 	
 	/**
-	 * Returns the current selected index
+	 * Read the currently selected index.
 	 * @return selectedIndex
 	 */
 	public int getSelectIndex() {
@@ -515,17 +511,17 @@ public abstract class ComboBox extends TextField {
 	}
 	
 	/**
-	 * Returns the object representing the current selected List Item
-	 * @return MenuITem
+	 * Access currently selected MenuItem.
+	 * @return the pre-existing instance
 	 */
 	public MenuItem getSelectedListItem() {
 		return this.DDList.getMenuItem(selectedIndex);
 	}
 	
 	/**
-	 * Returns the object representing the list item at the specified index
-	 * @param index
-	 * @return MenuItem
+	 * Access the menu item at the specified index.
+	 * @param index index of desired item
+	 * @return the pre-existing instance
 	 */
 	public MenuItem getListItemByIndex(int index) {
 		return this.DDList.getMenuItem(index);
@@ -533,7 +529,7 @@ public abstract class ComboBox extends TextField {
 	
 	/**
 	 * Returns a List of all ListItems 
-	 * @return List
+	 * @return List or null
 	 */
 	public List<MenuItem> getListItems() {
                 if(DDList != null) {

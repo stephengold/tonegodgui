@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.lists;
 
 import com.jme3.font.BitmapFont;
@@ -388,9 +384,10 @@ public abstract class Spinner extends TextField {
 	}
 	
 	/**
-	 * The abstract event method that is called when the selectedIndex changes
+	 * Abstract method called when the selectedIndex changes.
 	 * @param selectedIndex int The new selectedIndex
 	 * @param value The value associated with the selected index
+         * @param changeType direction of change
 	 */
 	public abstract void onChange(int selectedIndex, String value, ChangeType changeType);
         

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.windows;
 
 import com.jme3.font.BitmapFont.Align;
@@ -149,8 +145,9 @@ public abstract class TabControl extends Element {
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
-	 * @param resizeBorders A Vector4f containg the border information used when resizing the default image (x = N, y = W, z = E, w = S)
+	 * @param resizeBorders A Vector4f containing the border information used when resizing the default image (x = N, y = W, z = E, w = S)
 	 * @param defaultImg The default image to use for the TabControl background
+         * @param orientation which orientation to use
 	 */
 	public TabControl(ElementManager screen, String UID, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg, Orientation orientation) {
 		super(screen, UID, position, dimensions, resizeBorders, defaultImg);
@@ -269,7 +266,7 @@ public abstract class TabControl extends Element {
 	
 	/**
 	 * Sets the resize borders for use with ElementQuadGrid per tab
-	 * @param tabResizeBorders 
+	 * @param tabResizeBorders vector of resize border values (unaffected)
 	 */
 	public void setTabResizeBorders(Vector4f tabResizeBorders) {
 		this.tabResizeBorders.set(tabResizeBorders);
@@ -292,7 +289,7 @@ public abstract class TabControl extends Element {
 	
 	/**
 	 * Sets the default tab size
-	 * @param size 
+	 * @param size desired size
 	 */
 	public void setTabSize(float size) {
 		if (orientation == Orientation.HORIZONTAL)

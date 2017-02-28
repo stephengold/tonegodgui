@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.framework.animation;
 
 import tonegod.gui.framework.core.Transformable;
@@ -85,10 +81,16 @@ public abstract class TemporalAction implements Cloneable {
 		this.complete = complete;
 	}
 	
-	/** Gets the transition time so far. */
+	/** 
+         * Read the transition time. 
+         * @return transition time so far
+         */
 	public float getTime () { return time; }
 
-	/** Sets the transition time so far. */
+	/** 
+         * Alter the transition time.
+         * @param time desired value
+         */
 	public void setTime (float time) {
 		this.time = time;
 	}
@@ -97,7 +99,10 @@ public abstract class TemporalAction implements Cloneable {
 		return duration;
 	}
 
-	/** Sets the length of the transition in seconds. */
+	/** 
+         * Alter the transition time. 
+         * @param duration desired transition time (in seconds)
+         */
 	public void setDuration (float duration) {
 		this.duration = duration;
 	}
@@ -114,7 +119,10 @@ public abstract class TemporalAction implements Cloneable {
 		return reverse;
 	}
 
-	/** When true, the action's progress will go from 100% to 0%. */
+	/** 
+         * Alter the direction of this action's progress.
+         * @param reverse true &rarr; progress will go from 100% to 0%, false &rarr; from 0% to 100%.
+         */
 	public void setReverse (boolean reverse) {
 		this.reverse = reverse;
 	}

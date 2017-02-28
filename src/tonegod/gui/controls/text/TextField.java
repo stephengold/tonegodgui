@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.text;
 
 import com.jme3.font.BitmapFont;
@@ -219,7 +215,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 
 	// Validation
 	/**
-	 * Sets the TextField.Type of the text field.  This can be used to enfoce rules on the inputted text
+	 * Sets the TextField.Type of the text field.  This can be used to enforce rules on the inputted text
 	 * @param type Type
 	 */
 	public void setType(Type type) {
@@ -236,7 +232,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	
 	/**
 	 * Sets a custom validation rule for the TextField.
-	 * @param grabBag String A list of character to either allow or diallow as input
+	 * @param grabBag String A list of character to either allow or disallow as input
 	 */
 	public void setCustomValidation(String grabBag) {
 		validateCustom = grabBag;
@@ -245,7 +241,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	/**
 	 * Attempts to parse an int from the inputted text of the TextField
 	 * @return int
-	 * @throws NumberFormatException 
+	 * @throws NumberFormatException from parseInt
 	 */
 	public int parseInt() throws NumberFormatException {
 		return Integer.parseInt(getText());
@@ -254,7 +250,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	/**
 	 * Attempts to parse a float from the inputted text of the TextField
 	 * @return float
-	 * @throws NumberFormatException 
+	 * @throws NumberFormatException from parseFloat
 	 */
 	public float parseFloat() throws NumberFormatException {
 		return Float.parseFloat(getText());
@@ -263,7 +259,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	/**
 	 * Attempts to parse a short from the inputted text of the TextField
 	 * @return short
-	 * @throws NumberFormatException 
+	 * @throws NumberFormatException from parseShort
 	 */
 	public short parseShort() throws NumberFormatException {
 		return Short.parseShort(getText());
@@ -272,7 +268,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	/**
 	 * Attempts to parse a double from the inputted text of the TextField
 	 * @return double
-	 * @throws NumberFormatException 
+	 * @throws NumberFormatException from parseDouble
 	 */
 	public double parseDouble() throws NumberFormatException {
 		return Double.parseDouble(getText());
@@ -281,7 +277,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	/**
 	 * Attempts to parse a long from the inputted text of the TextField
 	 * @return long
-	 * @throws NumberFormatException 
+	 * @throws NumberFormatException from parseLong
 	 */
 	public long parseLong() throws NumberFormatException {
 		return Long.parseLong(getText());
@@ -904,7 +900,8 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	}
 	
 	/**
-	 * Forces all text input to lowercase
+	 * Forces all text input to lowercase.
+         * @param forceLowerCase true &rarr; force lowercase, false &rarr; don't force
 	 */
 	public void setForceLowerCase(boolean forceLowerCase) {
 		this.forceLowerCase = forceLowerCase;
@@ -913,7 +910,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	
 	/**
 	 * Returns if the TextField is set to force lowercase
-	 * @return boolean
+	 * @return boolean true if forcing lowercase, otherwise false
 	 */
 	public boolean getForceLowerCase() {
 		return this.forceLowerCase;

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.buttons;
 
 import com.jme3.font.BitmapFont;
@@ -175,7 +171,7 @@ public class CheckBox extends ButtonAdapter {
 	
 	/**
 	 * Sets text for the check Label
-	 * @param text 
+	 * @param text text for label
 	 */
 	public void setLabelText(String text) {
 		if (label.getParent() != null) {
@@ -208,7 +204,7 @@ public class CheckBox extends ButtonAdapter {
 	
 	/**
 	 * Checks/unchecks the checkbox
-	 * @param isChecked 
+	 * @param isChecked true &rarr; check, false &rarr; uncheck
 	 */
 	public void setIsChecked(boolean isChecked) {
 		setIsToggled(isChecked);

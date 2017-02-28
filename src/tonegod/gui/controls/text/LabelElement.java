@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.text;
 
 import com.jme3.font.BitmapFont;
@@ -137,7 +133,7 @@ public class LabelElement extends TextElement {
 	
 	/**
 	 * Enables/disables resizing the Label to length
-	 * @param sizeToText 
+	 * @param sizeToText true &rarr; resize, false &rarr; don't resize
 	 */
 	public void setSizeToText(boolean sizeToText) {
 		this.sizeToText = sizeToText;

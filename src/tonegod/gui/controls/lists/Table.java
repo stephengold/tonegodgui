@@ -576,14 +576,14 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Get the size of the visible scrolling area
      *
-     * @return viewport size
+     * @return a new vector containing the viewport size
      */
     public final Vector2f getViewPortSize() {
         return new Vector2f(getWidth() - (tablePadding * 2), getHeight() - (tablePadding * 2) - (headersVisible ? headerHeight - headerGap : 0));
     }
 
     /**
-     * Get if the table is sortable.
+     * Test whether the table is sortable.
      *
      * @return sortable
      */
@@ -604,9 +604,9 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     /**
-     * Get the columns.
+     * Access the list of columns.
      *
-     * @return columns
+     * @return the pre-existing list
      */
     public List<TableColumn> getColumns() {
         return columns;
@@ -615,8 +615,8 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Sort a column.
      *
-     * @param column
-     * @param ascending
+     * @param column which column to sort
+     * @param ascending true &rarr; ascending order, false &rarr; descending order
      */
     public void sort(TableColumn column, boolean ascending) {
         // Sort rows
@@ -693,7 +693,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
     
     /** 
-     * Remoe all columns (also removes all rows)
+     * Remove all columns (also removes all rows)
      */
     public void removeAllColumns() {
         removeAllRows();
@@ -703,9 +703,9 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
     
     /**
-     * Remove a table column
+     * Remove a column from this Table.
      * 
-     * @param column
+     * @param column which column to remove
      */
     public void removeColumn(TableColumn column) {
         int index = columns.indexOf(column);
@@ -784,6 +784,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
      *
      * @param row row
      * @param pack recalculate layout
+     * @return index of the last row
      */
     public int addRow(TableRow row, boolean pack) {
         this.getVScrollBar().hide();
@@ -800,6 +801,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
      * } for an explanation of the impact of always packing when you add items.
      *
      * @param row row
+     * @return index of the last row
      */
     public int addRow(TableRow row) {
         return addRow(row, true);
@@ -871,6 +873,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
 
     /**
      * Removes the first row in the Table
+     * @return 0 if successful, -1 otherwise
      */
     public int removeFirstRow() {
         if (!rows.isEmpty()) {
@@ -883,6 +886,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
 
     /**
      * Removes the last TableRow in the Table
+     * @return number of remaining rows, or -1 if unsuccessful
      */
     public int removeLastRow() {
         if (!rows.isEmpty()) {
@@ -906,7 +910,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Select an entire column
      *
-     * @param column column
+     * @param column index of column to select
      */
     public void setSelectColumn(int column) {
         selectedCells.clear();
@@ -921,7 +925,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Sets the current selected row index for single select Table
      *
-     * @param index int
+     * @param index index of row to select
      */
     public void setSelectedRowIndex(Integer index) {
         if (index < 0) {
@@ -942,7 +946,8 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Sets the current selected row and column indexes
      *
-     * @param rowIndex
+     * @param rowIndex row index
+     * @param columnIndexes column indices
      */
     public void setSelectedCellIndexes(Integer rowIndex, Integer... columnIndexes) {
         if (rowIndex < 0) {
@@ -964,9 +969,9 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     /**
-     * Sets the current list of selected indexes to the specified indexes
+     * Set the list of currently selected indices.
      *
-     * @param indexes
+     * @param indexes which indices to select
      */
     public void setSelectedRowIndexes(Integer... indexes) {
         selectedCells.clear();
@@ -983,7 +988,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
      * Adds specific cells of the specified row to the list of selected indexes
      *
      * @param rowIndex row index
-     * @param columnIndexes columns
+     * @param columnIndexes column indices
      */
     public void addSelectedCellIndexes(Integer rowIndex, Integer... columnIndexes) {
         if (columnIndexes.length == 0) {
@@ -1009,7 +1014,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Adds all cells of the specified row to the list of selected indexes
      *
-     * @param row row index
+     * @param row index of row to add
      */
     public void addSelectedRowIndex(Integer row) {
         selectedCells.remove(row);
@@ -1021,9 +1026,9 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     /**
-     * Removes the specified index from the list of selected indexes
+     * Remove the specified index from the selection.
      *
-     * @param index int
+     * @param index index to remove
      */
     public void removeSelectedRowIndex(Integer index) {
         selectedCells.remove(index);
@@ -1033,9 +1038,10 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     /**
-     * Removes the specified cells from the list of selected indexes
+     * Removes the specified cells from the selection.
      *
-     * @param rowIndex
+     * @param rowIndex index of row to remove
+     * @param columnIndexes indices of columns to remove
      */
     public void removeSelectedCellIndexes(Integer rowIndex, Integer... columnIndexes) {
         if (columnIndexes.length == 0) {
@@ -1060,7 +1066,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     /**
-     * Get if anything is selected (rows or cells)
+     * Test whether anything is selected (rows or cells).
      *
      * @return select
      */
@@ -1082,9 +1088,10 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     /**
-     * Get the list of column indexes that are selected for the row.
+     * Get the list of column indexes that are selected for the specified row.
      *
-     * @return List
+     * @param rowIndex which row
+     * @return List of column indices
      */
     public List<Integer> getSelectedColumnIndexes(int rowIndex) {
         if (selectedCells.containsKey(rowIndex)) {
@@ -1521,8 +1528,10 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     }
 
     /**
-     * Get if this control is in tree mode. It is a tree if any of the root rows are not
+     * Test whether this control is in tree mode. It is a tree if any of the root rows are not
      * leafs.
+     * 
+     * @return true if in tree mode, otherwise false
      */
     public boolean getIsTree() {
         for (TableRow w : getRows()) {
@@ -1959,6 +1968,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
          *
          * @param row row
          * @param pack recalculate layout
+         * @return index of last row after addition
          */
         public int addRow(TableRow row, boolean pack) {
             if (leaf) {
@@ -1982,6 +1992,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
          * }.
          *
          * @param row row
+         * @return index of last row after addition
          */
         public int addRow(TableRow row) {
             return addRow(row, true);

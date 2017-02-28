@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.framework.core;
 
 import com.jme3.texture.Texture;
@@ -139,7 +135,11 @@ public class TextureRegion {
 		setV(y / (float)texture.getImage().getHeight());
 	}
 
-	/** Returns the region's width. */
+	/** 
+         * Read the region's width.
+         * 
+         * @return width
+         */
 	public int getRegionWidth () {
 		return regionWidth;
 	}

@@ -2224,7 +2224,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	
 	/**
 	 * For internal use - Use setForcedCursor instead
-	 * @param cur 
+	 * @param cur desired type of cursor
 	 */
 	@Override
 	public void setCursor(CursorType cur) {
@@ -2628,7 +2628,9 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	}
 	
 	/**
-	 * Returns the current tab focus element
+	 * Access the current tab focus element.
+         * 
+         * @return the pre-existing Element
 	 */
 	public Element getTabFocusElement() { return this.tabFocusElement; }
 	

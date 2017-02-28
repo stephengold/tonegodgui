@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.extras.emitter;
 
 import com.jme3.app.Application;
@@ -117,7 +113,7 @@ public class ElementEmitter implements Control, Transformable {
 	}
 	
 	/**
-	 * Adds the specified influencer to the emitter's influencer chain
+	 * Add the specified influencer to the emitter's influencer chain.
 	 * @param influencer which influencer to add
 	 */
 	public final void addInfluencer(Influencer influencer) {
@@ -126,7 +122,8 @@ public class ElementEmitter implements Control, Transformable {
 	
 	/**
 	 * Access the first instance of the specified Influencer class.
-	 * @param c The Influencer class
+         * @param <T> type of influencer
+	 * @param c Influencer class to find
 	 * @return a pre-existing instance or null
 	 */
         @SuppressWarnings("unchecked")

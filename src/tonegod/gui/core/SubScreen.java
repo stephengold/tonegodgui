@@ -128,6 +128,7 @@ public class SubScreen implements ElementManager, Control {
 	 * Creates an instance of the SubScreen control.
 	 * 
 	 * @param screen The Application Screen class
+         * @param geom geometry of the control
 	 */
 	public SubScreen(Screen screen, Geometry geom) {
 		this(screen, UIDUtil.getUID(), geom);
@@ -138,6 +139,7 @@ public class SubScreen implements ElementManager, Control {
 	 * 
 	 * @param screen The Application Screen class
 	 * @param UID A Unique String ID for the SubScreen
+         * @param geom geometry of the control
 	 */
 	public SubScreen(Screen screen, String UID, Geometry geom) {
 		this.UID = UID;

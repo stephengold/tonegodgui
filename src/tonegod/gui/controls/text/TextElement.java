@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.text;
 
 import com.jme3.font.BitmapFont;
@@ -53,6 +49,7 @@ public abstract class TextElement extends Element implements Control {
 	 * Creates a new instance of the TextElement control
 	 * 
 	 * @param screen The screen control the Element is to be added to
+         * @param font font to use
 	 */
 	public TextElement(ElementManager screen, BitmapFont font) {
 		this(screen, UIDUtil.getUID(), Vector2f.ZERO,
@@ -68,6 +65,7 @@ public abstract class TextElement extends Element implements Control {
 	 * 
 	 * @param screen The screen control the Element is to be added to
 	 * @param position A Vector2f containing the x/y position of the Element
+         * @param font font to use
 	 */
 	public TextElement(ElementManager screen, Vector2f position, BitmapFont font) {
 		this(screen, UIDUtil.getUID(), position,
@@ -84,6 +82,7 @@ public abstract class TextElement extends Element implements Control {
 	 * @param screen The screen control the Element is to be added to
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
+         * @param font font to use
 	 */
 	public TextElement(ElementManager screen, Vector2f position, Vector2f dimensions, BitmapFont font) {
 		this(screen, UIDUtil.getUID(), position, dimensions,
@@ -101,6 +100,7 @@ public abstract class TextElement extends Element implements Control {
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
 	 * @param resizeBorders A Vector4f containg the border information used when resizing the default image (x = N, y = W, z = E, w = S)
 	 * @param defaultImg The default image to use for the Slider's track
+         * @param font font to use
 	 */
 	public TextElement(ElementManager screen, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg, BitmapFont font) {
 		this(screen, UIDUtil.getUID(), position, dimensions,resizeBorders,defaultImg, font);
@@ -112,6 +112,7 @@ public abstract class TextElement extends Element implements Control {
 	 * @param screen The screen control the Element is to be added to
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
+         * @param font font to use
 	 */
 	public TextElement(ElementManager screen, String UID, Vector2f position, BitmapFont font) {
 		this(screen, UID, position,
@@ -129,6 +130,7 @@ public abstract class TextElement extends Element implements Control {
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
+         * @param font font to use
 	 */
 	public TextElement(ElementManager screen, String UID, Vector2f position, Vector2f dimensions, BitmapFont font) {
 		this(screen, UID, position, dimensions,
@@ -145,8 +147,9 @@ public abstract class TextElement extends Element implements Control {
 	 * @param UID A unique String identifier for the Element
 	 * @param position A Vector2f containing the x/y position of the Element
 	 * @param dimensions A Vector2f containing the width/height dimensions of the Element
-	 * @param resizeBorders A Vector4f containg the border information used when resizing the default image (x = N, y = W, z = E, w = S)
+	 * @param resizeBorders A Vector4f containing the border information used when resizing the default image (x = N, y = W, z = E, w = S)
 	 * @param defaultImg The default image to use for the Slider's track
+         * @param font font to use
 	 */
 	public TextElement(ElementManager screen, String UID, Vector2f position, Vector2f dimensions, Vector4f resizeBorders, String defaultImg, BitmapFont font) {
 		super(screen, UID, position, dimensions, resizeBorders, defaultImg);

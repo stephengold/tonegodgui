@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.core.layouts;
 
 import com.jme3.math.Vector2f;
@@ -29,10 +25,10 @@ public class MigLayout extends AbstractLayout {
 	/**
 	 * Creates a new instance of MigLayout
 	 * 
-	 * @param screen
-	 * @param cols
-	 * @param rows
-	 * @param constraints 
+	 * @param screen manager for this layout
+	 * @param cols number of columns of cells, encoded in a String
+	 * @param rows number of rows of cells, encoded in a String
+	 * @param constraints constraints of this layout
 	 */
 	public MigLayout(ElementManager screen, String cols, String rows, String... constraints) {
 		super(screen, constraints);

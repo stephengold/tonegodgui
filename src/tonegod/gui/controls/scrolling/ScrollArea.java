@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.scrolling;
 
 import com.jme3.font.BitmapFont;
@@ -386,8 +382,8 @@ public class ScrollArea extends Element implements MouseWheelListener, TouchList
 	}
 	
 	/**
-	 * Scrolls the scrollbar thumb to the specified Y coord
-	 * @param y 
+	 * Scrolls the scrollbar thumb to the specified Y coordinate
+	 * @param y desired Y-coordinate
 	 */
 	public void scrollThumbYTo(float y) {
 		adjustWidthForScroll();
@@ -395,8 +391,8 @@ public class ScrollArea extends Element implements MouseWheelListener, TouchList
 	}
 	
 	/**
-	 * Scrolls the Scrollable Area to the specified Y coord
-	 * @param y float
+	 * Scrolls the Scrollable Area to the specified Y coordinate
+	 * @param y desired Y-coordinate
 	 */
 	public void scrollYTo(float y) {
 		adjustWidthForScroll();

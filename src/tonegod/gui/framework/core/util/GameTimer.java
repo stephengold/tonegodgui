@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.framework.core.util;
 
 import tonegod.gui.framework.animation.Interpolation;
@@ -127,7 +123,7 @@ public abstract class GameTimer {
 	
 	/**
 	 * Sets the interpolation to apply to the percent complete returned by getPercentComplete()
-	 * @param interpolation 
+	 * @param interpolation which interpolation to apply
 	 */
 	public void setInterpolation(Interpolation interpolation) {
 		this.interpolation = interpolation;
@@ -168,7 +164,8 @@ public abstract class GameTimer {
 	/**
 	 * For use with or without managed GameTimers.
 	 * Enables auto restart of the timer after calling onComplete.
-	 * @param autoRestart 
+	 * @param autoRestart true &rarr; enable auto restart, false &rarr; 
+         * disable it
 	 */
 	public void setAutoRestart(boolean autoRestart) {
 		this.autoRestart = autoRestart;
@@ -184,6 +181,7 @@ public abstract class GameTimer {
 	
 	/**
 	 * FOR INTERNAL USE ONLY. Do not call this method directly.
+         * @param isManaged desired setting for flag
 	 */
 	public void setIsManaged(boolean isManaged) {
 		this.isManaged = isManaged;
@@ -193,7 +191,7 @@ public abstract class GameTimer {
 	
 	/**
 	 * Should be called each game loop
-	 * @param tpf 
+	 * @param tpf time interval between render passes (in seconds, &ge;0)
 	 */
 	public void update(float tpf) {
 		if (active && !complete) {

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.lists;
 
 import com.jme3.input.KeyInput;
@@ -461,7 +457,7 @@ public abstract class Slider extends ButtonAdapter {
 	 * Sets the Slider's selected index to the selected step index specified and
 	 * moves the Slider's thumb to appropriate x/y coordinates to reflect this change.
 	 * 
-	 * @param selectedIndex The index to set the Slider's selectedIndex to.
+	 * @param selectedIndex desired index
 	 */
 	private void setInternalSelectedIndex(int selectedIndex) {
 		this.selectedIndex = selectedIndex;
@@ -470,8 +466,8 @@ public abstract class Slider extends ButtonAdapter {
 	}
 	
 	/**
-	 * Sets the selectedIndex to the provided index and updates appropriately then calling the onChange event
-	 * @param selectedIndex 
+	 * Sets the selectedIndex to the specified index and updates appropriately then calling the onChange event
+	 * @param selectedIndex desired index
 	 */
 	public void setSelectedIndexWithCallback(int selectedIndex) {
 		if (isStepped) {
@@ -499,8 +495,8 @@ public abstract class Slider extends ButtonAdapter {
 	}
 	
 	/**
-	 * Sets the selectedIndex to the provided index and updates appropriately
-	 * @param selectedIndex 
+	 * Sets the selectedIndex to the specified index and updates appropriately
+	 * @param selectedIndex desired index
 	 */
 	public void setSelectedIndex(int selectedIndex) {
 		if (isStepped) {
@@ -526,7 +522,7 @@ public abstract class Slider extends ButtonAdapter {
 	
 	/**
 	 * Attempts to set the selectedIndex to the index of the provided value Object and updates appropriately
-	 * @param value
+	 * @param value desired value
 	 */
 	public void setSelectedByValue(Object value) {
 		String searchVal = value.toString();

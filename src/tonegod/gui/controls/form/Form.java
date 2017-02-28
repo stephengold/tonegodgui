@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.form;
 
 import java.util.ArrayList;
@@ -40,8 +36,8 @@ public class Form {
 	
 	/**
 	 * A useless, but very funny method
-	 * @param element
-	 * @return Element
+	 * @param element which Element to find
+	 * @return Element, or null if none found
 	 */
 	public Element getFormElement(Element element) {
 		if (elements.contains(element))
@@ -51,9 +47,9 @@ public class Form {
 	}
 	
 	/**
-	 * Returns the element containing the specified UID, or null if it does not exist
-	 * @param UID
-	 * @return Element
+	 * Access the element with the specified UID
+	 * @param UID UID to search for
+	 * @return Element, or null if none found
 	 */
 	public Element getFormElementByID(String UID) {
 		Element ret = null;
@@ -67,8 +63,8 @@ public class Form {
 	}
 	
 	/**
-	 * Removes the specified element if it exists
-	 * @param element 
+	 * Remove the specified element if it exists
+	 * @param element which element to remove
 	 */
 	public void removeFormElement(Element element) {
 		int newIndex = 0;
@@ -84,7 +80,7 @@ public class Form {
 	
 	/**
 	 * Used by screen class.  Do not call directly
-	 * @param element 
+	 * @param element element to use
 	 */
 	public void setSelectedTabIndex(Element element) {
 		currentTabIndex = element.getTabIndex();

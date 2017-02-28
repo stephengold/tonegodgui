@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.controls.menuing;
 
 import com.jme3.font.BitmapFont;
@@ -351,7 +347,7 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	
 	/**
 	 * Remove the first MenuItem that contains the provided caption
-	 * @param caption
+	 * @param caption caption to find
 	 */
 	public void removeMenuItem(String caption) {
 		if (!menuItems.isEmpty()) {
@@ -393,16 +389,18 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 		}
 	}
 	/**
-	 * Defines the number of pixels this Menu should overhang it's parent Menu when called as a Sub-Menu
-	 * @param menuOverhang 
+	 * Alters the amount this Menu should overhang its parent Menu when 
+         * called as a Sub-Menu.
+	 * @param menuOverhang desired amount (in pixels)
 	 */
 	public void setMenuOverhang(float menuOverhang) {
 		this.menuOverhang = menuOverhang;
 	}
 	
 	/**
-	 * Returns the number of pixels this Menu should overhang its parent Menu when called as a Sub-Menu
-	 * @return float
+	 * Read the amount this Menu should overhang its parent Menu when 
+         * called as a Sub-Menu.
+	 * @return current amount (in pixels)
 	 */
 	public float getMenuOverhang() {
 		return this.menuOverhang;
@@ -708,6 +706,7 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	 * 
 	 * @param index Index of MenuItem clicked
 	 * @param value String value of MenuItem clicked
+         * @param isToggled true if toggled, otherwise false
 	 */
 	public abstract void onMenuItemClicked(int index, Object value, boolean isToggled);
 	

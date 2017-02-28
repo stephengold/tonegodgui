@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tonegod.gui.core.layouts;
 
 import com.jme3.math.Vector2f;
@@ -26,20 +22,20 @@ public class LayoutHelper {
 	
 	/**
 	 * Sets the default padding between Elements
-	 * @param pad 
+	 * @param pad padding for all four sides
 	 */
 	public static void setPadding(float pad) { padding.set(pad,pad,pad,pad); }
 	/**
 	 * Sets the default padding between Elements
-	 * @param padLeft
-	 * @param padRight
-	 * @param padTop
-	 * @param padBottom 
+	 * @param padLeft padding for left side
+	 * @param padRight padding for right side
+	 * @param padTop padding for top edge
+	 * @param padBottom padding for bottom edge
 	 */
 	public static void setPadding(float padLeft, float padRight, float padTop, float padBottom) { padding.set(padLeft,padRight,padTop,padBottom); }
 	/**
 	 * Sets the size of the line feed
-	 * @param feed 
+	 * @param feed size (in pixels)
 	 */
 	public static void setLineFeedHeight(float feed) { lfHeight = feed; }
 	/**
@@ -55,14 +51,15 @@ public class LayoutHelper {
 	 */
 	public static void resetY() { pos.setY(0); }
 	/**
-	 * Advances the x position by el.getWidth()
-	 * @param el 
+	 * Advances the x position by the width of the specified element.
+	 * @param el element to use for width
 	 */
 	public static void advanceX(Element el) { advanceX(el, false); }
 	/**
-	 * Advances the x position by el.getWidth() + the default padding if true
-	 * @param el
-	 * @param pad 
+	 * Advance the x position by the width of the specified element + 
+         * (optionally) the default horizontal padding.
+	 * @param el element to use for width
+	 * @param pad true &rarr; additionally advance by default horizontal padding
 	 */
 	public static void advanceX(Element el, boolean pad) {
 		pos.addLocal(el.getWidth(),0);
@@ -70,26 +67,28 @@ public class LayoutHelper {
 			pos.addLocal(padding.x,0);
 	}
 	/**
-	 * Advances the x position by the specified number of pixels
-	 * @param x 
+	 * Advance the x position by the specified amount.
+	 * @param x amount (in pixels)
 	 */
 	public static void advanceX(float x) { pos.addLocal(x,0); }
 	/**
-	 * Advances the y position by el.getHeight()
-	 * @param el 
+	 * Advance the y position by the height of the specified element.
+	 * @param el element to use for height
 	 */
 	public static void advanceY(Element el) { advanceY(el, false, false); }
 	/**
-	 * Advances the y position by el.getHeight() + the default padding if true
-	 * @param el
-	 * @param pad 
+	 * Advance the y position by the height of the specified element + 
+         * (optionally) the default vertical padding.
+	 * @param el element to use for height
+	 * @param pad true &rarr; additionally advance by default vertical padding
 	 */
 	public static void advanceY(Element el, boolean pad) { advanceY(el, pad, false); }
 	/**
-	 * Advances the y position by el.getHeight() + the default padding OR the default line feed if true
-	 * @param el
-	 * @param pad
-	 * @param lineFeed 
+	 * Advance the y position by the height of the specified element +
+         * (optionally) the default vertical padding OR the default line feed.
+	 * @param el element to use for height
+	 * @param pad true &rarr; additionally advance by default vertical padding
+	 * @param lineFeed true &rarr; additionally advance by linefeed amount
 	 */
 	public static void advanceY(Element el, boolean pad, boolean lineFeed) {
 		pos.addLocal(0,el.getHeight());
@@ -99,14 +98,14 @@ public class LayoutHelper {
 			pos.addLocal(0, padding.y);
 	}
 	/**
-	 * Advances the y position by the specified number of pixels
-	 * @param y 
+	 * Advance the y position by the specified amount.
+	 * @param y amount (in pixels)
 	 */
 	public static void advanceY(float y) { pos.addLocal(0,y); }
 	/**
-	 * Sets the position to the specified x, y coords
-	 * @param w
-	 * @param h
+	 * Set the position to the specified x, y coordinates.
+	 * @param w desired x coordinate
+	 * @param h desired y coordinate
 	 * @return the updated position (pre-existing instance)
 	 */
 	public static Vector2f absPosition(float w, float h) {
@@ -120,8 +119,8 @@ public class LayoutHelper {
 	public static Vector2f position() { return pos; }
 	/**
 	 * Sets and returns the dimensions Vector2f to the specified width, height
-	 * @param w
-	 * @param h
+	 * @param w desired width
+	 * @param h desired height
 	 * @return the updated dimensions (pre-existing instance)
 	 */
 	public static Vector2f dimensions(float w, float h) {
