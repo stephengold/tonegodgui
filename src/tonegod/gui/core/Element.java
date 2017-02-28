@@ -429,23 +429,23 @@ public class Element extends Node {
 	
 	/**
 	 * Returns the child elements as a Map
-	 * @return 
+	 * @return the pre-existing map
 	 */
 	public Map<String, Element> getElementsAsMap() {
 		return this.elementChildren;
 	}
 	
 	/**
-	 * Returns the child elements as a Collection
-	 * @return 
+	 * Access the child elements as a Collection.
+	 * @return a view of the pre-existing elements
 	 */
 	public Collection<Element> getElements() {
 		return this.elementChildren.values();
 	}
 	
 	/**
-	 * Returns the one and only Element's screen
-	 * @return 
+	 * Access the Element's screen.
+	 * @return the pre-existing instance
 	 */
 	public ElementManager getScreen() {
 		return this.screen;
@@ -453,7 +453,7 @@ public class Element extends Node {
 	
 	/**
 	 * Returns a list of all children that are an instance of DragElement
-	 * @return List
+	 * @return a new list
 	 */
 	public List<Element> getDraggableChildren() {
 		List<Element> ret = new ArrayList<>();
@@ -467,7 +467,7 @@ public class Element extends Node {
 	
 	/**
 	 * Recursively searches children elements for specified element containing the specified UID
-	 * @param UID - Unique Indentifier of element to search for
+	 * @param UID - Unique Identifier of element to search for
 	 * @return Element containing UID or null if not found
 	 */
 	public Element getChildElementById(String UID) {
@@ -652,9 +652,9 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element is set to ingnore mouse events
+	 * Test whether the element is set to ignore mouse events
 	 * 
-	 * @return boolean ignoreMouse
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreMouse() {
 		return this.ignoreMouse;
@@ -670,8 +670,9 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns true if both left and right mouse buttons are being ignored
-	 * @return 
+	 * Test whether the Element is ignoring both left and right mouse button 
+         * events.
+	 * @return true if ignoring all such events, otherwise false
 	 */
 	public boolean getIgnoreMouseButtons() { return (getIgnoreMouseLeftButton() && getIgnoreMouseRightButton()); }
 	
@@ -684,8 +685,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the left mouse button is being ignored
-	 * @return 
+	 * Test whether the Element is ignoring left mouse button events.
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreMouseLeftButton() { return this.ignoreMouseLeftButton; }
 	
@@ -698,8 +699,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the right mouse button is being ignored
-	 * @return 
+	 * Test whether the Element is ignoring right mouse button events.
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreMouseRightButton() { return this.ignoreMouseRightButton; }
 	
@@ -712,8 +713,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element ignores mouse focus
-	 * @return 
+	 * Test whether the element ignores mouse focus.
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreMouseFocus() { return this.ignoreMouseFocus; }
 	
@@ -727,8 +728,9 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element is ignoring both mouse wheel click and move events
-	 * @return 
+	 * Test whether the element is ignoring both mouse-wheel clicks and 
+         * mouse-wheel move events.
+	 * @return true if ignoring all such events, otherwise false
 	 */
 	public boolean getIgnoreMouseWheel() { return (getIgnoreMouseWheelClick() && getIgnoreMouseWheelMove()); }
 	
@@ -741,8 +743,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element ignores mouse wheel clicks
-	 * @return 
+	 * Test whether the element ignores mouse wheel clicks.
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreMouseWheelClick() { return this.ignoreMouseWheelClick; }
 	
@@ -755,8 +757,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element is ignoring mouse wheel moves
-	 * @return 
+	 * Test whether the element is ignoring mouse wheel moves.
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreMouseWheelMove() { return this.ignoreMouseWheelMove; }
 	
@@ -771,8 +773,9 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element ignores touch down, up, move and fling events
-	 * @return 
+	 * Test whether the element ignores touch down, up, move and fling 
+         * events.
+	 * @return true if ignoring all such events, otherwise false
 	 */
 	public boolean getIgnoreTouchEvents() { return (getIgnoreTouch() && getIgnoreTouchMove() && getIgnoreFling()); }
 	
@@ -785,8 +788,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element ignores touch down and up events
-	 * @return 
+	 * Test whether the element ignores touch down and up events.
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreTouch() { return ignoreTouch; }
 	/**
@@ -798,8 +801,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element ignores touch move events
-	 * @return 
+	 * Test whether the element ignores touch move events.
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreTouchMove() { return this.ignoreTouchMove; }
 	
@@ -812,8 +815,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element ignores fling events
-	 * @return 
+	 * Test whether the element ignores fling events.
+	 * @return true if ignoring such events, otherwise false
 	 */
 	public boolean getIgnoreFling() { return this.ignoreFling; }
 	
@@ -1419,21 +1422,21 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns a Vector2f containing the actual width and height of an Element
-	 * @return float
+	 * Access the actual width and height of the Element.
+	 * @return the pre-existing vector
 	 */
 	public Vector2f getDimensions() {
 		return dimensions;
 	}
 	
 	/**
-	 * Returns the dimensions defined at the time of the Element's creation.
-	 * @return 
+	 * Access the dimensions defined at the time of the Element's creation.
+	 * @return the pre-existing vector
 	 */
 	public Vector2f getOrgDimensions() { return this.orgDimensions; }
 	
 	/**
-	 * Returns the actual width of an Element
+	 * Read the actual width of the Element.
 	 * @return float
 	 */
 	public float getWidth() {
@@ -1441,7 +1444,7 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns the actual height of an Element
+	 * Read the actual height of the Element.
 	 * @return float
 	 */
 	public float getHeight() {
@@ -1891,7 +1894,7 @@ public class Element extends Node {
 	
 	/**
 	 * Returns the Element's Geometry.
-	 * @return 
+	 * @return the pre-existing instance
 	 */
 	public Geometry getGeometry() {
 		return this.geom;
@@ -2198,8 +2201,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns the current unparsed string representing the Element's atlas image
-	 * @return 
+	 * Read the Element's current texture atlas image.
+	 * @return unparsed string value
 	 */
 	public String getAtlasCoords() { return this.atlasCoords; }
 	
@@ -2225,8 +2228,9 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the element is using a local texture atlas of the screen defined texture atlas
-	 * @return 
+	 * Test whether the element is using a local texture atlas or the 
+         * screen-defined texture atlas.
+	 * @return true if using local atlas, false if using screen-defined atlas
 	 */
 	public boolean getUseLocalAtlas() { return this.useLocalAtlas; }
 	
@@ -3225,8 +3229,8 @@ public class Element extends Node {
 	}
 	
 	/**
-	 * Returns if the Element currently has input focus
-	 * @return 
+	 * Test whether the Element currently has input focus.
+	 * @return true if Element has input focus, otherwise false
 	 */
 	public boolean getHasFocus() {
 		return this.hasFocus;
@@ -3329,7 +3333,7 @@ public class Element extends Node {
 	
 	/**
 	 * Stubbed for future use.
-	 * @return 
+	 * @return the pre-existing instance
 	 */
 	public Vector2f getOrigin() {
 		return this.origin;

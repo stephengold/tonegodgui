@@ -433,7 +433,7 @@ public class ScrollPanel extends Element {
 	 * 
 	 * Note: This returns a negative float value if the scrollable area is smaller than it's bounds.
 	 * 
-	 * @return 
+	 * @return height difference
 	 */
 	public float getVerticalScrollDistance() {
 		float diff =  scrollableArea.getHeight()-innerBounds.getHeight();
@@ -526,9 +526,9 @@ public class ScrollPanel extends Element {
 	 * Returns the width difference between the scrollable area's total width and the
 	 * scroll panel's bounds.
 	 * 
-	 * Note: This returns a negative float value if the scrollable area is smaller than it's bounds.
+	 * Note: This returns a negative float value if the scrollable area is smaller than its bounds.
 	 * 
-	 * @return 
+	 * @return width difference
 	 */
 	public float getHorizontalScrollDistance() {
 		float diff =  scrollableArea.getWidth()-innerBounds.getWidth();

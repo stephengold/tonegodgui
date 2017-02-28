@@ -125,9 +125,9 @@ public class ElementEmitter implements Control, Transformable {
 	}
 	
 	/**
-	 * Returns the first instance of the provided Influencer class
+	 * Access the first instance of the specified Influencer class.
 	 * @param c The Influencer class
-	 * @return 
+	 * @return a pre-existing instance or null
 	 */
         @SuppressWarnings("unchecked")
 	public <T extends Influencer> T getInfluencer(Class<T> c) {

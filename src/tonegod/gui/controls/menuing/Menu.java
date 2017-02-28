@@ -401,7 +401,7 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	}
 	
 	/**
-	 * Returns the number of pixels this Menu should overhang it's parent Menu when called as a Sub-Menu
+	 * Returns the number of pixels this Menu should overhang its parent Menu when called as a Sub-Menu
 	 * @return float
 	 */
 	public float getMenuOverhang() {
@@ -417,16 +417,17 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	}
 	
 	/**
-	 * Return the initial width of the Menu prior to populating the MenuItems
-	 * @return 
+	 * Read the initial width of the Menu prior to populating the MenuItems
+	 * @return width
 	 */
 	public float getInitialWidth() {
 		return this.initWidth;
 	}
 	
 	/**
-	 * Returns the number of pixels this Menu uses as padding before rendering the MenuItems
-	 * @return 
+	 * Read the amount of padding this Menu uses before rendering the 
+         * MenuItems.
+	 * @return number of pixels
 	 */
 	public float getMenuPadding() {
 		return this.menuPadding.x;
@@ -611,7 +612,7 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	
 	/**
 	 * Returns the current Element waiting notification
-	 * @return 
+	 * @return the pre-existing instance
 	 */
 	public Element getCallerElement() {
 		return this.callerElement;

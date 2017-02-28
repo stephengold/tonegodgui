@@ -87,8 +87,8 @@ public class MenuItem {
 	}
 	
 	/**
-	 * Returns if the MenuItem is currently toggled
-	 * @return 
+	 * Test whether the MenuItem is currently toggled.
+	 * @return true if toggled, otherwise false
 	 */
 	public boolean getIsToggled() {
 		return this.isToggled;

@@ -503,24 +503,24 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	}
 	
 	/**
-	 * Returns the screen level elements Map
-	 * @return 
+	 * Access the screen-level elements as a Map.
+	 * @return the pre-existing map
 	 */
 	public Map<String, Element> getElementsAsMap() {
 		return this.elements;
 	}
 	
 	/**
-	 * Returns the screen level elements as a Collection
-	 * @return 
+	 * Access the screen-level elements as a Collection.
+	 * @return a view of the pre-existing elements 
 	 */
 	public Collection<Element> getElements() {
 		return this.elements.values();
 	}
 	
 	/**
-	 * Returns the guiNode used by the Screen
-	 * @return Node
+	 * Access the guiNode used by the Screen.
+	 * @return the pre-existing Node
 	 */
 	@Override
 	public Node getGUINode() {
@@ -2587,8 +2587,8 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	}
 	
 	/**
-	 * Returns the cursor effects manager
-	 * @return 
+	 * Access the cursor effects manager.
+	 * @return the pre-existing instance
 	 */
 	@Override
 	public CursorEffects getCursorEffects() {

@@ -107,35 +107,35 @@ public class LayoutHelper {
 	 * Sets the position to the specified x, y coords
 	 * @param w
 	 * @param h
-	 * @return 
+	 * @return the updated position (pre-existing instance)
 	 */
 	public static Vector2f absPosition(float w, float h) {
 		absPos.set(w, h);
 		return absPos;
 	}
 	/**
-	 * Returns the set position Vector2f
-	 * @return 
+	 * Access the set position Vector2f
+	 * @return the pre-existing instance
 	 */
 	public static Vector2f position() { return pos; }
 	/**
 	 * Sets and returns the dimensions Vector2f to the specified width, height
 	 * @param w
 	 * @param h
-	 * @return 
+	 * @return the updated dimensions (pre-existing instance)
 	 */
 	public static Vector2f dimensions(float w, float h) {
 		dim.set(w, h);
 		return dim;
 	}
 	/**
-	 * Returns the default padding between elements
-	 * @return 
+	 * Read the default padding between elements
+	 * @return amount
 	 */
 	public static float pad() { return padding.x; }
 	/**
 	 * Returns the default line feed height
-	 * @return 
+	 * @return height
 	 */
 	public static float feed() { return lfHeight; }
 	/**

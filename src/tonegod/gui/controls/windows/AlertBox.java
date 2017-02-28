@@ -174,8 +174,8 @@ public abstract class AlertBox extends Window {
 	}
 	
 	/**
-	 * Returns the ScrollArea containing the window message text.
-	 * @return 
+	 * Access the ScrollArea containing the window message text.
+	 * @return the pre-existing instance
 	 */
 	public ScrollPanel getTextArea() { return this.dlg; }
 	

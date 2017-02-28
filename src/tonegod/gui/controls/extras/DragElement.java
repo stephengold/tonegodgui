@@ -108,8 +108,8 @@ public abstract class DragElement extends Element implements MouseButtonListener
 	}
 	
 	/**
-	 * Returns if the SlideTo Effect is enabled/disabled when centering within a drop element
-	 * @return 
+	 * Test whether the SlideTo Effect is enabled when centering within a drop element.
+	 * @return true if effect is enabled, otherwise false
 	 */
 	public boolean getUseLockToDropElementEffect() {
 		return this.useLockToDropElementEffect;

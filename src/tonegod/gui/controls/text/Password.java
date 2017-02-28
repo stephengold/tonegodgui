@@ -74,8 +74,8 @@ public class Password extends TextField {
 	}
 	
 	/**
-	 * Returns the current mask character used when hiding text input
-	 * @return 
+	 * Read the mask character currently used when hiding text input.
+	 * @return string consisting of a single mask character
 	 */
 	public String getMask() {
 		return String.valueOf(this.mask);

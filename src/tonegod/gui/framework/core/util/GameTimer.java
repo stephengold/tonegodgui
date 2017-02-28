@@ -119,7 +119,7 @@ public abstract class GameTimer {
 	
 	/**
 	 * Returns if the GameTimer has completed running
-	 * @return 
+	 * @return true if complete, otherwise false
 	 */
 	public boolean isComplete() {
 		return this.complete;
@@ -135,31 +135,31 @@ public abstract class GameTimer {
 	
 	/**
 	 * Returns the interpolation set to be used by getPercentComplete()
-	 * @return 
+	 * @return interpolation
 	 */
 	public Interpolation getInterpolation() {
 		return this.interpolation;
 	}
 	
 	/**
-	 * return a float between 0.0 and 1.0 representing the percent complete
-	 * @return 
+	 * Calculate the completion fraction.
+	 * @return value between 0f and 1f, where 1f &rarr; complete
 	 */
 	public float getPercentComplete() {
 		return interpolation.apply(time/duration);
 	}
 	
 	/**
-	 * Returns if the GameTimer is running
-	 * @return 
+	 * Test whether the GameTimer is running
+	 * @return true if running, otherwise false
 	 */
 	public boolean isActive() {
 		return this.active;
 	}
 	
 	/**
-	 * Returns the number of times startGameTimer has been called on this timer
-	 * @return 
+	 * Read the number of times startGameTimer has been called on this timer
+	 * @return count
 	 */
 	public long getRunCount() {
 		return this.runCount;
@@ -175,8 +175,8 @@ public abstract class GameTimer {
 	}
 	
 	/**
-	 * Returns if the GameTimer will automatically reset and restart after calling onComplete.
-	 * @return 
+	 * Test auto restart flag.
+	 * @return true if timer resets and restarts after onComplete, otherwise false
 	 */
 	public boolean getAutoRestart() {
 		return this.autoRestart;

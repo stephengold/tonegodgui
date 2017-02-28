@@ -373,8 +373,8 @@ public class SlideTray extends Element {
 	}
 	
 	/**
-	 * Returns the current slide tray padding value
-	 * @return 
+	 * Read the current slide tray padding value.
+	 * @return padding value
 	 */
 	public float getTrayPadding() { return this.trayPadding; }
 	

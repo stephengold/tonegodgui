@@ -315,16 +315,16 @@ public abstract class ChatBoxExt extends Panel {
 	}
 
 	/**
-	 * Returns the chat display area (ScrollArea)
-	 * @return 
+	 * Access the chat display area (ScrollArea)
+	 * @return the pre-existing instance
 	 */
 	public ScrollPanel getChatArea() {
 		return saChatArea;
 	}
 
 	/**
-	 * Returns the chat input TextField
-	 * @return 
+	 * Access the chat input TextField
+	 * @return the pre-existing instance
 	 */
 	public TextField getChatInput() {
 		return this.tfChatInput;
