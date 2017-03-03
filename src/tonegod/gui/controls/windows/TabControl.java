@@ -1,9 +1,6 @@
 package tonegod.gui.controls.windows;
 
 import com.jme3.font.BitmapFont.Align;
-import static com.jme3.font.BitmapFont.Align.Center;
-import static com.jme3.font.BitmapFont.Align.Left;
-import static com.jme3.font.BitmapFont.Align.Right;
 import com.jme3.font.BitmapFont.VAlign;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector4f;

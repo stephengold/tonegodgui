@@ -6,7 +6,6 @@ package tonegod.gui.controls.extras.emitter;
 
 import com.jme3.math.FastMath;
 import tonegod.gui.controls.extras.emitter.ElementEmitter.ElementParticle;
-import tonegod.gui.framework.core.AnimElement;
 import tonegod.gui.framework.core.TextureRegion;
 
 /**

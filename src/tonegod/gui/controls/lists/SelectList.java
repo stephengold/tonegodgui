@@ -20,7 +20,6 @@ import tonegod.gui.core.utils.UIDUtil;
 import tonegod.gui.listeners.KeyboardListener;
 import tonegod.gui.listeners.MouseButtonListener;
 import tonegod.gui.listeners.MouseMovementListener;
-import tonegod.gui.listeners.MouseWheelListener;
 import tonegod.gui.listeners.TabFocusListener;
 
 /**
