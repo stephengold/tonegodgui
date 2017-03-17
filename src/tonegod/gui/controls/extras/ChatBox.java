@@ -126,7 +126,6 @@ public abstract class ChatBox extends Panel {
 		float controlSpacing = screen.getStyle("Common").getFloat("defaultControlSpacing");
 		float controlSize = screen.getStyle("Common").getFloat("defaultControlSize");
 		float buttonWidth = screen.getStyle("Button").getVector2f("defaultSize").x;
-		float scrollSize = screen.getStyle("ScrollArea#VScrollBar").getFloat("defaultControlSize");
 		
 		saChatArea = new ScrollPanel(screen, UID + ":ChatArea",
 			new Vector2f(

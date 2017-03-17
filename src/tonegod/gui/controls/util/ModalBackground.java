@@ -16,7 +16,6 @@ import tonegod.gui.core.utils.UIDUtil;
  * @author t0neg0d
  */
 public class ModalBackground extends Element {
-	private boolean useSeparateAlpha = true;
 	ColorRGBA resetColor = new ColorRGBA(0.5f,0.5f,0.5f,0.5f);
 	ColorRGBA bgColor = new ColorRGBA();
 	float resetAlpha = 0.5f;
@@ -37,7 +36,6 @@ public class ModalBackground extends Element {
 	}
 	
 	public void setBackgroundColor(ColorRGBA color, boolean useSeparateAlpha) {
-		this.useSeparateAlpha = useSeparateAlpha;
 		if (!useSeparateAlpha)
 			this.bgColor.set(color);
 		else
@@ -46,7 +44,6 @@ public class ModalBackground extends Element {
 	}
 	
 	public void resetColor(boolean useSeparateAlpha) {
-		this.useSeparateAlpha = useSeparateAlpha;
 		if (!useSeparateAlpha)
 			this.bgColor.set(resetColor);
 		else

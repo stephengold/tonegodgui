@@ -34,13 +34,8 @@ public class FlowLayout extends AbstractLayout {
 		for (Element el : owner.getElements()) {
 			this.convertElementProperties(el);
 			
-			LayoutHint grow = el.getLayoutHints().get("grow");
-			boolean growx = (grow == null) ? true : (Boolean)grow.getValues().get("x").getValue();
-			boolean growy = (grow == null) ? true : (Boolean)grow.getValues().get("y").getValue();
-
 			LayoutHint fill = el.getLayoutHints().get("fill");
 			boolean fillx = (fill == null) ? false : (Boolean)fill.getValues().get("x").getValue();
-			boolean filly = (fill == null) ? false : (Boolean)fill.getValues().get("y").getValue();
 
 			LayoutHint pad = el.getLayoutHints().get("pad");
 			float padLeft = (pad == null) ? 0 : (Float)pad.getValues().get("left").getValue();

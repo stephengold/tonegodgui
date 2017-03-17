@@ -30,7 +30,7 @@ public class ElementQuadGrid extends Mesh {
 	
 	private float[] templateX, templateY, templateCoordX, templateCoordY;
 	private float templateZ = 0;
-	private float imgWidth, imgHeight, pixelWidth, pixelHeight, atlasX, atlasY, atlasW, atlasH;
+	private float imgWidth, imgHeight, pixelWidth, pixelHeight, atlasX, atlasY;
 	
 	boolean updatePosition = true;
 	
@@ -61,8 +61,6 @@ public class ElementQuadGrid extends Mesh {
 		float fH = pixelHeight*(atlasY+atlasH);
 		this.atlasX = fX;
 		this.atlasY = fY;
-		this.atlasW = fW;
-		this.atlasH = fH;
 		
 	//	System.out.println(fX + " : " + fY + " : " + fW + " : " + fH);
 		
@@ -193,8 +191,6 @@ public class ElementQuadGrid extends Mesh {
 		float fH = pixelHeight*(atlasY+atlasH);
 		this.atlasX = fX;
 		this.atlasY = fY;
-		this.atlasW = fW;
-		this.atlasH = fH;
 		
 		templateCoordX = new float[] {
 			fX, fX+(pixelWidth*borders.y), fW-(pixelWidth*borders.z), fW

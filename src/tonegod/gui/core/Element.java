@@ -1688,7 +1688,6 @@ public class Element extends Node {
 	
 	// TODO: enforce minimum size
 	private void childResize(float diffX, float diffY, Borders dir) {
-		boolean minSize = !(minDimensions == null);
 		if (dir == Borders.NW || dir == Borders.N || dir == Borders.NE) {
 			if (getScaleNS()) setHeight(getHeight()-diffY);
 			if ((getDocking() == Docking.NW || getDocking() == Docking.NE) && !getScaleNS()) setY(getY()-diffY);
@@ -2232,10 +2231,7 @@ public class Element extends Node {
 		float textureAtlasW = coords[2];
 		float textureAtlasH = coords[3];
 		
-		float imgWidth = defaultTex.getImage().getWidth();
 		float imgHeight = defaultTex.getImage().getHeight();
-		float pixelWidth = 1f/imgWidth;
-		float pixelHeight = 1f/imgHeight;
 
 		textureAtlasY = imgHeight-textureAtlasY-textureAtlasH;
 		

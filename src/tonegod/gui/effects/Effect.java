@@ -69,13 +69,11 @@ public class Effect implements Cloneable {
 	private Texture blendImage;
 	private Vector2f blendImageOffset;
 	private ColorRGBA blendColor;
-	private ColorRGBA tempColor = new ColorRGBA();
 	private boolean init = false;
 	private boolean destroyOnHide = false;
 	private EffectDirection effectDir = EffectDirection.Top;
 	private Vector2f def = new Vector2f();
 	private Vector2f diff = new Vector2f();
-	private Vector2f fract = new Vector2f();
 	private String audioFile = null;
 	private float audioVolume = 1;
 	private boolean callHide = true;
@@ -178,7 +176,6 @@ public class Effect implements Cloneable {
 	}
 	
 	public void setInterpolation(Interpolation interpolation) {
-		this.interpolation = null;
 		this.interpolation = interpolation;
 	}
 	

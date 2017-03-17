@@ -32,11 +32,6 @@ public class AnimElementMesh extends Mesh {
 	private FloatBuffer tcb;
 	private FloatBuffer cb;
 	
-	float[] verts;
-	short[] indices;
-	
-	int bufferSetCount = 0;
-	
 	boolean updateCol = false;
 	
 	public AnimElementMesh(AnimElement batch) {

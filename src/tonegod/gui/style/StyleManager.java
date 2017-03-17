@@ -143,7 +143,6 @@ public class StyleManager {
 				for (int s = 0; s < nLst.getLength(); s++) {
 					Node fstNode = nLst.item(s);
 					if (fstNode.getNodeType() == Node.ELEMENT_NODE) {
-						Element fstElmnt = (Element) fstNode;
 						String key = XMLHelper.getNodeAttributeValue(fstNode, "type");
 						String curPath = XMLHelper.getNodeAttributeValue(fstNode, "path");
 						
@@ -179,7 +178,6 @@ public class StyleManager {
 				for (int s = 0; s < nLst.getLength(); s++) {
 					Node fstNode = nLst.item(s);
 					if (fstNode.getNodeType() == Node.ELEMENT_NODE) {
-						Element fstElmnt = (Element) fstNode;
 						String key = XMLHelper.getNodeAttributeValue(fstNode, "key");
 						String audioPath = XMLHelper.getNodeAttributeValue(fstNode, "path");
 

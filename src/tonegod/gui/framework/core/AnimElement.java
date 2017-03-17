@@ -61,8 +61,6 @@ public abstract class AnimElement extends Node implements Transformable {
 	private Geometry geom;
 	private Vector2f worldPosition = new Vector2f();
 	private float worldRotation = 0;
-	private Vector2f tempV = new Vector2f(),
-			tempV2 = new Vector2f();
 	private Vector4f clippingPosition = new Vector4f(-10000,-10000,10000,10000);
 	
 	public AnimElement(AssetManager am) {

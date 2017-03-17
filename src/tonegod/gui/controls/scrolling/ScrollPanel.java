@@ -29,7 +29,6 @@ public class ScrollPanel extends Element {
 		Right
 	}
 	
-	private ScrollPanel self;
 	protected ScrollPanelBounds innerBounds;
 	protected Element scrollableArea;
 	protected ScrollPanelBarV vScrollBar;
@@ -38,14 +37,10 @@ public class ScrollPanel extends Element {
 	private int buttonInc = 1;
 	private int trackInc = 10;
 	private boolean verticalWrap = false;
-	private boolean vScrollEnabled = true;
-	private boolean hScrollEnabled = true;
-	private boolean scrollChild = false;
 	private boolean pagingEnabled = false;
 	private boolean flingEnabled = true;
 	private GameTimer flingTimer;
 	private float touchStartY = 0;
-	private float touchEndY = 0;
 	private float touchOffsetY = 0;
 	private boolean flingDir = true;
 	private float flingSpeed = 1;
@@ -191,8 +186,6 @@ public class ScrollPanel extends Element {
 		addClippingLayer(this);
 		
 		initFlingTimer();
-		
-		self = this;
 	}
 	
 	private void initFlingTimer() {
@@ -643,7 +636,6 @@ public class ScrollPanel extends Element {
 	public boolean getFlingEnabled() { return this.flingEnabled; }
 	
 	public void configureAsChildOfScrollPanel() {
-		scrollChild = true;
 		setScaleEW(false);
 		innerBounds.setScaleEW(false);
 		scrollableArea.setScaleEW(false);
@@ -712,7 +704,6 @@ public class ScrollPanel extends Element {
 				if (nextY <= getScrollableAreaHeight() && nextY >= innerBounds.getHeight()) {
 					scrollYTo(nextY);
 					setVThumbPositionToScrollArea();
-					touchEndY = getScrollableAreaVerticalPosition();
 				}
 			}
 		}

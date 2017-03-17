@@ -392,7 +392,6 @@ public abstract class Slider extends ButtonAdapter {
 		stepValues.clear();
 		isStepped = false;
 		selectedIndex = -1;
-		selectedIndex = -1;
 		for (float i = min; i <= max; i += inc) {
 			addStepValue(i);
 		}

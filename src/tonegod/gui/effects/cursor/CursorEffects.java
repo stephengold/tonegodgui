@@ -83,7 +83,6 @@ public class CursorEffects {
 	
 	public void start() {
 		cursorEmitter.startEmitter((Node)app.getGuiViewPort().getScenes().get(0));
-		float z = screen.getGUINode().getLocalTranslation().z;
 		cursorEmitter.getParticles().setLocalTranslation(0, 0, 1f);
 		isActive = true;
 	}

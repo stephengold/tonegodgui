@@ -713,7 +713,6 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	@Override
 	public void onMouseMove(MouseMotionEvent evt) {
 		if (!Screen.isAndroid()) {
-			float x = evt.getX()-getX();
 			float y = scrollableArea.getAbsoluteHeight()-menuPadding.z-evt.getY();
 
 			if (currentMenuItemIndex != (int)Math.floor(y/menuItemHeight)) {
@@ -758,7 +757,6 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 		boolean hasSubMenu = false;
                         
 		if (Screen.isAndroid()) {
-			float x = evt.getX()-getX();
 			float y = scrollableArea.getAbsoluteHeight()-menuPadding.z-evt.getY();
 
 			if (currentMenuItemIndex != (int)Math.floor(y/menuItemHeight)) {

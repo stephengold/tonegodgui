@@ -5,7 +5,6 @@
 package tonegod.gui.controls.extras.emitter.animation;
 
 import tonegod.gui.controls.extras.emitter.ElementEmitter;
-import tonegod.gui.core.Element;
 import tonegod.gui.framework.animation.TemporalAction;
 
 /**
@@ -13,9 +12,7 @@ import tonegod.gui.framework.animation.TemporalAction;
  * @author t0neg0d
  */
 public class EmitterEnableAction extends TemporalAction {
-	Element target = null;
 	boolean enable = true;
-	boolean destroyOnRemove = false;
 	
 	@Override
 	protected void begin() {
@@ -47,7 +44,6 @@ public class EmitterEnableAction extends TemporalAction {
 		setDuration(1);
 	}
 	public void setDestroyOnRemove(boolean destroy) {
-		this.destroyOnRemove = destroy;
 		setDuration(1);
 	}
 }

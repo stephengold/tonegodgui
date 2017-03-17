@@ -21,7 +21,6 @@ import tonegod.gui.core.Screen;
  */
 public class EffectManager implements Control {
 	Screen screen;
-	Spatial spatial;
 //	private Map<String, Effect> currentEffects = new HashMap();
 	private List<Effect> currentEffects = new ArrayList<>();
 	private List<EffectQueue> currentEffectQueues = new ArrayList<>();
@@ -97,7 +96,6 @@ public class EffectManager implements Control {
 
 	@Override
 	public void setSpatial(Spatial spatial) {
-		this.spatial = spatial;
 	}
 
 	@Override

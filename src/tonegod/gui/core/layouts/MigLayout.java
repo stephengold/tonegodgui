@@ -187,8 +187,6 @@ public class MigLayout extends AbstractLayout {
 		SizeUnit wUnit, hUnit;
 		
 		public Cell(int row, int col) {
-			this.row = row;
-			this.col = col;
 		}
 		
 		public void setPos(float x, float y) {
@@ -200,8 +198,6 @@ public class MigLayout extends AbstractLayout {
 		}
 		
 		public void setSizeUnits(SizeUnit wUnit, SizeUnit hUnit) {
-			this.wUnit = wUnit;
-			this.hUnit = hUnit;
 		}
 		
 		public void setInitSize(float w, float h) {

@@ -417,7 +417,6 @@ public class ScrollArea extends Element implements MouseWheelListener, TouchList
 	public void scrollYBy(float yInc) {
 		adjustWidthForScroll();
 		if (scrollableArea == null) {
-			float nextY = textElement.getLocalTranslation().getY() + yInc;
 			textElement.setLocalTranslation(textElement.getLocalTranslation().setY(yInc));
 		} else {
 			scrollableArea.setY(scrollableArea.getY()+yInc);

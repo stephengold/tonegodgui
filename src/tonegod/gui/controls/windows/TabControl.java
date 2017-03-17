@@ -389,8 +389,6 @@ public abstract class TabControl extends Element {
 		if (orientation == Orientation.VERTICAL) {
 			tab.addChild(label);
                         
-                        final Align hal = Align.valueOf(screen.getStyle("Tab").getString("textAlign"));
-                        final VAlign val = VAlign.valueOf(screen.getStyle("Tab").getString("textVAlign"));
                         
                         // Flip the alignments
 //                        switch(hal) {

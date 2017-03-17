@@ -415,9 +415,7 @@ public class VScrollBar extends Element {
 	 * Moves the scroll bar thumb relative to the scroll area position
 	 */
 	public final void setThumbByPosition() {
-		float scrollLayerHeight = scrollableArea.getScrollableHeight();
-		float trackHeight = btnScrollTrack.getHeight();
-		
+		float scrollLayerHeight = scrollableArea.getScrollableHeight();	
 		float diff = btnScrollTrack.getHeight()-btnScrollThumb.getHeight();
 		float sadiff = scrollLayerHeight-scrollableArea.getHeight();
 		

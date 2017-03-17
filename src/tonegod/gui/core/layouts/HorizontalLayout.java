@@ -42,9 +42,7 @@ public class HorizontalLayout extends AbstractLayout {
 			LayoutHint pad = el.getLayoutHints().get("pad");
 			if (pad != null) {
 				padLeft		= (Float)pad.getValues().get("left").getValue();
-				padRight	= (Float)pad.getValues().get("right").getValue();
 				padTop		= (Float)pad.getValues().get("top").getValue();
-				padBottom	= (Float)pad.getValues().get("bottom").getValue();
 			}
 			if (lastEl != null) {
 				if (LayoutHelper.position().x + el.getWidth() > owner.getWidth()-margins.x) {

@@ -15,10 +15,6 @@ public class Form {
 	private int nextIndex = 0;
 	private int currentTabIndex = 0;
 	
-	List<Character> gbSpecialCharacters;
-	List<Character> gbNumeric;
-	List<Character> gbAlpha;
-	
 	public Form(ElementManager screen) {
 		this.screen = screen;
 	}

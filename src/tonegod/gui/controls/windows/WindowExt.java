@@ -24,9 +24,6 @@ public class WindowExt extends Element {
 	protected Element dragBar;
 	protected LabelElement dragBarTitle;
 	protected Element contentArea;
-	private boolean useShowSound, useHideSound;
-	private String showSound, hideSound;
-	private float showSoundVolume, hideSoundVolume;
 	private Vector4f dbIndents = new Vector4f();
 	
 	/**

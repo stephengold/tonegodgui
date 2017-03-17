@@ -157,7 +157,6 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	private ToolTip toolTip = null;
 	private float toolTipMaxWidth = 250;
 	private String forcedToolTipText = "";
-	private boolean forcedToolTip = false;
 	
 	private float globalAlpha = 1.0f;
 	
@@ -167,7 +166,6 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	private boolean useCursorEffects = false;
 	
 	private Clipboard clipboard;
-	private boolean clipboardActive = false;
 	
 	private boolean useTextureAtlas = false;
 	private Texture atlasTexture;
@@ -184,12 +182,8 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	private float layerZOrderCurrent = .4999f;
 	private AnimElement eventAnimElement = null;
 	private QuadData eventQuad = null;
-	private AnimElement targetAnimElement = null;
-	private QuadData targetQuad = null;
 	private AnimElement mouseFocusAnimElement = null;
 	private AnimElement previousMouseFocusAnimElement = null;
-	private AnimElement mouseFocusQuad = null;
-	private AnimElement mouseWheelAnimElement = null;
 	private float eventAnimOffsetX = 0;
 	private float eventAnimOffsetY = 0;
 	private float eventQuadOffsetX = 0;
@@ -586,15 +580,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 			Logger.getLogger(Screen.class.getName()).log(Level.SEVERE, "The provided texture information does not conform to the expected standard of x=(int)|y=(int)|w=(int)|h=(int)", ex);
 		}
 	}
-	
-	private void throwParserException(String queryString) {
-		try {
-			throw new java.text.ParseException("The provided texture information (" + queryString + ") does not conform to the expected standard of x=(int)|y=(int)|w=(int)|h=(int)", 0);
-		} catch (ParseException ex) {
-			Logger.getLogger(Screen.class.getName()).log(Level.SEVERE, "The provided texture information does not conform to the expected standard of x=(int)|y=(int)|w=(int)|h=(int)", ex);
-		}
-	}
-	//</editor-fold>
+		//</editor-fold>
 	
 	//<editor-fold desc="Z-Order">
 	/**
@@ -619,7 +605,6 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	@Override
 	public void updateZOrder(Element topMost) {
 	//	zOrderCurrent = zOrderInit;
-		String topMostUID = topMost.getUID();
 		float shiftZ = topMost.getLocalTranslation().getZ();
 		
 		for (Element el : elements.values()) {
@@ -1167,8 +1152,6 @@ public class Screen implements ElementManager, Control, RawInputListener {
 		float flingY = 1f/8000f*evt.getDeltaY();
 		evt.set(evt.getType(), touchXY.x, touchXY.y, flingX, flingY);
 		
-		Element contact = getContactElement(touchXY.x, touchXY.y, EventCheckType.Fling);
-		Vector2f offset = tempElementOffset.clone();
 		Element target = getEventElement(touchXY.x, touchXY.y, EventCheckType.Fling);
 		
 		if (target != null) {
@@ -1667,10 +1650,6 @@ public class Screen implements ElementManager, Control, RawInputListener {
 			if (eventElement.getIsDragDropDragElement())
 				targetElement = null;
 			if (eventElement.getIsResizable()) {
-				float offsetX = x;
-				float offsetY = y;
-				Element el = eventElement;
-				
 				if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
 					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
 				}

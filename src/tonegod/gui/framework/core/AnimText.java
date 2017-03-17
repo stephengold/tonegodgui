@@ -68,7 +68,7 @@ public class AnimText extends AnimElement {
 	
 	BitmapCharacter bc, bcSpc;
 	int wordSIndex = 0, wordEIndex = 0;
-	int lineSIndex = 0, lineEIndex = 0;
+	int lineSIndex = 0;
 	int italicSIndex = 0, italicEIndex = 0;
 	float x = 0, y = 0, lnWidth = 0, wordWidth = 0;
 	int lIndex = 0;
@@ -77,9 +77,6 @@ public class AnimText extends AnimElement {
 	// Formatting
 	boolean hasLines = false;
 	AnimElement lineDisplay;
-	int lineDisplaySIndex = 0, lineDisplayEIndex = 0;
-	TextureRegion trLine;
-	int lineIndex = 0;
 	boolean ul = false;
 	float lineOffset = 3;
 	float lineSize = 2;
@@ -110,7 +107,7 @@ public class AnimText extends AnimElement {
 			public void animElementUpdate(float tpf) {  }
 		};
 		lineDisplay.setTexture(tex);
-		trLine = lineDisplay.addTextureRegion("trLine", 4, 4, 6, 6);
+		lineDisplay.addTextureRegion("trLine", 4, 4, 6, 6);
 		
 		setTexture(bfTexture);
 		imgHeight = (int)bfTexture.getImage().getHeight();
@@ -407,13 +404,12 @@ public class AnimText extends AnimElement {
 	public void wrapTextToWord(float width) {
 		bcSpc = font.getCharSet().getCharacter('i');
 		wordSIndex = 0; wordEIndex = 0;
-		lineSIndex = 0; lineEIndex = 0;
+		lineSIndex = 0;
 		x = 0; y = -(font.getCharSet().getBase()/2)*size;
 		lnWidth = 0; wordWidth = 0;
 		lIndex = 0;
 		placeWord = false;
 		int i = 0;
-		lineIndex = 0;
 		
 		for (char c : characters) {
 			bc = font.getCharSet().getCharacter(c);
@@ -658,7 +654,7 @@ public class AnimText extends AnimElement {
 	
 	public void setFontSize(float size) {
 		this.size = size/font.getPreferredSize();
-		float tempScale = size/font.getPreferredSize();
+	//	float tempScale = size/font.getPreferredSize();
 	//	setScale(
 	//		tempScale,
 	//		tempScale

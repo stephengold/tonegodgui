@@ -27,7 +27,6 @@ public class AnimLayer extends Element implements Control {
 	private List<AnimElement> tempElements = new LinkedList<>();
 	private float childZOrder = -1;
 	private float zOrderStepMid = 0.001f;
-	private Spatial spatial;
 	private boolean isPaused;
 	
 	public AnimLayer(ElementManager screen) {
@@ -109,7 +108,6 @@ public class AnimLayer extends Element implements Control {
 
 	@Override
 	public void setSpatial(Spatial spatial) {
-		this.spatial = spatial;
 	}
 	
 	public void pause() { this.isPaused = true; }

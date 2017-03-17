@@ -520,7 +520,6 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	private void displayHighlights() {
 		scrollableArea.removeAllChildren();
 		int index = 0;
-		float currentHeight = 0;
 		for (ListItem mi : listItems) {
 			if (selectedIndexes.contains(index)) {
 				Element highlight = createHighlight(index);
@@ -534,7 +533,6 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 				highlight.setY(scrollableArea.getHeight()-((listItems.size()-index)*listItemHeight) + listPadding);
 				scrollableArea.addChild(highlight);
 			}
-			currentHeight += listItemHeight;
 			index++;
 		}
 	}
@@ -557,7 +555,6 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 	}
 	@Override
 	public void onMouseMove(MouseMotionEvent evt) {
-		float x = evt.getX()-getX();
 		float y = scrollableArea.getAbsoluteHeight()-listPadding-evt.getY();
 		
 		if (currentListItemIndex != (int)Math.floor(y/listItemHeight)) {
@@ -637,7 +634,6 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 		Object value;
 		
 		public ListItem(SelectList owner, String caption, Object value) {
-			this.owner = owner;
 			this.caption = caption;
 			this.value = value;
 		}

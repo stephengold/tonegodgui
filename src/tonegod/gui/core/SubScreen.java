@@ -81,8 +81,6 @@ public class SubScreen implements ElementManager, Control {
 	private Vector2f eventElementOriginXY = new Vector2f();
 	private float eventElementOffsetX = 0;
 	private float eventElementOffsetY = 0;
-	private float targetElementOffsetX = 0;
-	private float targetElementOffsetY = 0;
 	private Borders eventElementResizeDirection = null;
 	private Element mouseFocusElement = null;
 	private Element contactElement = null;
@@ -90,22 +88,16 @@ public class SubScreen implements ElementManager, Control {
 	private boolean focusElementIsMovable = false;
 	private boolean mousePressed = false;
 	private boolean mouseLeftPressed = false;
-	private boolean mouseRightPressed = false;
-	private boolean mouseWheelPressed = false;
 	
 	private float zOrderCurrent = .5f;
 	private float zOrderStepMajor = .01f;
 	private float zOrderStepMinor = 0.0001f;
-	
-	private String clipboardText = "";
 	
 	protected Node subScreenNode = new Node("t0neg0dGUI");
 	private Material mat;
 	
 	private Vector2f mouseXY = new Vector2f(0,0);
 	private boolean SHIFT = false;
-	private boolean CTRL = false;
-	private boolean ALT = false;
 	
 	private ElementQuadGrid mesh;
 	
@@ -114,15 +106,6 @@ public class SubScreen implements ElementManager, Control {
 	private float layerZOrderCurrent = .4999f;
 	private AnimElement eventAnimElement = null;
 	private QuadData eventQuad = null;
-	private AnimElement targetAnimElement = null;
-	private QuadData targetQuad = null;
-	private AnimElement mouseFocusAnimElement = null;
-	private AnimElement previousMouseFocusAnimElement = null;
-	private AnimElement mouseFocusQuad = null;
-	private float eventAnimOffsetX = 0;
-	private float eventAnimOffsetY = 0;
-	private float eventQuadOffsetX = 0;
-	private float eventQuadOffsetY = 0;
 	
 	/**
 	 * Creates an instance of the SubScreen control.
@@ -401,7 +384,6 @@ public class SubScreen implements ElementManager, Control {
 	@Override
 	public void updateZOrder(Element topMost) {
 	//	zOrderCurrent = zOrderInit;
-		String topMostUID = topMost.getUID();
 		float shiftZ = topMost.getLocalTranslation().getZ();
 		
 		for (Element el : elements.values()) {
@@ -602,7 +584,6 @@ public class SubScreen implements ElementManager, Control {
 					}
 					break;
 				case 1:
-					mouseRightPressed = true;
 				//	eventElement = getEventElement(evt.getX(), evt.getY());
 					if (eventElement != null) {
 						if (eventElement.getEffectZOrder())
@@ -615,7 +596,6 @@ public class SubScreen implements ElementManager, Control {
 					}
 					break;
 				case 2:
-					mouseWheelPressed = true;
 				//	eventElement = getEventElement(evt.getX(), evt.getY());
 					if (eventElement != null) {
 						if (eventElement instanceof MouseWheelListener) {
@@ -643,7 +623,6 @@ public class SubScreen implements ElementManager, Control {
 					}
 					break;
 				case 1:
-					mouseRightPressed = false;
 					if (eventElement instanceof MouseButtonListener) {
 						((MouseButtonListener)eventElement).onMouseRightReleased(evt);
 					}
@@ -653,7 +632,6 @@ public class SubScreen implements ElementManager, Control {
 					}
 					break;
 				case 2:
-					mouseWheelPressed = false;
 					if (eventElement instanceof MouseWheelListener) {
 						((MouseWheelListener)eventElement).onMouseWheelReleased(evt);
 					}
@@ -674,12 +652,8 @@ public class SubScreen implements ElementManager, Control {
 			else SHIFT = false;
 		}
 		if (evt.getKeyCode() == KeyInput.KEY_LCONTROL || evt.getKeyCode() == KeyInput.KEY_RCONTROL) {
-			if (evt.isPressed()) CTRL = true;
-			else CTRL = false;
 		}
 		if (evt.getKeyCode() == KeyInput.KEY_LMENU || evt.getKeyCode() == KeyInput.KEY_RMENU) {
-			if (evt.isPressed()) ALT = true;
-			else ALT = false;
 		}
 		if (evt.getKeyCode() == KeyInput.KEY_TAB && evt.isPressed()) {
 			if (focusForm != null) {
@@ -979,10 +953,6 @@ public class SubScreen implements ElementManager, Control {
 			if (eventElement.getIsDragDropDragElement())
 				targetElement = null;
 			if (eventElement.getIsResizable()) {
-				float offsetX = x;
-				float offsetY = y;
-				Element el = eventElement;
-				
 				if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
 					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
 				}
@@ -1069,8 +1039,6 @@ public class SubScreen implements ElementManager, Control {
 			if (parent != null) {
 				el = parent;
 			}
-			targetElementOffsetX = x-el.getX();
-			targetElementOffsetY = y-el.getY();
 			return el;
 		} else {
 			return null;

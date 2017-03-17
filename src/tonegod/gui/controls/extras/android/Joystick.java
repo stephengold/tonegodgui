@@ -25,11 +25,9 @@ import tonegod.gui.effects.Effect;
 public abstract class Joystick extends Element implements Control {
 	private ButtonAdapter thumb;
 	private Vector2f origin = new Vector2f();
-	private boolean springback = true;
 	private Vector2f centerVec = new Vector2f();
 	private float maxDistance;
 	private float deltaX, deltaY;
-	private Spatial spatial;
 	private Vector2f tempV2 = new Vector2f();
 	
 	public Joystick(ElementManager screen, Vector2f position, int size) {
@@ -107,11 +105,6 @@ public abstract class Joystick extends Element implements Control {
 	@Override
 	public Control cloneForSpatial(Spatial spatial) {
 		return this;
-	}
-
-	@Override
-	public void setSpatial(Spatial spatial) {
-		this.spatial = spatial;
 	}
 
 	@Override

@@ -30,7 +30,6 @@ public class Keyboard extends Panel {
 		OTHER
 	}
 	
-	private boolean Shift = false;
 	private boolean Symbol = false;
 	
 	private List<KeyboardKey> keys = new ArrayList<>();
@@ -240,7 +239,6 @@ public class Keyboard extends Panel {
 	}
 	
 	public void setGlobalShift(boolean shift) {
-		this.Shift = shift;
 		if (!Symbol) {
 			for (KeyboardKey key : keys) {
 				if (key.getKeyType() == KeyType.ALPHA)
@@ -275,14 +273,12 @@ public class Keyboard extends Panel {
 		}
 		
 		public void setShift(KeyType type, int code, char character, String label) {
-			this.shiftType = type;
 			this.shiftKeyCode = code;
 			this.shiftCharacter = character;
 			this.shiftLabel = label;
 		}
 		
 		public void setSymbol(KeyType type, int code, char character, String label) {
-			this.symbolType = type;
 			this.symbolKeyCode = code;
 			this.symbolCharacter = character;
 			this.symbolLabel = label;

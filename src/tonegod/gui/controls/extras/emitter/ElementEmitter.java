@@ -50,15 +50,12 @@ public class ElementEmitter implements Control, Transformable {
 	private Texture tex, emitterShape;
 	private ImageRaster ir;
 	private ColorRGBA tempColor = new ColorRGBA();
-	private Vector2f shapeRatio = new Vector2f(1,1);
 	private Interpolation interpolation = Interpolation.linear;
 	protected int activeParticleCount = 0;
 	
 	// Sprite Info
-	private String spriteImagePath;
 	private int spriteRows, spriteCols, spriteFPS;
 	private int spriteWidth, spriteHeight;
-	private float spriteSize = 30;
 	
 	// Globals
 	private boolean useFixedForce = false;
@@ -144,7 +141,6 @@ public class ElementEmitter implements Control, Transformable {
 	}
 	
 	public void setSprite(String spriteImagePath, int spriteRows, int spriteCols, int spriteFPS) {
-		this.spriteImagePath = spriteImagePath;
 		this.spriteRows = spriteRows;
 		this.spriteCols = spriteCols;
 		this.spriteFPS = spriteFPS;

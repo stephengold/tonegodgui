@@ -24,7 +24,6 @@ import tonegod.gui.core.utils.UIDUtil;
  */
 public class SpriteElement extends Element implements Control {
 
-	private Spatial spatial;
 	private boolean isEnabled = true;
 	private boolean useInterval = true;
 	private float framesPerSecond = 4;
@@ -207,7 +206,6 @@ public class SpriteElement extends Element implements Control {
 	
 	@Override
 	public void setSpatial(Spatial spatial) {
-		this.spatial = spatial;
 	}
 
 	@Override
