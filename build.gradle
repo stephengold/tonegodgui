@@ -1,83 +1,68 @@
 apply plugin: 'java'
-apply plugin: 'application'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
 apply plugin: 'maven'
 
+description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine'
+group = 'tonegod'
+version = '0.1.0'
 
-version = '0.0.1'
-ext {
-	appName = 'tonegodgui'
-}
-sourceCompatibility = 1.7
+//sourceCompatibility = 1.7
+sourceCompatibility = 1.8
 
 repositories {
-	mavenLocal()
-	mavenCentral()
-	maven { url 'http://updates.jmonkeyengine.org/maven' }
-        maven { url "https://jcenter.bintray.com" }
+    maven { url "https://jcenter.bintray.com" }
 }
 
 dependencies {
-	compile fileTree(dir: 'lib', include: ['*.jar'])
-//        compile "com.jme3:jme3-core:3.0.10"
-        compile "org.jmonkeyengine:jme3-core:3.1.0-stable"
+    //compile "com.jme3:jme3-core:3.0.10"
+    compile "org.jmonkeyengine:jme3-core:3.1.0-stable"
 }
 
 sourceSets {
-	main {
-		java { srcDir 'src'}
-		resources { srcDir 'src' }
-	}
-}
-
-
-//sets up the Android Eclipse project, using the old Ant based build.
-eclipse {
-	// need to specify Java source sets explicitely, SpringSource Gradle Eclipse plugin
-	// ignores any nodes added in classpath.file.withXml
-	//	sourceSets {
-	//		main {
-	//			java.srcDirs "src"
-	//			resources.srcDirs = ["src"]
-	//		}
-	//	}
-	classpath { downloadSources=true }
-
-	jdt {
-		sourceCompatibility = 1.7
-		targetCompatibility = 1.7
-	}
-
-	project {
-		name = appName
-		natures 'org.springsource.ide.eclipse.gradle.core.nature'
-	}
+    main {
+        java { srcDir 'src'}
+        resources { srcDir 'src' }
+    }
 }
 
 // custom tasks for creating source/javadoc jars
-task sourcesJar(type: Jar, dependsOn: classes) {
-	classifier = 'sources'
-	from sourceSets.main.allSource
+task sourcesJar(type: Jar, dependsOn: classes, description: 'Create a jar of source files.') {
+    classifier = 'sources'
+    from sourceSets.main.allJava
+}
+task javadocJar(type: Jar, dependsOn: javadoc, description: 'Create a jar of javadoc.') {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-	classifier = 'javadoc'
-	from javadoc.destinationDir
+task pom {
+    doLast {
+        pom {
+            project {
+                licenses {
+                    license {
+                        distribution 'repo'
+                        name 'FreeBSD License'
+                        url 'https://opensource.org/licenses/BSD-2-Clause'
+                    }
+                }
+            }
+        }.writeTo("${buildDir}/libs/tonegodgui-0.1.0.pom")
+    }
 }
+build { dependsOn 'pom' }
 
 // add javadoc/source jar tasks as artifacts
 artifacts {
-	archives sourcesJar, javadocJar
+    archives sourcesJar, javadocJar
 }
 
 task wrapper(type: Wrapper) {
-	gradleVersion = '2.2.1'
+    gradleVersion = '2.2.1'
 }
 
 gradle.projectsEvaluated {
     tasks.withType(JavaCompile) {
         options.compilerArgs << "-Xlint:unchecked"
-//        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        //options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
     }
 }
