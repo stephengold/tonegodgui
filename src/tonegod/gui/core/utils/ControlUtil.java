@@ -17,6 +17,11 @@ import tonegod.gui.core.layouts.LayoutHelper;
  * @author t0neg0d
  */
 public class ControlUtil {
+        /**
+         * A private constructor to inhibit instantiation of this class.
+         */
+        private ControlUtil() {
+        }
 	
 	public static Element getContainer(ElementManager screen) {
 		Element el = new Element(

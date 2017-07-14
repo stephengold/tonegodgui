@@ -14,7 +14,12 @@ import tonegod.gui.core.Element;
  * @author t0neg0d
  */
 public class BitmapTextUtil {
-	
+        /**
+         * A private constructor to inhibit instantiation of this class.
+         */
+        private BitmapTextUtil() {
+        }
+        
 	/**
 	 * Returns the width of the provided text
 	 * @param ref Element The element the text will be added to (reference for font settings)

@@ -11,7 +11,13 @@ import java.util.UUID;
  * @author t0neg0d
  */
 public class UIDUtil {
-	public static String getUID() {
+        /**
+         * A private constructor to inhibit instantiation of this class.
+         */
+        private UIDUtil() {
+        }
+
+        public static String getUID() {
 		return UUID.randomUUID().toString();
 	}
 }

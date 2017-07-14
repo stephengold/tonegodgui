@@ -9,6 +9,11 @@ import org.w3c.dom.NodeList;
  * @author t0neg0d
  */
 public class XMLHelper {
+        /**
+         * A private constructor to inhibit instantiation of this class.
+         */
+        private XMLHelper() {
+        }
 
 	public static String getNodeText(Node parentNode, String nodeName) {
 		Element fstElmnt = (Element) parentNode;
