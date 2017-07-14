@@ -12,13 +12,13 @@ import tonegod.gui.core.ElementManager;
  * @author t0neg0d
  */
 public interface Layout {
-	public Layout define(String... params);
-	public Layout set(String param);
-	public LayoutParam get(String key);
-	public void resize();
-	public void setHandlesResize(boolean handleResize);
-	public boolean getHandlesResize();
-	public void setOwner(Element el);
-	public ElementManager getScreen();
-	public void layoutChildren();
+	Layout define(String... params);
+	Layout set(String param);
+	LayoutParam get(String key);
+	void resize();
+	void setHandlesResize(boolean handleResize);
+	boolean getHandlesResize();
+	void setOwner(Element el);
+	ElementManager getScreen();
+	void layoutChildren();
 }
