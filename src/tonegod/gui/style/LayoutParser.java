@@ -288,7 +288,7 @@ public class LayoutParser {
                 if (className.equals("ColorWheel")) styleName = "Window";
                 if (rsb == null || rsb.equals(""))      try { resizeBorders = screen.getStyle(styleName).getVector4f("resizeBorders"); } catch (Exception e) { resizeBorders = Vector4f.ZERO; }
                 else                                                            resizeBorders = parseVector4f(rsb);
-                if (img == null || img.equals(""))      try { img = screen.getStyle(styleName).getString("defaultImg"); } catch (Exception e) { img = null; };
+                if (img == null || img.equals(""))      try { img = screen.getStyle(styleName).getString("defaultImg"); } catch (Exception e) { img = null; }
                 
                 if (className.equals("Label")) {
                         return new Label(screen, id, position, dimensions, resizeBorders, img);

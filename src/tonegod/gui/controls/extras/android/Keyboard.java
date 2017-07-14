@@ -71,7 +71,7 @@ public class Keyboard extends Panel {
 		populateEffects("Window");
 		
 		float nWidth = getWidth()*0.1f-(110*0.1f);
-		float nX = nWidth+10;;
+		float nX = nWidth+10;
 		float nHeight = getHeight()*0.2f-(60*0.2f);
 		float nY = nHeight+10;
 		float xGap = 10;

@@ -159,7 +159,7 @@ public abstract class Slider extends ButtonAdapter {
 		super(screen, UID, position, dimensions, resizeBorders, defaultImg);
 		
 		this.orientation = orientation;
-		this.trackSurroundsThumb = trackSurroundsThumb;;
+		this.trackSurroundsThumb = trackSurroundsThumb;
 		this.setScaleNS(false);
 		this.setScaleEW(false);
 		this.setDocking(Docking.NW);
