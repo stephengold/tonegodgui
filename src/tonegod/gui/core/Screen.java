@@ -412,6 +412,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 	/**
 	 *  Adds an Element to the Screen and scene graph
 	 * @param element The Element to add
+         * @param hide true &rarr; hidden, false &rarr; visible
 	 */
 	@Override
 	public void addElement(Element element, boolean hide) {

@@ -5,6 +5,7 @@ import com.jme3.util.SafeArrayList;
 /**
  *
  * @author t0neg0d
+ * @param <T> type of object the pool contains
  */
 public class Pool<T> {
 	SafeArrayList<PoolResource> pool = new SafeArrayList<>(PoolResource.class);
