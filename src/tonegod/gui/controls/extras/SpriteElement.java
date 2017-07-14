@@ -173,12 +173,14 @@ public class SpriteElement extends Element implements Control {
 		setIsEnabled(true);
 	}
 	
+        @Override
 	public void setIsEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
 		if (isEnabled)	this.addControl(this);
 		else			this.removeControl(this);
 	}
 	
+        @Override
 	public boolean getIsEnabled() {
 		return this.isEnabled;
 	}

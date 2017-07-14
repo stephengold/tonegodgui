@@ -829,6 +829,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	 * Enables/disables the TextField
 	 * @param isEnabled boolean
 	 */
+        @Override
 	public void setIsEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
 	}
@@ -837,6 +838,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	 * Returns if the TextField is currently enabled/disabled
 	 * @return boolean
 	 */
+        @Override
 	public boolean getIsEnabled() {
 		return this.isEnabled;
 	}

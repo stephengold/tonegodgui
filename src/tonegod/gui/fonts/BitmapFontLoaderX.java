@@ -136,6 +136,7 @@ public class BitmapFontLoaderX implements AssetLoader {
         return font;
     }
     
+    @Override
     public Object load(AssetInfo info) throws IOException {
         InputStream in = null;
         try {

@@ -61,6 +61,7 @@ public abstract class DragElement extends Element implements MouseButtonListener
 	 * Enables/disables the DragElement
 	 * @param isEnabled boolean
 	 */
+        @Override
 	public void setIsEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
 		if (isEnabled)
@@ -73,6 +74,7 @@ public abstract class DragElement extends Element implements MouseButtonListener
 	 * Returns if the DragElement is current enabled/disabled
 	 * @return boolean isEnabled
 	 */
+        @Override
 	public boolean getIsEnabled() {
 		return this.isEnabled;
 	}

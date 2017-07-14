@@ -173,6 +173,7 @@ public class CheckBox extends ButtonAdapter {
 	 * Sets text for the check Label
 	 * @param text text for label
 	 */
+        @Override
 	public void setLabelText(String text) {
 		if (label.getParent() != null) {
 			elementChildren.remove(label.getUID());
