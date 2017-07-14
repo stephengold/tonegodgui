@@ -5,6 +5,7 @@
 package tonegod.gui.framework.animation;
 
 import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
 
 
 /**
@@ -45,8 +46,8 @@ public class ScaleByAction extends TemporalAction {
 	}
 	
 	private void reverseTransform() {
-		if (initX == -1) initX = ((Node)quad).getLocalScale().getX();
-		if (initY == -1) initY = ((Node)quad).getLocalScale().getY();
+		if (initX == -1) initX = ((Spatial)quad).getLocalScale().getX();
+		if (initY == -1) initY = ((Spatial)quad).getLocalScale().getY();
 	}
 	
 	@Override
@@ -67,10 +68,10 @@ public class ScaleByAction extends TemporalAction {
 	}
 	
 	private void updateTransform() {
-		((Node)quad).setLocalScale(
-			((Node)quad).getLocalScale().getX()+(amountX * nextPercent),
-			((Node)quad).getLocalScale().getY()+(amountY * nextPercent),
-			((Node)quad).getLocalScale().getZ()
+		((Spatial)quad).setLocalScale(
+			((Spatial)quad).getLocalScale().getX()+(amountX * nextPercent),
+			((Spatial)quad).getLocalScale().getY()+(amountY * nextPercent),
+			((Spatial)quad).getLocalScale().getZ()
 		);
 	}
 	
@@ -88,7 +89,7 @@ public class ScaleByAction extends TemporalAction {
 				quad.setScaleY(initY);
 			} else {
 				if (quad instanceof Node) {
-					((Node)quad).setLocalScale(initX,initY,((Node)quad).getLocalScale().z);
+					((Spatial)quad).setLocalScale(initX,initY,((Spatial)quad).getLocalScale().z);
 				} else {
 					quad.setScaleX(initX);
 					quad.setScaleY(initY);

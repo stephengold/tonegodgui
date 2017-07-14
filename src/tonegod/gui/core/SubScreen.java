@@ -539,26 +539,26 @@ public class SubScreen implements ElementManager, Control {
 								}
 							}
 							if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
-								if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+								if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 							}
 							if (eventElement.getResetKeyboardFocus())
 								keyboardElement = null;
 						} else if (eventElement.getIsMovable() && eventElementResizeDirection == null) {
 							eventElementResizeDirection = null;
 							if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
-								if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+								if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 							}
 							if (eventElement.getResetKeyboardFocus())
 								keyboardElement = null;
 							eventElementOriginXY.set(eventElement.getPosition());
 						} else if (eventElement instanceof KeyboardListener) {
 							if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
-								if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+								if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 							}
 							if (eventElement.getResetKeyboardFocus())
 								keyboardElement = eventElement;
 							if (keyboardElement instanceof TextField) {
-								((TextField)keyboardElement).setTabFocus();
+								((TabFocusListener)keyboardElement).setTabFocus();
 								if (Screen.isAndroid()) screen.showVirtualKeyboard();
 							//	((TextField)keyboardElement).setCaretPositionByX(evt.getX());
 							}
@@ -566,7 +566,7 @@ public class SubScreen implements ElementManager, Control {
 						} else {
 							eventElementResizeDirection = null;
 							if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
-								if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+								if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 							}
 							if (eventElement.getResetKeyboardFocus())
 								keyboardElement = null;
@@ -734,32 +734,32 @@ public class SubScreen implements ElementManager, Control {
 					}
 				}
 				if (keyboardElement != null && target.getResetKeyboardFocus()) {
-					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+					if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 				}
 				if (target.getResetKeyboardFocus())
 					keyboardElement = null;
 			} else if (target.getIsMovable() && dir == null) {
 				dir = null;
 				if (keyboardElement != null && target.getResetKeyboardFocus()) {
-					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+					if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 				}
 				if (target.getResetKeyboardFocus())
 					keyboardElement = null;
 				eventElementOriginXY.set(target.getPosition());
 			} else if (target instanceof KeyboardListener) {
 				if (keyboardElement != null && target.getResetKeyboardFocus()) {
-					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+					if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 				}
 				if (target.getResetKeyboardFocus())
 					keyboardElement = target;
 				if (keyboardElement instanceof TextField) {
-					((TextField)keyboardElement).setTabFocus();
+					((TabFocusListener)keyboardElement).setTabFocus();
 					screen.showVirtualKeyboard();
 				}
 			} else {
 				dir = null;
 				if (keyboardElement != null && target.getResetKeyboardFocus()) {
-					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+					if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 				}
 				if (target.getResetKeyboardFocus())
 					keyboardElement = null;
@@ -954,32 +954,32 @@ public class SubScreen implements ElementManager, Control {
 				targetElement = null;
 			if (eventElement.getIsResizable()) {
 				if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
-					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+					if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 				}
 				if (eventElement.getResetKeyboardFocus())
 					keyboardElement = null;
 			} else if (eventElement.getIsMovable() && eventElementResizeDirection == null) {
 				eventElementResizeDirection = null;
 				if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
-					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+					if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 				}
 				if (eventElement.getResetKeyboardFocus())
 					keyboardElement = null;
 				eventElementOriginXY.set(eventElement.getPosition());
 			} else if (eventElement instanceof KeyboardListener) {
 				if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
-					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+					if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 				}
 				if (eventElement.getResetKeyboardFocus())
 					keyboardElement = eventElement;
 				if (keyboardElement instanceof TextField) {
-					((TextField)keyboardElement).setTabFocus();
+					((TabFocusListener)keyboardElement).setTabFocus();
 				}
 				// TODO: Update target element's font shader
 			} else {
 				eventElementResizeDirection = null;
 				if (keyboardElement != null && eventElement.getResetKeyboardFocus()) {
-					if (keyboardElement instanceof TextField) ((TextField)keyboardElement).resetTabFocus();
+					if (keyboardElement instanceof TextField) ((TabFocusListener)keyboardElement).resetTabFocus();
 				}
 				if (eventElement.getResetKeyboardFocus())
 					keyboardElement = null;

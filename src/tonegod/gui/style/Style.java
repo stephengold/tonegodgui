@@ -30,11 +30,11 @@ public class Style {
 	}
 	
 	public float getFloat(String key) {
-		return ((Float)styleTags.get(key)).floatValue();
+		return ((Number)styleTags.get(key)).floatValue();
 	}
 	
 	public int getInt(String key) {
-		return ((Integer)styleTags.get(key)).intValue();
+		return ((Number)styleTags.get(key)).intValue();
 	}
 	
 	public boolean getBoolean(String key) {

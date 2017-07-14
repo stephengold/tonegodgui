@@ -6,6 +6,7 @@ package tonegod.gui.framework.animation;
 
 import com.jme3.math.Vector2f;
 import com.jme3.scene.Node;
+import com.jme3.scene.Spatial;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ public class SplineAction extends TemporalAction {
 			quad.setPositionY(tempV.y);
 		} else {
 			if (quad instanceof Node) {
-				((Node)quad).setLocalTranslation(
+				((Spatial)quad).setLocalTranslation(
 					tempV.x, 
 					tempV.y, 
 					quad.getPositionZ());
