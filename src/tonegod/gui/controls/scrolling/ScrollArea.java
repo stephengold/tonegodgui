@@ -469,7 +469,7 @@ public class ScrollArea extends Element implements MouseWheelListener, TouchList
 		if (flingEnabled && (evt.getDeltaY() > 0.2f || evt.getDeltaY() < -0.2f)) {
 			if (!screen.getAnimManager().hasGameTimer(flingTimer)) {
 				flingTimer.reset(false);
-				flingDir  = (evt.getDeltaY() < 0) ? true : false;
+				flingDir  = (evt.getDeltaY() < 0);
 				flingSpeed = FastMath.abs(evt.getDeltaY());
 				screen.getAnimManager().addGameTimer(flingTimer);
 			}
