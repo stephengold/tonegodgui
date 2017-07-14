@@ -38,18 +38,18 @@ public class MigLayout extends AbstractLayout {
 	
 	private int parseCount(int index, String id, String str) {
 		String token;
-		if (str.indexOf("]") != -1) {
+		if (str.contains("]")) {
 			token = "]";
-			if (str.indexOf(id) != -1)
-				str = str.substring(str.indexOf(" ")+1);
-		} else if (str.indexOf(",") != -1) {
+			if (str.contains(id))
+				str = str.substring(str.indexOf(' ')+1);
+		} else if (str.contains(",")) {
 			token = ",";
-			if (str.indexOf(id) != -1)
-				str = str.substring(str.indexOf(" ")+1);
+			if (str.contains(id))
+				str = str.substring(str.indexOf(' ')+1);
 		} else {
 			token = " ";
-			if (str.indexOf(id) != -1)
-				str = str.substring(str.indexOf(" ")+1);
+			if (str.contains(id))
+				str = str.substring(str.indexOf(' ')+1);
 		}
 		st[index] = new StringTokenizer(str, token);
 		return st[index].countTokens();
@@ -90,13 +90,13 @@ public class MigLayout extends AbstractLayout {
 		for (int c = 0; c < cells[0].length; c++) {
 			wUnit = SizeUnit.absolute;
 			String cStr = st[1].nextToken();
-			if (cStr.indexOf("[") != -1)
-				cStr = cStr.substring(cStr.indexOf("[")+1);
+			if (cStr.contains("["))
+				cStr = cStr.substring(cStr.indexOf('[')+1);
 			if (cStr.equals("")) {
 				w = 0;
 				wUnit = SizeUnit.percent;
 			} else {
-				if (cStr.indexOf("%") != -1) {
+				if (cStr.contains("%")) {
 					wUnit = SizeUnit.percent;
 					cStr = cStr.substring(0,cStr.length()-1);
 				}
@@ -139,13 +139,13 @@ public class MigLayout extends AbstractLayout {
 		for (int r = 0; r < cells.length; r++) {
 			hUnit = SizeUnit.absolute;
 			String rStr = st[0].nextToken();
-			if (rStr.indexOf("[") != -1)
-				rStr = rStr.substring(rStr.indexOf("[")+1);
+			if (rStr.contains("["))
+				rStr = rStr.substring(rStr.indexOf('[')+1);
 			if (rStr.equals("")) {
 				h = 0;
 				hUnit = SizeUnit.percent;
 			} else {
-				if (rStr.indexOf("%") != -1) {
+				if (rStr.contains("%")) {
 					hUnit = SizeUnit.percent;
 					rStr = rStr.substring(0,rStr.length()-1);
 				}

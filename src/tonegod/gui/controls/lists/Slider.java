@@ -528,7 +528,7 @@ public abstract class Slider extends ButtonAdapter {
 		int index = -1;
 		for (int i = 0; i < stepValues.size(); i++) {
 			String val = stepValues.get(i).toString();
-			if (val.indexOf(searchVal) != -1) {
+			if (val.contains(searchVal)) {
 				index = i;
 			}
 		}

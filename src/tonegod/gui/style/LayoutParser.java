@@ -151,7 +151,7 @@ public class LayoutParser {
                                         Class cl = null;
                                         
                                         for (Class c : controls) {
-                                                if (c.getName().substring(c.getName().lastIndexOf(".")+1).equals(type)) {
+                                                if (c.getName().substring(c.getName().lastIndexOf('.')+1).equals(type)) {
                                                         element = createElement(el, c, id, pos, dim, rsb, img, ori, flag, childNodes);
                                                         cl = c;
                                                         break;
@@ -272,7 +272,7 @@ public class LayoutParser {
                 Vector2f position, dimensions;
                 Vector4f resizeBorders;
                 String styleName = "";
-                String className = c.getName().substring(c.getName().lastIndexOf(".")+1);
+                String className = c.getName().substring(c.getName().lastIndexOf('.')+1);
                 styleName = className;
                 if (className.equals("ComboBox")) styleName = "TextField";
                 if (className.equals("TabControl") ||
@@ -1070,14 +1070,14 @@ public class LayoutParser {
                 String xComp = st.nextToken();
                 String yComp = st.nextToken();
                 if (el == null) {
-                        if (xComp.indexOf("%") != -1)   x = screen.getWidth()*(Float.parseFloat(xComp.substring(0,xComp.indexOf("%")))*0.01f);
+                        if (xComp.contains("%"))   x = screen.getWidth()*(Float.parseFloat(xComp.substring(0,xComp.indexOf('%')))*0.01f);
                         else                                                    x = Float.parseFloat(xComp);
-                        if (yComp.indexOf("%") != -1)   y = screen.getHeight()*(Float.parseFloat(yComp.substring(0,yComp.indexOf("%")))*0.01f);
+                        if (yComp.contains("%"))   y = screen.getHeight()*(Float.parseFloat(yComp.substring(0,yComp.indexOf('%')))*0.01f);
                         else                                                    y = Float.parseFloat(yComp);
                 } else {
-                        if (xComp.indexOf("%") != -1)   x = el.getWidth()*(Float.parseFloat(xComp.substring(0,xComp.indexOf("%")))*0.01f);
+                        if (xComp.contains("%"))   x = el.getWidth()*(Float.parseFloat(xComp.substring(0,xComp.indexOf('%')))*0.01f);
                         else                                                    x = Float.parseFloat(xComp);
-                        if (yComp.indexOf("%") != -1)   y = el.getHeight()*(Float.parseFloat(yComp.substring(0,yComp.indexOf("%")))*0.01f);
+                        if (yComp.contains("%"))   y = el.getHeight()*(Float.parseFloat(yComp.substring(0,yComp.indexOf('%')))*0.01f);
                         else                                                    y = Float.parseFloat(yComp);
                 }
                 return new Vector2f(x,y);

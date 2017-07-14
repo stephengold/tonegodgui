@@ -63,27 +63,27 @@ public class LayoutHint {
 	}
 	
 	private void getHintType(String name) {
-		if (name.indexOf("pad") != -1 || name.indexOf("inset") != -1)
+		if (name.contains("pad") || name.contains("inset"))
 			type = ParamType.pad;
-		else if (name.indexOf("grow") != -1)
+		else if (name.contains("grow"))
 			type = ParamType.grow;
-		else if (name.indexOf("fill") != -1)
+		else if (name.contains("fill"))
 			type = ParamType.fill;
-		else if (name.indexOf("dock") != -1)
+		else if (name.contains("dock"))
 			type = ParamType.dock;
-		else if (name.indexOf("valign") != -1)
+		else if (name.contains("valign"))
 			type = ParamType.valign;
-		else if (name.indexOf("align") != -1)
+		else if (name.contains("align"))
 			type = ParamType.align;
-		else if (name.indexOf("margin") != -1)
+		else if (name.contains("margin"))
 			type = ParamType.margin;
-		else if (name.indexOf("margin") != -1)
+		else if (name.contains("margin"))
 			type = ParamType.margin;
-		else if (name.indexOf("min") != -1)
+		else if (name.contains("min"))
 			type = ParamType.min;
-		else if (name.indexOf("max") != -1)
+		else if (name.contains("max"))
 			type = ParamType.max;
-		else if (name.indexOf("pref") != -1)
+		else if (name.contains("pref"))
 			type = ParamType.pref;
 		else
 			type = ParamType.valueOf(name);

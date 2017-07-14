@@ -199,20 +199,20 @@ public class AnimText extends AnimElement {
 		tags.clear();
 		int sIndex = 0, eIndex = 0;
 		
-		sIndex = text.indexOf("<");
+		sIndex = text.indexOf('<');
 		int lineIndex = 0;
 		while (sIndex > -1) {
-			eIndex = text.indexOf(">");
+			eIndex = text.indexOf('>');
 			if (eIndex > -1) {
 				String tagName = text.substring(sIndex, eIndex+1);
 				TagType type = getTagType(tagName);
 				Tag tag = new Tag(sIndex,type);
-				if (tagName.indexOf("</") != -1)
+				if (tagName.contains("</"))
 					tag.close = true;
 				switch(type) {
 					case Paragraph:
-						if (tagName.indexOf("align") != -1) {
-							tag.align = Align.valueOf(tagName.substring(tagName.indexOf("=")+1,tagName.indexOf(">")));
+						if (tagName.contains("align")) {
+							tag.align = Align.valueOf(tagName.substring(tagName.indexOf('=')+1,tagName.indexOf('>')));
 						}
 						break;
 					case Underline:
@@ -225,7 +225,7 @@ public class AnimText extends AnimElement {
 			} else {
 				break;
 			}
-			sIndex = text.indexOf("<");
+			sIndex = text.indexOf('<');
 		}
 		return text;
 	}
@@ -237,11 +237,11 @@ public class AnimText extends AnimElement {
 			return TagType.Italic;
 		else if (tagName.equals("<strike>") || tagName.equals("</strike>"))
 			return TagType.StrikeThrough;
-		else if (tagName.indexOf("<b>") != -1 || tagName.indexOf("</b>") != -1)
+		else if (tagName.contains("<b>") || tagName.contains("</b>"))
 			return TagType.Bold;
-		else if (tagName.indexOf("</br>") != -1 || tagName.indexOf("<br>") != -1 || tagName.indexOf("<br/>") != -1)
+		else if (tagName.contains("</br>") || tagName.contains("<br>") || tagName.contains("<br/>"))
 			return TagType.NewLine;
-		else if (tagName.indexOf("<p") != -1 || tagName.indexOf("</p>") != -1)
+		else if (tagName.contains("<p") || tagName.contains("</p>"))
 			return TagType.Paragraph;
 		else return null;
 	}

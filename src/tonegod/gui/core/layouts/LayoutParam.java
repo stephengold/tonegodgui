@@ -46,17 +46,17 @@ public class LayoutParam {
 	}
 	
 	private void getHintType(String name) {
-		if (name.indexOf("pad") != -1 || name.indexOf("inset") != -1)
+		if (name.contains("pad") || name.contains("inset"))
 			type = ParamType.pad;
-		else if (name.indexOf("clip") != -1)
+		else if (name.contains("clip"))
 			type = ParamType.clip;
-		else if (name.indexOf("margin") != -1)
+		else if (name.contains("margin"))
 			type = ParamType.margin;
-		else if (name.indexOf("min") != -1)
+		else if (name.contains("min"))
 			type = ParamType.min;
-		else if (name.indexOf("max") != -1)
+		else if (name.contains("max"))
 			type = ParamType.max;
-		else if (name.indexOf("pref") != -1)
+		else if (name.contains("pref"))
 			type = ParamType.pref;
 		else
 			type = ParamType.valueOf(name);

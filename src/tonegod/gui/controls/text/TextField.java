@@ -438,42 +438,42 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 							textFieldText.add(caretIndex, nextChar);
 							caretIndex++;
 						} else if (type == Type.ALPHA) {
-							if (validateAlpha.indexOf(nextChar) != -1) {
+							if (validateAlpha.contains(nextChar)) {
 								textFieldText.add(caretIndex, nextChar);
 								caretIndex++;
 							}
 						} else if (type == Type.ALPHA_NOSPACE) {
-							if (validateAlpha.indexOf(nextChar) != -1) {
+							if (validateAlpha.contains(nextChar)) {
 								textFieldText.add(caretIndex, nextChar);
 								caretIndex++;
 							}
 						} else if (type == Type.NUMERIC) {
-							if (validateNumeric.indexOf(nextChar) != -1) {
+							if (validateNumeric.contains(nextChar)) {
 								textFieldText.add(caretIndex, nextChar);
 								caretIndex++;
 							}
 						} else if (type == Type.ALPHANUMERIC) {
-							if (validateAlpha.indexOf(nextChar) != -1 || validateNumeric.indexOf(nextChar) != -1) {
+							if (validateAlpha.contains(nextChar) || validateNumeric.contains(nextChar)) {
 								textFieldText.add(caretIndex, nextChar);
 								caretIndex++;
 							}
 						} else if (type == Type.ALPHANUMERIC_NOSPACE) {
-							if (validateAlphaNoSpace.indexOf(nextChar) != -1 || validateNumeric.indexOf(nextChar) != -1) {
+							if (validateAlphaNoSpace.contains(nextChar) || validateNumeric.contains(nextChar)) {
 								textFieldText.add(caretIndex, nextChar);
 								caretIndex++;
 							}
 						} else if (type == Type.EXCLUDE_SPECIAL) {
-							if (validateSpecChar.indexOf(nextChar) == -1) {
+							if (validateSpecChar.contains(nextChar)) {
 								textFieldText.add(caretIndex, nextChar);
 								caretIndex++;
 							}
 						} else if (type == Type.EXCLUDE_CUSTOM) {
-							if (validateCustom.indexOf(nextChar) == -1) {
+							if (validateCustom.contains(nextChar)) {
 								textFieldText.add(caretIndex, nextChar);
 								caretIndex++;
 							}
 						} else if (type == Type.INCLUDE_CUSTOM) {
-							if (validateCustom.indexOf(nextChar) != -1) {
+							if (validateCustom.contains(nextChar)) {
 								textFieldText.add(caretIndex, nextChar);
 								caretIndex++;
 							}

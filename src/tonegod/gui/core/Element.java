@@ -256,7 +256,7 @@ public class Element extends Node {
 		boolean useAtlas = screen.getUseTextureAtlas();
 		
 		if (texturePath != null) {
-			if (useAtlas && texturePath.indexOf("|") != -1 && texturePath.indexOf("=") != -1) {
+			if (useAtlas && texturePath.contains("|") && texturePath.contains("=")) {
 				float[] coords = screen.parseAtlasCoords(texturePath);
 				textureAtlasX = coords[0];
 				textureAtlasY = coords[1];
