@@ -200,7 +200,7 @@ public class SpriteInfluencer extends InfluencerBase {
 	}
 	
 	public void setTargetFPS(int fps) {
-		this.fps = (float)fps;
+		this.fps = fps;
 	}
 	
 	@Override

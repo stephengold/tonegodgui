@@ -26,8 +26,8 @@ public class MoveTexByAction extends TemporalAction {
 		lastPercent = 0;
 		nextPercent = 0;
 		if (autoReverse) {
-			if (initX == -1) initX = ((QuadData)quad).getTCOffsetX();
-			if (initY == -1) initY = ((QuadData)quad).getTCOffsetY();
+			if (initX == -1) initX = quad.getTCOffsetX();
+			if (initY == -1) initY = quad.getTCOffsetY();
 			if (initDuration == -1)	{
 				initDuration = getDuration();
 				setDuration(initDuration*.5f);
@@ -40,8 +40,8 @@ public class MoveTexByAction extends TemporalAction {
 		nextPercent = percent - lastPercent;
 		lastPercent = percent;
 		
-		((QuadData)quad).setTCOffsetX(((QuadData)quad).getTCOffsetX()+(amountX * nextPercent));
-		((QuadData)quad).setTCOffsetY(((QuadData)quad).getTCOffsetY()+(amountY * nextPercent));
+		quad.setTCOffsetX(quad.getTCOffsetX()+(amountX * nextPercent));
+		quad.setTCOffsetY(quad.getTCOffsetY()+(amountY * nextPercent));
 	}
 	
 	@Override
@@ -53,8 +53,8 @@ public class MoveTexByAction extends TemporalAction {
 			restart();
 			cycles = 1;
 		} else if (cycles == 1) {
-			((QuadData)quad).setTCOffsetX(initX);
-			((QuadData)quad).setTCOffsetY(initY);
+			quad.setTCOffsetX(initX);
+			quad.setTCOffsetY(initY);
 			amountX = -amountX;
 			amountY = -amountY;
 			autoReverse = initAutoReverse;

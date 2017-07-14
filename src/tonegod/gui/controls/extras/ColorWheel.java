@@ -501,17 +501,17 @@ public abstract class ColorWheel extends Window {
 	}
 	
 	private void factorRed() {
-		red = (float)R/255f;
+		red = R/255f;
 		finalRed = red;
 	}
 	
 	private void factorGreen() {
-		green = (float)G/255f;
+		green = G/255f;
 		finalGreen = green;
 	}
 	
 	private void factorBlue() {
-		blue = (float)B/255f;
+		blue = B/255f;
 		finalBlue = blue;
 	}
 	
@@ -545,9 +545,9 @@ public abstract class ColorWheel extends Window {
 	}
 	
 	private float average() {
-		red = (float)R/255f;
-		green = (float)G/255f;
-		blue = (float)B/255f;
+		red = R/255f;
+		green = G/255f;
+		blue = B/255f;
 		float sum = red+green+blue;
 		return sum/3;
 	}

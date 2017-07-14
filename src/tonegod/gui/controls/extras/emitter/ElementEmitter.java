@@ -154,7 +154,7 @@ public class ElementEmitter implements Control, Transformable {
 		int index = 0;
 		for (int y = spriteRows-1; y > -1; y--) {
 			for (int x = 0; x < spriteCols; x++) {
-				particles.addTextureRegion("sprite" + index, (int)(spriteWidth*x), (int)(spriteHeight*y), (int)spriteWidth, (int)spriteHeight);
+				particles.addTextureRegion("sprite" + index, spriteWidth*x, spriteHeight*y, spriteWidth, spriteHeight);
 				index++;
 			}
 		}
@@ -174,7 +174,7 @@ public class ElementEmitter implements Control, Transformable {
 		int index = 0;
 		for (int y = spriteRows-1; y > -1; y--) {
 			for (int x = 0; x < spriteCols; x++) {
-				particles.addTextureRegion("sprite" + index, (int)(spriteWidth*x), (int)(spriteHeight*y), (int)spriteWidth, (int)spriteHeight);
+				particles.addTextureRegion("sprite" + index, spriteWidth*x, spriteHeight*y, spriteWidth, spriteHeight);
 				index++;
 			}
 		}
@@ -289,7 +289,7 @@ public class ElementEmitter implements Control, Transformable {
 	
 	public void setParticlesPerSecond(int particlesPerSecond) {
 		this.particlesPerSecond = particlesPerSecond;
-		this.targetInterval = 1f/(float)particlesPerSecond;
+		this.targetInterval = 1f/particlesPerSecond;
 		currentInterval = 0;
 	}
 	

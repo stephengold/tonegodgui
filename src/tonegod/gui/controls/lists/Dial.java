@@ -153,7 +153,7 @@ public abstract class Dial extends ButtonAdapter {
 			new Vector4f(0,0,0,0),
 			screen.getStyle("Common").getString("blankImg")
 		);
-		((Geometry)elCenter.getChild(0)).center();
+		elCenter.getChild(0).center();
 		elCenter.setScaleNS(false);
 		elCenter.setScaleEW(false);
 		elCenter.setDocking(Docking.SW);
@@ -168,7 +168,7 @@ public abstract class Dial extends ButtonAdapter {
 			new Vector4f(0,0,0,0),
 			screen.getStyle("Dial").getString("radialImg")
 		);
-		((Geometry)elIndicator.getChild(0)).center();
+		elIndicator.getChild(0).center();
 		elIndicator.setScaleNS(false);
 		elIndicator.setScaleEW(false);
 		elIndicator.setDocking(Docking.SW);
@@ -302,12 +302,12 @@ public abstract class Dial extends ButtonAdapter {
 		
 		int nIndex;
 		if (stepValues.size() >= 2) {
-			nIndex = (int)Math.round(angle/stepSize);
+			nIndex = Math.round(angle/stepSize);
 			if (nIndex >= 0 && nIndex < stepValues.size() && nIndex != this.selectedIndex)
 				setInternalIndex(nIndex);
 		} else {
-			nIndex = (int)Math.round(angle/stepSize);
-			int finIndex = (int)Math.round(nIndex);
+			nIndex = Math.round(angle/stepSize);
+			int finIndex = Math.round(nIndex);
 			if (finIndex != this.selectedIndex)
 				setInternalIndex(finIndex);
 		}
@@ -361,7 +361,7 @@ public abstract class Dial extends ButtonAdapter {
 	 */
 	public void setSelectedIndex(float index) {
 		float angle;
-		int index1 = (int)Math.round(index);
+		int index1 = Math.round(index);
 		if (isStepped) {
 			if (index1 < 0) index1 = 0;
 			else if (index1 > stepValues.size()-1) index1 = stepValues.size()-1;
@@ -382,7 +382,7 @@ public abstract class Dial extends ButtonAdapter {
 	 */
 	public void setSelectedIndexWithCallback(float index) {
 		float angle;
-		int index1 = (int)Math.round(index);
+		int index1 = Math.round(index);
 		if (isStepped) {
 			if (index1 < 0) index1 = 0;
 			else if (index1 > stepValues.size()-1) index1 = stepValues.size()-1;

@@ -193,11 +193,11 @@ public abstract class Slider extends ButtonAdapter {
 				if (isStepped) {
 					int index = 0;
 					if (slider.orientation == Slider.Orientation.HORIZONTAL) {
-						index = (int)Math.round(x/stepSize);
+						index = Math.round(x/stepSize);
 						x = index*stepSize;
 						if (slider.trackSurroundsThumb) x += controlSize/2;
 					} else {
-						index = (int)Math.round(y/stepSize);
+						index = Math.round(y/stepSize);
 						y = index*stepSize;
 						if (slider.trackSurroundsThumb) y += controlSize/2;
 					}

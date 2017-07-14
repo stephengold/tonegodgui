@@ -20,13 +20,13 @@ public class XMLHelper {
 		NodeList fstNmElmntLst = fstElmnt.getElementsByTagName(nodeName);
 		Element fstNmElmnt = (Element) fstNmElmntLst.item(0);
 		NodeList fstNm = fstNmElmnt.getChildNodes();
-		String ret = ((Node) fstNm.item(0)).getNodeValue();
+		String ret = fstNm.item(0).getNodeValue();
 		return ret;
 	}
 
 	public static String getNodeText(Node node) {
-		NodeList fstNm = ((Element)node).getChildNodes();
-		String ret = ((Node) fstNm.item(0)).getNodeValue();
+		NodeList fstNm = node.getChildNodes();
+		String ret = fstNm.item(0).getNodeValue();
 		return ret;
 	}
 

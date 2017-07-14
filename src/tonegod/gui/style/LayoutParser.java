@@ -210,11 +210,11 @@ public class LayoutParser {
                                         } else if (paramClass == String.class) {
                                                 finalParams[index] = XMLHelper.getNodeAttributeValue(childNode, "param" + index);
                                         } else if (paramClass == Object.class) {
-                                                finalParams[index] = (Object)XMLHelper.getNodeAttributeValue(childNode, "param" + index);
+                                                finalParams[index] = XMLHelper.getNodeAttributeValue(childNode, "param" + index);
                                         } else if (paramClass == Boolean.class || paramClass == Boolean.TYPE) {
                                                 finalParams[index] = Boolean.parseBoolean(XMLHelper.getNodeAttributeValue(childNode, "param" + index));
                                         } else if (paramClass == Menu.class) {
-                                                finalParams[index] = (Menu)screen.getElementById(XMLHelper.getNodeAttributeValue(childNode, "param" + index));
+                                                finalParams[index] = screen.getElementById(XMLHelper.getNodeAttributeValue(childNode, "param" + index));
                                         } else if (paramClass == BitmapFont.Align.class) {
                                                 finalParams[index] = BitmapFont.Align.valueOf(XMLHelper.getNodeAttributeValue(childNode, "param" + index));
                                         } else if (paramClass == BitmapFont.VAlign.class) {

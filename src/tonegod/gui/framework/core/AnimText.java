@@ -110,7 +110,7 @@ public class AnimText extends AnimElement {
 		lineDisplay.addTextureRegion("trLine", 4, 4, 6, 6);
 		
 		setTexture(bfTexture);
-		imgHeight = (int)bfTexture.getImage().getHeight();
+		imgHeight = bfTexture.getImage().getHeight();
 		
 		setText(text);
 		initialize();
@@ -834,7 +834,7 @@ public class AnimText extends AnimElement {
 		
 		Texture bfTexture = (Texture)font.getPage(0).getParam("ColorMap").getValue();
 		setTexture(bfTexture);
-		imgHeight = (int)bfTexture.getImage().getHeight();
+		imgHeight = bfTexture.getImage().getHeight();
 		
 		setText(".");
 		initialize();

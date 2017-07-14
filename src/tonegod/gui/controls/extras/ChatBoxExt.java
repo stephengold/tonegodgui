@@ -489,7 +489,7 @@ public abstract class ChatBoxExt extends Panel {
 	private ChatChannel getChannelByStringCommand(String command) {
 		ChatChannel c = null;
 		for (ChatChannel channel : channels) {
-			if (((String)channel.getCommand()).equals(command)) {
+			if ((channel.getCommand()).equals(command)) {
 				c = channel;
 				break;
 			}
@@ -528,7 +528,7 @@ public abstract class ChatBoxExt extends Panel {
 			if (btnChatFilter.getParent() != null) {
 				btnChatFilter.removeFromParent();
 				chatForm.removeFormElement(btnChatFilter);
-				sbDefaultChannel.setX(indents.y);
+				sbDefaultChannel.setX(indents.y); //?
 				tfChatInput.setX(indents.y+sbDefaultChannel.getWidth()+controlSize);
 				if (showSendButton)
 					tfChatInput.setWidth(getWidth()-sbDefaultChannel.getWidth()-controlSize-indents.y-indents.z-buttonWidth);

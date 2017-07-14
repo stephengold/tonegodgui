@@ -208,7 +208,7 @@ public abstract class Spinner extends TextField {
 		) {
 			@Override
 			public void onButtonMouseLeftDown(MouseButtonEvent evt, boolean toggled) {
-				screen.setTabFocusElement((Spinner)getElementParent());
+				screen.setTabFocusElement(getElementParent());
 				((Spinner)getElementParent()).incStep();
 			}
 			@Override
@@ -228,7 +228,7 @@ public abstract class Spinner extends TextField {
 		) {
 			@Override
 			public void onButtonMouseLeftDown(MouseButtonEvent evt, boolean toggled) {
-				screen.setTabFocusElement((Spinner)getElementParent());
+				screen.setTabFocusElement(getElementParent());
 				((Spinner)getElementParent()).decStep();
 			}
 			@Override

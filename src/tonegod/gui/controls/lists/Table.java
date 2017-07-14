@@ -298,7 +298,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
         @SuppressWarnings("unchecked")
         public int compareTo(TableCell o) {
             if (value instanceof Comparable && o.value instanceof Comparable) {
-                return ((Comparable) value).compareTo((Comparable) o.value);
+                return ((Comparable) value).compareTo(o.value);
             }
             return toString().compareTo(o.toString());
         }
@@ -629,7 +629,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
                 Element e1 = new ArrayList<Element>(o1.getElements()).get(columnIndex);
                 Element e2 = new ArrayList<Element>(o2.getElements()).get(columnIndex);
                 if (e1 instanceof Comparable) {
-                    return ((Comparable) e1).compareTo((Comparable) e2);
+                    return ((Comparable) e1).compareTo(e2);
                 }
                 return e1.toString().compareTo(e2.toString());
             }

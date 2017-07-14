@@ -716,7 +716,7 @@ public abstract class Button extends Element implements Control, MouseButtonList
 		if (intervalsPerSecond > 0) {
 			this.useInterval = true;
 			this.intervalsPerSecond = intervalsPerSecond;
-			this.trackInterval = (float)(1/intervalsPerSecond);
+			this.trackInterval = 1/intervalsPerSecond;
 			this.addControl(this);
 		} else {
 			this.useInterval = false;

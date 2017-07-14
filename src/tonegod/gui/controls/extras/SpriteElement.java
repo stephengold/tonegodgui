@@ -168,7 +168,7 @@ public class SpriteElement extends Element implements Control {
 		
 		this.useInterval = true;
 		this.framesPerSecond = framesPerSecond;
-		this.trackInterval = (float)(1/framesPerSecond);
+		this.trackInterval = 1/framesPerSecond;
 		
 		setIsEnabled(true);
 	}

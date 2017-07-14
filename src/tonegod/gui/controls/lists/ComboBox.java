@@ -165,7 +165,7 @@ public abstract class ComboBox extends TextField {
 						screen.addElement(DDList);
 					if (!DDList.getIsVisible()) {
 						DDList.showMenu(
-							(Menu)null,
+							null,
 							getElementParent().getAbsoluteX(),
 							getElementParent().getAbsoluteY()-DDList.getHeight()
 						);
@@ -173,7 +173,7 @@ public abstract class ComboBox extends TextField {
 						DDList.hide();
 					}
 				}
-				screen.setTabFocusElement((ComboBox)getElementParent());
+				screen.setTabFocusElement(getElementParent());
 			}
 		};
 		btnArrowDown.setButtonIcon(18, 18, screen.getStyle("Common").getString("arrowDown"));
@@ -193,7 +193,7 @@ public abstract class ComboBox extends TextField {
 				@Override
 				public void onMenuItemClicked(int index, Object value, boolean isToggled) {
 					((ComboBox)getCallerElement()).setSelectedWithCallback(index, DDList.getMenuItem(index).getCaption(), value);
-					screen.setTabFocusElement(((ComboBox)getCallerElement()));
+					screen.setTabFocusElement(getCallerElement());
 					hide();
 				}
 			};
@@ -447,7 +447,7 @@ public abstract class ComboBox extends TextField {
 				if (screen.getElementById(DDList.getUID()) == null)
 						screen.addElement(DDList);
 				if (!DDList.getIsVisible() && evt.getKeyCode() != KeyInput.KEY_LSHIFT && evt.getKeyCode() != KeyInput.KEY_RSHIFT)
-					DDList.showMenu((Menu)null, getAbsoluteX(), getAbsoluteY()-DDList.getHeight());
+					DDList.showMenu(null, getAbsoluteX(), getAbsoluteY()-DDList.getHeight());
 			} else {
 				if (evt.getKeyCode() == KeyInput.KEY_UP) {
 					if (hlIndex > 0) {

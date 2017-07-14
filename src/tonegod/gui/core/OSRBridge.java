@@ -70,7 +70,7 @@ public class OSRBridge extends AbstractControl {
 		chaseCam.setDefaultHorizontalRotation(90*FastMath.DEG_TO_RAD);
 		chaseCam.setDefaultVerticalRotation(0f);
 		cam.setFrustumFar(36000f);
-		float aspect = (float)cam.getWidth() / (float)cam.getHeight();
+		float aspect = cam.getWidth() / (float)cam.getHeight();
 		cam.setFrustumPerspective( 45f, aspect, 0.1f, cam.getFrustumFar() );
 		chaseCam.setUpVector(Vector3f.UNIT_Y);
 	}
