@@ -19,6 +19,12 @@ Recent builds can be downloaded from:
 
 https://jmonkeyengine.github.io/wiki/jme3/contributions/tonegodgui.html
 
+## 2017 YouTube videos by Charles Anderson
+
+# https://www.youtube.com/watch?v=9qZVJhqvvVI Quickstart
+# https://www.youtube.com/watch?v=moPwAZ-3s34 Skinning
+# https://www.youtube.com/watch?v=yj_CL9YbXdo Elements in 3D ... Holopanels!
+
 ## open-source tests
 
 https://github.com/meltzow/tonegodgui-test (January 2016)
