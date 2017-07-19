@@ -362,7 +362,7 @@ public abstract class ChatBoxExt extends Panel {
 	 * @param msg The String message to display
 	 */
 	public void receiveMsg(Object command, String msg) {
-		ChatChannel channel = null;
+		ChatChannel channel;
 		if (command instanceof String)
 			channel = getChannelByStringCommand((String)command);
 		else
@@ -635,7 +635,6 @@ public abstract class ChatBoxExt extends Panel {
 		boolean init = true;
 		String finalString = "";
 		float currentHeight = 0;
-		int index = 0;
 
 		filterLineHeight = BitmapTextUtil.getTextLineHeight(scrollableArea, "Xg");
 
@@ -656,7 +655,7 @@ public abstract class ChatBoxExt extends Panel {
 		scrollableArea.setWidth(getWidth());
 		scrollableArea.setText(finalString);
 
-		index = 0;
+		int index = 0;
 		for (ChatChannel channel : channels) {
 				this.addCheckBox(index, channel);
 				index++;

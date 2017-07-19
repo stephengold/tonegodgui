@@ -164,7 +164,7 @@ public abstract class Indicator extends Element {
 				if (def == null) def = elIndicator.getClippingDefine(elIndicator);
 				
 				if (getIsVisible()) {
-					float clipX = 0, clipY = 0, clipW = 0, clipH = 0;
+					float clipX = 0, clipY = 0, clipW, clipH;
 					if (ind.getOrientation() == Indicator.Orientation.HORIZONTAL) {
 						if (reverseDirection) {
 							clipX = def.getElement().getWidth()-ind.getCurrentPercentage();

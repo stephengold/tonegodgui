@@ -423,7 +423,7 @@ public abstract class ComboBox extends TextField {
 		if (validateListSize()) {
 			if (evt.getKeyCode() != KeyInput.KEY_UP && evt.getKeyCode() != KeyInput.KEY_DOWN && evt.getKeyCode() != KeyInput.KEY_RETURN) {
 				int miIndexOf = 0;
-				int strIndex = -1;
+				int strIndex;
 				for (MenuItem mi : DDList.getMenuItems()) {
 					strIndex = mi.getCaption().toLowerCase().indexOf(text.toLowerCase());
 					if (strIndex == 0) {

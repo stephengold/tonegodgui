@@ -191,7 +191,7 @@ public abstract class Slider extends ButtonAdapter {
 				if (slider.trackSurroundsThumb) nextY -= controlSize/2;
 				
 				if (isStepped) {
-					int index = 0;
+					int index;
 					if (slider.orientation == Slider.Orientation.HORIZONTAL) {
 						index = Math.round(x/stepSize);
 						x = index*stepSize;
@@ -205,7 +205,7 @@ public abstract class Slider extends ButtonAdapter {
 						slider.setInternalSelectedIndex(index);
 					}
 				} else {
-					int percent = 0;
+					int percent;
 					if (slider.orientation == Slider.Orientation.HORIZONTAL) {
 						if (slider.trackSurroundsThumb) 
 							percent = (int)((nextX/(slider.getWidth()-controlSize-1))*100);

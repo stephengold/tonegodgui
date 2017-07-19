@@ -76,7 +76,7 @@ public class Keyboard extends Panel {
 		float nY = nHeight+10;
 		float xGap = 10;
 		
-		KeyboardKey key = null;
+		KeyboardKey key;
 		Style keyboard = screen.getStyle("Keyboard");
 		
 		for (int r = 0; r < 2; r++) {
@@ -306,7 +306,7 @@ public class Keyboard extends Panel {
 			) {
 				@Override
 				public void onButtonMouseLeftDown(MouseButtonEvent evt, boolean isToggled) {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					if (symbol) {
 						nEvt = new KeyInputEvent(symbolKeyCode, symbolCharacter, true, false);
 					} else if (shift) {
@@ -319,7 +319,7 @@ public class Keyboard extends Panel {
 				}
 				@Override
 				public void onButtonMouseLeftUp(MouseButtonEvent evt, boolean isToggled) {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					if (symbol) {
 						nEvt = new KeyInputEvent(symbolKeyCode, symbolCharacter, false, false);
 					} else if (shift) {
@@ -332,7 +332,7 @@ public class Keyboard extends Panel {
 				}
 				@Override
 				public void onButtonStillPressedInterval() {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					if (symbol) {
 						nEvt = new KeyInputEvent(symbolKeyCode, symbolCharacter, true, false);
 					} else if (shift) {
@@ -391,21 +391,21 @@ public class Keyboard extends Panel {
 			) {
 				@Override
 				public void onButtonMouseLeftDown(MouseButtonEvent evt, boolean isToggled) {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					nEvt = new KeyInputEvent(KeyInput.KEY_BACK, symbolCharacter, true, false);
 					nEvt.setTime(System.currentTimeMillis());
 					screen.onKeyEvent(nEvt);
 				}
 				@Override
 				public void onButtonMouseLeftUp(MouseButtonEvent evt, boolean isToggled) {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					nEvt = new KeyInputEvent(KeyInput.KEY_BACK, symbolCharacter, false, false);
 					nEvt.setTime(System.currentTimeMillis());
 					screen.onKeyEvent(nEvt);
 				}
 				@Override
 				public void onButtonStillPressedInterval() {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					nEvt = new KeyInputEvent(KeyInput.KEY_BACK, symbolCharacter, true, false);
 					nEvt.setTime(System.currentTimeMillis());
 					screen.onKeyEvent(nEvt);
@@ -425,21 +425,21 @@ public class Keyboard extends Panel {
 			) {
 				@Override
 				public void onButtonMouseLeftDown(MouseButtonEvent evt, boolean isToggled) {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					nEvt = new KeyInputEvent(KeyInput.KEY_S, ' ', true, false);
 					nEvt.setTime(System.currentTimeMillis());
 					screen.onKeyEvent(nEvt);
 				}
 				@Override
 				public void onButtonMouseLeftUp(MouseButtonEvent evt, boolean isToggled) {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					nEvt = new KeyInputEvent(KeyInput.KEY_S, ' ', false, false);
 					nEvt.setTime(System.currentTimeMillis());
 					screen.onKeyEvent(nEvt);
 				}
 				@Override
 				public void onButtonStillPressedInterval() {
-					KeyInputEvent nEvt = null;
+					KeyInputEvent nEvt;
 					nEvt = new KeyInputEvent(KeyInput.KEY_S, ' ', true, false);
 					nEvt.setTime(System.currentTimeMillis());
 					screen.onKeyEvent(nEvt);

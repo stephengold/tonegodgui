@@ -160,8 +160,7 @@ public class LayoutHelper {
 		
 		float	nextX = 0,
 				nextY = 0,
-				ratioX = 0,
-				ratioY = 0;
+				ratioX;
 		
 		switch (xQuad) {
 			case 0:
@@ -177,6 +176,7 @@ public class LayoutHelper {
 				nextX = (quad.x*xQuad)+(quad.x*ratioX)-el.getWidth();
 				break;
 		}
+                float   ratioY;
 		switch (yQuad) {
 			case 0:
 				ratioY	= (Y-(prevQuad.y*yQuad))/prevQuad.y;

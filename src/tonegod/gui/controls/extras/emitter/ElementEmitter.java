@@ -333,14 +333,12 @@ public class ElementEmitter implements Control, Transformable {
 	public boolean getIsEnabled() { return this.isEnabled; }
 	
 	private void emitNextParticle(int numParticles) {
-		boolean particleEmitted = false;
 		for (ElementParticle p : quads) {
-			if (!p.particle.getIsVisible() && !particleEmitted) {
+			if (!p.particle.getIsVisible()) {
 				p.initialize(false);
 				activeParticleCount++;
 				numParticles--;
 				if (numParticles == 0) {
-					particleEmitted = true;
 					break;
 				}
 			}

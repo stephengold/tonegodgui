@@ -43,7 +43,7 @@ public class FlowLayout extends AbstractLayout {
 			float padRight = (pad == null) ? 0 : (Float)pad.getValues().get("right").getValue();
 			float padBottom = (pad == null) ? 0 : (Float)pad.getValues().get("bottom").getValue();
 			
-			boolean advanceY = false;
+			boolean advanceY;
 			
 			if (lastEl != null) {
 				advanceY = (lastEl.getLayoutHints().get("wrap") == null) ? false : true;
@@ -73,7 +73,7 @@ public class FlowLayout extends AbstractLayout {
 			el.setY(owner.getHeight()-el.getY()-el.getHeight());
 			
 			if (fillx) {
-				float resizeW = 0;
+				float resizeW;
 				if (fillx)	resizeW = el.getAbsoluteX()+(owner.getWidth()-margins.x);
 				else		resizeW = el.getWidth();
 				el.resize(

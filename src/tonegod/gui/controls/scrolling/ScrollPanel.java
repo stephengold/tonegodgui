@@ -290,8 +290,7 @@ public class ScrollPanel extends Element {
 				hShow = false;
 		boolean vResize = false,
 				hResize = false;
-		boolean vDir = true,
-				hDir = true;
+		boolean hDir = true;
 		
 		if (verticalWrap) {
 			if (scrollableArea.getTextElement() != null) {
@@ -308,6 +307,7 @@ public class ScrollPanel extends Element {
 			scrollToTop();
 		}
 		
+		boolean vDir;
 		if (getHeight() < scrollableArea.getHeight()) {
 			if (innerBounds.getWidth() == getWidth())
 				vResize = true;

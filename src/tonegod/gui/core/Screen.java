@@ -851,7 +851,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 		if (!useMultiTouch) {
 			setMouseXY(evt.getX(),evt.getY());
 
-			EventCheckType check = null;
+			EventCheckType check;
 			if (evt.getButtonIndex() == 0)
 				check = EventCheckType.MouseLeft;
 			else if (evt.getButtonIndex() == 1)

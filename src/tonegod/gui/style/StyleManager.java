@@ -124,8 +124,6 @@ public class StyleManager {
 			
 			parseStyleDefs(docPaths);
 			docPaths.clear();
-			docPaths = null;
-			doc = null;
 		} catch (Exception e) {
 			System.err.println("Problem loading style map: " + e);
 		}

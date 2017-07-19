@@ -197,12 +197,9 @@ public class AnimText extends AnimElement {
 	
 	private String stripTags(String text) {
 		tags.clear();
-		int sIndex = 0, eIndex = 0;
-		
-		sIndex = text.indexOf('<');
-		int lineIndex = 0;
+		int sIndex = text.indexOf('<');
 		while (sIndex > -1) {
-			eIndex = text.indexOf('>');
+			int eIndex = text.indexOf('>');
 			if (eIndex > -1) {
 				String tagName = text.substring(sIndex, eIndex+1);
 				TagType type = getTagType(tagName);

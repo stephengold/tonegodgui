@@ -955,7 +955,7 @@ public class Element extends Node {
 	public void setDockN(boolean dockN) {
 		this.dockS = dockN;
 		this.dockN = !dockN;
-		Docking d = null;
+		Docking d;
 		if (dockS) {
 			if (dockE)	d = Docking.NE;
 			else		d = Docking.NW;
@@ -985,7 +985,7 @@ public class Element extends Node {
 	public void setDockW(boolean dockW) {
 		this.dockW = dockW;
 		this.dockE = !dockW;
-		Docking d = null;
+		Docking d;
 		if (dockE) {
 			if (dockS)	d = Docking.NE;
 			else		d = Docking.SE;
@@ -1015,7 +1015,7 @@ public class Element extends Node {
 	public void setDockE(boolean dockE) {
 		this.dockE = dockE;
 		this.dockW = !dockE;
-		Docking d = null;
+		Docking d;
 		if (dockE) {
 			if (dockS)	d = Docking.NE;
 			else		d = Docking.SE;
@@ -1045,7 +1045,7 @@ public class Element extends Node {
 	public void setDockS(boolean dockS) {
 		this.dockN = dockS;
 		this.dockS = !dockS;
-		Docking d = null;
+		Docking d;
 		if (dockS) {
 			if (dockE)	d = Docking.NE;
 			else		d = Docking.NW;
@@ -2381,7 +2381,7 @@ public class Element extends Node {
 	 * @param alphaMap A String path to the alpha map
 	 */
 	public void setAlphaMap(String alphaMap) {
-		Texture alpha = null;
+		Texture alpha;
 		if (screen.getUseTextureAtlas() && !useLocalTexture) {
 			if (this.getElementTexture() != null)	alpha = getElementTexture();
 			else									alpha = screen.getAtlasTexture();
@@ -2434,7 +2434,7 @@ public class Element extends Node {
 	}
 	
 	public void setColorMap(String colorMap) {
-		Texture color = null;
+		Texture color;
 		if (screen.getUseTextureAtlas() && !useLocalTexture) {
 			if (this.getElementTexture() != null)	color = getElementTexture();
 			else									color = screen.getAtlasTexture();

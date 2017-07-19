@@ -119,7 +119,6 @@ public class LayoutParser {
                         
                         parseNodeList(nodeLst, null);
                         
-                        doc = null;
                 } catch (Exception e) {
                         e.printStackTrace();
                 }
@@ -271,9 +270,8 @@ public class LayoutParser {
         private Element createElement(Element el, Class c, String id, String pos, String dim, String rsb, String img, String ori, String flag, final NodeList childNodes) {
                 Vector2f position, dimensions;
                 Vector4f resizeBorders;
-                String styleName = "";
                 String className = c.getName().substring(c.getName().lastIndexOf('.')+1);
-                styleName = className;
+                String styleName = className;
                 if (className.equals("ComboBox")) styleName = "TextField";
                 if (className.equals("TabControl") ||
                         className.equals("LoginBox") ||
@@ -1052,7 +1050,7 @@ public class LayoutParser {
                                         }
                                         String audioFile = XMLHelper.getNodeAttributeValue(childNode, "audioFile");
                                         if (!audioFile.equals("")) effect.setAudioFile(audioFile);
-                                        float audioVolume = 1;
+                                        float audioVolume;
                                         try { audioVolume = Float.parseFloat(XMLHelper.getNodeAttributeValue(childNode, "volume")); } catch (Exception exa) { audioVolume = 1; }
                                         effect.setAudioVolume(audioVolume);
                                         
