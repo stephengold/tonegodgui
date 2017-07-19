@@ -18,12 +18,6 @@ dependencies {
     compile "org.jmonkeyengine:jme3-core:3.1.0-stable"
 }
 
-sourceSets {
-    main {
-        java { srcDir 'src'}
-    }
-}
-
 // custom tasks for creating source/javadoc jars
 task sourcesJar(type: Jar, dependsOn: classes, description: 'Create a jar of source files.') {
     classifier = 'sources'
