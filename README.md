@@ -21,9 +21,10 @@ https://jmonkeyengine.github.io/wiki/jme3/contributions/tonegodgui.html
 
 ## 2017 YouTube videos by Charles Anderson
 
-# https://www.youtube.com/watch?v=9qZVJhqvvVI Quickstart
-# https://www.youtube.com/watch?v=moPwAZ-3s34 Skinning
-# https://www.youtube.com/watch?v=yj_CL9YbXdo Elements in 3D ... Holopanels!
+* https://www.youtube.com/watch?v=9qZVJhqvvVI Quickstart
+* https://www.youtube.com/watch?v=moPwAZ-3s34 Skinning
+* https://www.youtube.com/watch?v=yj_CL9YbXdo GUI elements on 3D surfaces
+* https://www.youtube.com/watch?v=Udt4rE744vc Table, ChatBox, LoginBox, etcetera
 
 ## open-source tests
 
