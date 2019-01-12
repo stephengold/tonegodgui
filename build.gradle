@@ -9,6 +9,16 @@ version = '0.1.1'
 //sourceCompatibility = '1.7'
 sourceCompatibility = '1.8'
 
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        // compile-time options:
+        options.compilerArgs << '-Xdiags:verbose'
+        options.compilerArgs << '-Xlint:unchecked'
+        //options.deprecation = true
+        options.encoding = 'UTF-8'
+    }
+}
+
 repositories {
     //maven { url 'https://dl.bintray.com/jmonkeyengine/com.jme3' }
     maven { url 'https://jcenter.bintray.com' }
@@ -18,7 +28,8 @@ dependencies {
     //compile 'com.jme3:jme3-core:3.0.10'
     //compile 'org.jmonkeyengine:jme3-core:3.1.0-stable'
     //compile 'org.jmonkeyengine:jme3-core:3.2.0-stable'
-    compile 'org.jmonkeyengine:jme3-core:3.2.1-stable'
+    //compile 'org.jmonkeyengine:jme3-core:3.2.1-stable'
+    compile 'org.jmonkeyengine:jme3-core:3.2.2-stable'
 }
 
 // custom tasks for creating source/javadoc jars
@@ -31,6 +42,7 @@ task javadocJar(type: Jar, dependsOn: javadoc, description: 'Create a jar of jav
     from javadoc.destinationDir
 }
 
+build.dependsOn('pom')
 task pom {
     doLast {
         pom {
@@ -48,17 +60,8 @@ task pom {
         }.writeTo("${buildDir}/libs/tonegodgui-0.1.1.pom")
     }
 }
-build { dependsOn 'pom' }
 
 // add javadoc/source jar tasks as artifacts
 artifacts {
     archives sourcesJar, javadocJar
-}
-
-gradle.projectsEvaluated {
-    tasks.withType(JavaCompile) {
-        // compile-time options:
-        options.compilerArgs << "-Xlint:unchecked"
-        //options.deprecation = true
-    }
 }
