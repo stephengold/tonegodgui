@@ -29,7 +29,8 @@ dependencies {
     //compile 'org.jmonkeyengine:jme3-core:3.1.0-stable'
     //compile 'org.jmonkeyengine:jme3-core:3.2.0-stable'
     //compile 'org.jmonkeyengine:jme3-core:3.2.1-stable'
-    compile 'org.jmonkeyengine:jme3-core:3.2.2-stable'
+    //compile 'org.jmonkeyengine:jme3-core:3.2.2-stable'
+    compile 'org.jmonkeyengine:jme3-core:3.2.3-stable'
 }
 
 // custom tasks for creating source/javadoc jars
