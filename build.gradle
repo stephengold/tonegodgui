@@ -1,5 +1,7 @@
-apply plugin: 'java'
-apply plugin: 'maven'
+plugins {
+    id 'java-library'
+    id 'maven'
+}
 
 description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine'
 group = 'tonegod'
@@ -24,12 +26,7 @@ repositories {
 }
 
 dependencies {
-    //compile 'com.jme3:jme3-core:3.0.10'
-    //compile 'org.jmonkeyengine:jme3-core:3.1.0-stable'
-    //compile 'org.jmonkeyengine:jme3-core:3.2.0-stable'
-    //compile 'org.jmonkeyengine:jme3-core:3.2.1-stable'
-    //compile 'org.jmonkeyengine:jme3-core:3.2.2-stable'
-    compile 'org.jmonkeyengine:jme3-core:3.2.3-stable'
+    api 'org.jmonkeyengine:jme3-core:3.2.3-stable'
 }
 
 // custom tasks for creating source/javadoc jars
