@@ -1,6 +1,6 @@
 plugins {
     id 'java-library'
-    id 'maven'
+    id 'maven-publish'
 }
 
 description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine'
@@ -43,21 +43,29 @@ task javadocJar(type: Jar) {
 }
 
 build.dependsOn('pom')
-task pom {
-    doLast {
-        pom {
-            project {
-                artifactId 'tonegodgui'
+task('pom', type: Copy) {
+    dependsOn 'generatePomFileForMavenPublication'
+    from "${buildDir}/publications/maven/pom-default.xml"
+    into "${buildDir}/libs"
+    rename '.*', 'tonegodgui-0.1.2.pom'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId 'tonegodgui'
+            from components.java
+            pom {
                 licenses {
                     license {
-                        distribution 'repo'
-                        name 'FreeBSD License'
-                        url 'https://opensource.org/licenses/BSD-2-Clause'
+                        distribution = 'repo'
+                        name = 'FreeBSD License'
+                        url = 'https://opensource.org/licenses/BSD-2-Clause'
                     }
                 }
-                version '0.1.2'
             }
-        }.writeTo("${buildDir}/libs/tonegodgui-0.1.2.pom")
+            version '0.1.2'
+        }
     }
 }
 
