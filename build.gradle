@@ -7,9 +7,8 @@ description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine'
 group = 'tonegod'
 version = '0.1.2'
 
-// select one source-code option
 sourceCompatibility = '1.7'
-//sourceCompatibility = '1.8'
+targetCompatibility = '1.7'
 
 gradle.projectsEvaluated {
     tasks.withType(JavaCompile) { // compile-time options:
@@ -21,21 +20,25 @@ gradle.projectsEvaluated {
 }
 
 repositories {
-    //maven { url 'https://dl.bintray.com/jmonkeyengine/com.jme3' }
-    maven { url 'https://jcenter.bintray.com' }
+    //mavenLocal()
+    jcenter()
 }
 
 dependencies {
     api 'org.jmonkeyengine:jme3-core:3.2.3-stable'
 }
 
-// custom tasks for creating source/javadoc jars
-task sourcesJar(type: Jar, dependsOn: classes, description: 'Create a jar of source files.') {
+// custom tasks for creating source/javadoc JARs
+task sourcesJar(type: Jar) {
     classifier = 'sources'
+    dependsOn 'classes'
+    description 'Create a JAR of source files.'
     from sourceSets.main.allJava
 }
-task javadocJar(type: Jar, dependsOn: javadoc, description: 'Create a jar of javadoc.') {
+task javadocJar(type: Jar) {
     classifier = 'javadoc'
+    dependsOn 'javadoc'
+    description 'Create a JAR of javadoc.'
     from javadoc.destinationDir
 }
 
@@ -60,5 +63,5 @@ task pom {
 
 // add javadoc/source jar tasks as artifacts
 artifacts {
-    archives sourcesJar, javadocJar
+    archives jar, sourcesJar, javadocJar
 }
