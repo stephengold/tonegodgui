@@ -8,7 +8,7 @@ This project's repository (at https://github.com/stephengold/tonegodgui)
 was forked from https://github.com/meltzow/tonegodgui
 which was exported from https://code.google.com/p/tonegodgui
 
-The project currently targets jMonkeyEngine 3.2.2 and JDK 1.8.
+The project currently targets jMonkeyEngine 3.2.4 and JDK 1.7.
 
 ## releases
 
@@ -40,6 +40,7 @@ Also here:  https://sourceforge.net/projects/tonegodemitter/files (June 2014)
 
 ## other known versions/forks
 
+* https://github.com/ihmcrobotics/tonegodgui (October 2019)
 * https://github.com/marianne-butaye/tonegodgui (May 2017)
 * https://github.com/jPonyEngine/tonegodgui (January 2017)
 * https://github.com/JavaSaBr/tonegodgui (June 2016)
