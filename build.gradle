@@ -23,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    api 'org.jmonkeyengine:jme3-core:3.2.4-stable'
+    api 'org.jmonkeyengine:jme3-core:3.3.2-stable'
 }
 
 // custom tasks for creating source/javadoc JARs
