@@ -1,3 +1,5 @@
+// Gradle build script for tonegodgui Maven artifacts
+
 plugins {
     id 'java-library'
     id 'maven-publish'
@@ -10,11 +12,8 @@ version = '0.1.3'
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
 
-tasks.withType(JavaCompile) { // compile-time options:
-    options.compilerArgs << '-Xdiags:verbose'
-    options.compilerArgs << '-Xlint:unchecked'
-    //options.deprecation = true
-    options.encoding = 'UTF-8'
+dependencies {
+    api 'org.jmonkeyengine:jme3-core:3.3.2-stable'
 }
 
 repositories {
@@ -22,22 +21,26 @@ repositories {
     jcenter()
 }
 
-dependencies {
-    api 'org.jmonkeyengine:jme3-core:3.3.2-stable'
+tasks.withType(JavaCompile) { // compile-time options:
+    options.compilerArgs << '-Xdiags:verbose'
+    options.compilerArgs << '-Xlint:unchecked'
+    //options.deprecation = true
+    options.encoding = 'UTF-8'
 }
 
 // custom tasks for creating source/javadoc JARs
-task sourcesJar(type: Jar) {
-    classifier = 'sources'
-    dependsOn 'classes'
-    description 'Create a JAR of source files.'
-    from sourceSets.main.allJava
-}
 task javadocJar(type: Jar) {
     classifier = 'javadoc'
     dependsOn 'javadoc'
     description 'Create a JAR of javadoc.'
     from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    dependsOn 'classes'
+    description 'Create a JAR of sourcecode.'
+    from sourceSets.main.allJava
 }
 
 build.dependsOn('pom')
