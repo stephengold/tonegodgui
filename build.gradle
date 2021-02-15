@@ -22,7 +22,7 @@ dependencies {
 
 repositories {
     //mavenLocal()
-    jcenter()
+    mavenCentral()
 }
 
 tasks.withType(JavaCompile) { // compile-time options:
