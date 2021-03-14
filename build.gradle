@@ -75,6 +75,13 @@ publishing {
             from components.java
             groupId 'com.github.stephengold'
             pom {
+                description = project.description
+                developers {
+                    developer {
+                        name = 'Cris aka "t0neg0d"'
+                    }
+                }
+                inceptionYear = '2012'
                 licenses {
                     license {
                         distribution = 'repo'
@@ -82,6 +89,13 @@ publishing {
                         url = 'https://opensource.org/licenses/BSD-2-Clause'
                     }
                 }
+                name = 'com.github.stephengold:' + artifact
+                scm {
+                    connection = 'scm:git:git://github.com/stephengold/tonegodgui.git'
+                    developerConnection = 'scm:git:ssh://github.com:stephengold/tonegodgui.git'
+                    url = 'https://github.com/stephengold/tonegodgui/tree/master'
+                }
+                url = 'https://github.com/stephengold/tonegodgui'
             }
             version project.ext.version
         }
