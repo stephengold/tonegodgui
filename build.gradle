@@ -17,13 +17,13 @@ description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine'
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
 
-dependencies {
-    api 'org.jmonkeyengine:jme3-core:3.3.2-stable'
-}
-
 repositories {
     //mavenLocal()
     mavenCentral()
+}
+
+dependencies {
+    api 'org.jmonkeyengine:jme3-core:3.3.2-stable'
 }
 
 tasks.withType(JavaCompile) { // compile-time options:
