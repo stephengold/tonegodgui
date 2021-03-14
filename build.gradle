@@ -71,6 +71,8 @@ task('pomAsc', type: Copy) {
 publishing {
     publications {
         maven(MavenPublication) {
+            artifact javadocJar
+            artifact sourcesJar
             artifactId artifact
             from components.java
             groupId 'com.github.stephengold'
@@ -100,6 +102,9 @@ publishing {
             version project.ext.version
         }
     }
+}
+publishToMavenLocal.doLast {
+    println 'published to ' + baseName
 }
 
 signing {
