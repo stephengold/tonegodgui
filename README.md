@@ -15,11 +15,11 @@ The project currently targets jMonkeyEngine 3.3.2 and JDK 1.7.
 Recent builds can be downloaded from:
 
 * https://github.com/stephengold/tonegodgui/releases
-* https://bintray.com/stephengold/tonegod/tonegodgui
+* https://repo1.maven.org/maven2/com/github/stephengold/tonegodgui
 
 ## documentation
 
-https://jmonkeyengine.github.io/wiki/jme3/contributions/tonegodgui.html
+https://wiki.jmonkeyengine.org/docs/3.3/contributions/gui/tonegodgui/tonegodgui.html
 
 ## 2017 YouTube videos by Charles Anderson
 
