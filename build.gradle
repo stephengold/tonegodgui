@@ -73,7 +73,7 @@ publishing {
         maven(MavenPublication) {
             artifactId artifact
             from components.java
-            groupId 'tonegod'
+            groupId 'com.github.stephengold'
             pom {
                 licenses {
                     license {
