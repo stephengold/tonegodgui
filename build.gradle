@@ -7,12 +7,14 @@ plugins {
 }
 
 ext {
+    group = 'com.github.stephengold'
     artifact = 'tonegodgui'
     version = '0.1.6-SNAPSHOT'
     baseName = "${artifact}-${version}"
+    jme3Version='3.3.2-stable'
 }
 
-description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine'
+description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine.'
 
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
@@ -23,7 +25,7 @@ repositories {
 }
 
 dependencies {
-    api 'org.jmonkeyengine:jme3-core:3.3.2-stable'
+    api 'org.jmonkeyengine:jme3-core:' + jme3Version
 }
 
 tasks.withType(JavaCompile) { // compile-time options:
@@ -76,7 +78,7 @@ publishing {
             artifact sourcesJar
             artifactId artifact
             from components.java
-            groupId 'com.github.stephengold'
+            groupId project.ext.group
             pom {
                 description = project.description
                 developers {
@@ -92,7 +94,7 @@ publishing {
                         url = 'https://opensource.org/licenses/BSD-2-Clause'
                     }
                 }
-                name = 'com.github.stephengold:' + artifact
+                name = project.ext.group + ':' + artifact
                 scm {
                     connection = 'scm:git:git://github.com/stephengold/tonegodgui.git'
                     developerConnection = 'scm:git:ssh://github.com:stephengold/tonegodgui.git'
