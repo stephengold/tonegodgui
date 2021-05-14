@@ -8,8 +8,8 @@ plugins {
 
 ext {
     artifact = 'tonegodgui'
-    version = '0.1.5'
-    baseName = "$artifact-$version"
+    version = '0.1.6-SNAPSHOT'
+    baseName = "${artifact}-${version}"
 }
 
 description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine'
@@ -33,7 +33,8 @@ tasks.withType(JavaCompile) { // compile-time options:
     options.encoding = 'UTF-8'
 }
 
-// custom tasks for creating source/javadoc JARs
+// publishing tasks
+
 jar {
     archiveBaseName = project.ext.baseName
 }
@@ -117,6 +118,8 @@ generateMetadataFileForMavenPublication.dependsOn('pom')
 publishToMavenLocal.doLast {
     println 'published to ' + baseName
 }
+
+// signing tasks
 
 signing {
     sign publishing.publications.maven
