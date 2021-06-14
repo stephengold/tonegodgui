@@ -9,7 +9,7 @@ plugins {
 ext {
     group = 'com.github.stephengold'
     artifact = 'tonegodgui'
-    version = '0.1.6-SNAPSHOT'
+    version = '0.1.6'
     baseName = "${artifact}-${version}"
     jme3Version='3.4.0-stable'
 }
