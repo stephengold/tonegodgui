@@ -435,7 +435,7 @@ public abstract class Dial extends ButtonAdapter {
 		else if (currentAngle > (180-endGap))
 			currentAngle = (180-endGap);
 		
-		float angle = Float.valueOf(currentAngle);
+		float angle = currentAngle;
 		
 		angle = getStepAngle(angle);
 		

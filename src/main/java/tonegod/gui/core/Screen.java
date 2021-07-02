@@ -619,7 +619,7 @@ public class Screen implements ElementManager, Control, RawInputListener {
 				}
 			}
 		}
-		topMost.setLocalTranslation(topMost.getLocalTranslation().setZ(Float.valueOf(zOrderCurrent)));
+		topMost.setLocalTranslation(topMost.getLocalTranslation().setZ(zOrderCurrent));
 	}
 	
 	/**

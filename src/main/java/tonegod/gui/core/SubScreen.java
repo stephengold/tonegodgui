@@ -397,7 +397,7 @@ public class SubScreen implements ElementManager, Control {
 				}
 			}
 		}
-		topMost.setLocalTranslation(topMost.getLocalTranslation().setZ(Float.valueOf(zOrderCurrent)));
+		topMost.setLocalTranslation(topMost.getLocalTranslation().setZ(zOrderCurrent));
 	}
 	
 	/**
