@@ -1,4 +1,4 @@
-<img height="399" src="https://i.imgur.com/eEUqt50.png">
+<img height="399" src="https://i.imgur.com/eEUqt50.png" alt="Tonegodgui logo">
 
 # tonegodgui project
 
