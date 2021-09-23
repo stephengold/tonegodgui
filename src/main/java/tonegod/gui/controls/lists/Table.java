@@ -45,7 +45,7 @@ import tonegod.gui.listeners.TabFocusListener;
  * </ul>
  * <p>
  * Cells are either strings, or you may use any {@link Element}.
- * <h1>Example of a simple Table using string cells</h1>
+ * <h2>Example of a simple Table using string cells</h2>
  * <code>
  * Panel panel = new Panel(screen, "Panel",
  *          new Vector2f(8, 8), new Vector2f(372f, 300));
@@ -69,7 +69,7 @@ import tonegod.gui.listeners.TabFocusListener;
  * panel.addChild(table);
  * </code>
  *
- * <h1>Example of a Tree Table</h1>
+ * <h2>Example of a Tree Table</h2>
  * <p>
  * To configure as a <i>Tree Table</i> features, you need set a row as NOT being a 'leaf', and then
  * add child rows to the other rows :-
@@ -97,7 +97,7 @@ import tonegod.gui.listeners.TabFocusListener;
  *     childRow.addRow(childRow);
  * </code>
  * 
- * <h1>Example of a Tree</h1>
+ * <h2>Example of a Tree</h2>
  * <p>
  * To configure as a <i>Tree</i> , it is much the same as a Tree Table,
  * except just add a single column, and hide the headers. :-
@@ -120,7 +120,7 @@ import tonegod.gui.listeners.TabFocusListener;
  *     childRow.addRow(childRow);
  * </code>
  * 
- * <h1>Example of a List</h1>
+ * <h2>Example of a List</h2>
  * <p>
  * As an alternative to the building in lists, you can use this control, turn off
  * the headers and add on a single column, to a single depth. :-
