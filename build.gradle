@@ -1,4 +1,4 @@
-// Gradle build script for tonegodgui Maven artifacts
+// Gradle build script for the tonegodgui project
 
 plugins {
     id 'java-library'
@@ -12,6 +12,7 @@ ext {
     version = '0.1.7-SNAPSHOT'
     baseName = "${artifact}-${version}"
     jme3Version='3.4.0-stable'
+    websiteUrl = 'https://github.com/stephengold/tonegodgui'
 }
 
 description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine.'
@@ -100,9 +101,9 @@ publishing {
                 scm {
                     connection = 'scm:git:git://github.com/stephengold/tonegodgui.git'
                     developerConnection = 'scm:git:ssh://github.com:stephengold/tonegodgui.git'
-                    url = 'https://github.com/stephengold/tonegodgui/tree/master'
+                    url = project.ext.websiteUrl + '/tree/master'
                 }
-                url = 'https://github.com/stephengold/tonegodgui'
+                url = project.ext.websiteUrl
             }
             version project.ext.version
         }
