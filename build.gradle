@@ -139,5 +139,5 @@ signing {
     sign publishing.publications.maven
 }
 tasks.withType(Sign) {
-    onlyIf { rootProject.hasProperty('signing.keyId') }
+    onlyIf { project.hasProperty('signing.keyId') }
 }
