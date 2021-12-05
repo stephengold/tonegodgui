@@ -12,7 +12,7 @@ ext {
     artifact = 'tonegodgui'
     version = '0.1.7-SNAPSHOT'
     baseName = "${artifact}-${version}" // for POM and class JAR
-    jme3Version='3.4.0-stable'
+    jme3Version='3.4.1-stable'
     websiteUrl = 'https://github.com/stephengold/tonegodgui'
 }
 
