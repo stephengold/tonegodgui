@@ -46,7 +46,7 @@ import tonegod.gui.listeners.TabFocusListener;
  * <p>
  * Cells are either strings, or you may use any {@link Element}.
  * <h2>Example of a simple Table using string cells</h2>
- * <code>
+ * {@code
  * Panel panel = new Panel(screen, "Panel",
  *          new Vector2f(8, 8), new Vector2f(372f, 300));
  *
@@ -67,14 +67,14 @@ import tonegod.gui.listeners.TabFocusListener;
  *     table.addRow(row);
  * }
  * panel.addChild(table);
- * </code>
+ * }
  *
  * <h2>Example of a Tree Table</h2>
  * <p>
  * To configure as a <i>Tree Table</i> features, you need set a row as NOT being a 'leaf', and then
  * add child rows to the other rows :-
  * 
- * <code>
+ * {@code
  *     final Table table = new TreeTable(screen, new Vector2f(10, 40)) {
  *         public void onChange() {
  *         }
@@ -95,14 +95,14 @@ import tonegod.gui.listeners.TabFocusListener;
  *     childRow.addCell("Bb", "22");
  *     childRow.addCell("CC", "33");
  *     childRow.addRow(childRow);
- * </code>
+ * }
  * 
  * <h2>Example of a Tree</h2>
  * <p>
  * To configure as a <i>Tree</i> , it is much the same as a Tree Table,
  * except just add a single column, and hide the headers. :-
  * 
- * <code>
+ * {@code
  *     final Table table = new Table(screen, new Vector2f(10, 40)) {
  *         public void onChange() {
  *         }
@@ -118,14 +118,14 @@ import tonegod.gui.listeners.TabFocusListener;
  *     Table.TableRow childRow = new Table.TableRow(screen, table);
  *     childRow.addCell("AA", "11");
  *     childRow.addRow(childRow);
- * </code>
+ * }
  * 
  * <h2>Example of a List</h2>
  * <p>
  * As an alternative to the building in lists, you can use this control, turn off
  * the headers and add on a single column, to a single depth. :-
  * 
- * <code>
+ * {@code
  *     final Table table = new Table(screen, new Vector2f(10, 40)) {
  *         public void onChange() {
  *         }
@@ -140,7 +140,7 @@ import tonegod.gui.listeners.TabFocusListener;
  *     Table.TableRow row2 = new Table.TableRow(screen, table); 
  *     parentRow.addCell("B", "2");
  *     table.addRow(row2);
- * </code>
+ * }
  *
  * @author rockfire
  * @author t0neg0d
@@ -1133,7 +1133,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Get the co-ordinates of the first selected cell. First element in array is the row,
      * the second is the column.
-     * <code>null</code> will be returned if nothing is selected.
+     * {@code null} will be returned if nothing is selected.
      *
      * @return first selected cell
      */
@@ -1152,7 +1152,7 @@ public abstract class Table extends ScrollArea implements MouseMovementListener,
     /**
      * Get the co-ordinates of the last selected cell. First element in array is the row,
      * the second is the column.
-     * <code>null</code> will be returned if nothing is selected.
+     * {@code null} will be returned if nothing is selected.
      *
      * @return first selected cell
      */
