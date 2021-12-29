@@ -90,7 +90,7 @@ public class Password extends TextField {
 			maskedText += String.valueOf(mask);
 		}
 		
-		widthTest = new BitmapText(font, false);
+		widthTest = new BitmapText(font);
 		widthTest.setBox(null);
 		widthTest.setSize(getFontSize());
 		

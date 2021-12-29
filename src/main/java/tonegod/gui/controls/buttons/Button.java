@@ -773,7 +773,7 @@ public abstract class Button extends Element implements Control, MouseButtonList
 	public void setText(String text) {
 		this.text = text;
 		if (textElement == null) {
-			textElement = new BitmapText(font, false);
+			textElement = new BitmapText(font);
 			textElement.setBox(new Rectangle(0,0,getDimensions().x,getDimensions().y));
 		//	textElement = new TextElement(screen, Vector2f.ZERO);
 		}

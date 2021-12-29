@@ -582,7 +582,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	protected String getVisibleText() {
 		getTextFieldText();
 		
-		widthTest = new BitmapText(font, false);
+		widthTest = new BitmapText(font);
 		widthTest.setBox(null);
 		widthTest.setSize(getFontSize());
 
@@ -996,7 +996,7 @@ public class TextField extends Element implements Control, KeyboardListener, Tab
 	public final void updateText(String text) {
 		this.text = text;
 		if (textElement == null) {
-			textElement = new BitmapText(font, false);
+			textElement = new BitmapText(font);
 			textElement.setBox(new Rectangle(0,0,getDimensions().x,getDimensions().y));
 		//	textElement = new TextElement(screen, Vector2f.ZERO);
 			centerTextVertically();
