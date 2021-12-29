@@ -15,6 +15,7 @@ import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.control.AbstractControl;
 import com.jme3.texture.FrameBuffer;
+import com.jme3.texture.FrameBuffer.FrameBufferTarget;
 import com.jme3.texture.Image;
 import com.jme3.texture.Texture;
 import com.jme3.texture.Texture2D;
@@ -48,10 +49,10 @@ public class OSRBridge extends AbstractControl {
 		tex.setMinFilter(Texture.MinFilter.BilinearNoMipMaps);
 		tex.setMagFilter(Texture.MagFilter.Bilinear);
 
-		if (!Screen.isAndroid())
-			offBuffer.setDepthBuffer(Image.Format.Depth);
-		
-		offBuffer.setColorTexture(tex);
+		if (!Screen.isAndroid()) {
+			offBuffer.setDepthTarget(FrameBufferTarget.newTarget(Image.Format.Depth));
+                }
+		offBuffer.addColorTarget(FrameBufferTarget.newTarget(tex));
 
 		vp.setOutputFrameBuffer(offBuffer);
 		

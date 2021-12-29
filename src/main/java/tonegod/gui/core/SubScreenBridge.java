@@ -46,10 +46,10 @@ public class SubScreenBridge extends AbstractControl {
 		tex.setMinFilter(Texture.MinFilter.BilinearNoMipMaps);
 		tex.setMagFilter(Texture.MagFilter.Bilinear);
 
-		if (!Screen.isAndroid())
-			offBuffer.setDepthBuffer(Image.Format.Depth);
-		
-		offBuffer.setColorTexture(tex);
+		if (!Screen.isAndroid()) {
+			offBuffer.setDepthTarget(FrameBuffer.FrameBufferTarget.newTarget(Image.Format.Depth));
+                }
+		offBuffer.addColorTarget(FrameBuffer.FrameBufferTarget.newTarget(tex));
 
 		vp.setOutputFrameBuffer(offBuffer);
 		
