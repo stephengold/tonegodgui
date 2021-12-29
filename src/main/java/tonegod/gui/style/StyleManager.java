@@ -7,6 +7,7 @@ package tonegod.gui.style;
 import com.jme3.app.Application;
 import com.jme3.asset.AssetKey;
 import com.jme3.asset.AssetNotFoundException;
+import com.jme3.audio.AudioData;
 import com.jme3.audio.AudioNode;
 import com.jme3.cursors.plugins.JmeCursor;
 import com.jme3.math.ColorRGBA;
@@ -179,7 +180,8 @@ public class StyleManager {
 						String key = XMLHelper.getNodeAttributeValue(fstNode, "key");
 						String audioPath = XMLHelper.getNodeAttributeValue(fstNode, "path");
 
-						AudioNode audioNode = new AudioNode(app.getAssetManager(), audioPath, false);
+						AudioNode audioNode = new AudioNode(app.getAssetManager(),
+                                                        audioPath, AudioData.DataType.Buffer);
 						audioNode.setPositional(false);
 						audioNode.setReverbEnabled(false);
 						audioNodes.put(key, audioNode);
