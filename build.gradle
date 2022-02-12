@@ -6,7 +6,6 @@ plugins {
     id 'signing'
 }
 
-description = 'Tonegod\'s graphical user-interface library for jMonkeyEngine.'
 ext {
     group = 'com.github.stephengold'
     artifact = 'tonegodgui'
