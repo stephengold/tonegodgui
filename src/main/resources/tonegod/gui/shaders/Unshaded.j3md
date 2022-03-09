@@ -31,8 +31,8 @@ MaterialDef Unshaded {
     }
 
     Technique {
-        VertexShader GLSL100:   tonegod/gui/shaders/Unshaded.vert
-        FragmentShader GLSL100: tonegod/gui/shaders/Unshaded.frag
+        VertexShader GLSL100 GLSL150:   tonegod/gui/shaders/Unshaded.vert
+        FragmentShader GLSL100 GLSL150: tonegod/gui/shaders/Unshaded.frag
 
         WorldParameters {
             WorldViewProjectionMatrix

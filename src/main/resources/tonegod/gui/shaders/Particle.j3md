@@ -4,7 +4,7 @@ MaterialDef Point Sprite {
         Texture2D Texture
         Float Quadratic
         Boolean PointSprite
-        
+
         //only used for soft particles
         Texture2D DepthTexture
         Float Softness
@@ -17,7 +17,7 @@ MaterialDef Point Sprite {
 
     Technique {
 
-        VertexShader   GLSL100 : tonegod/gui/shaders/Particle.vert
+        VertexShader   GLSL100 GLSL150: tonegod/gui/shaders/Particle.vert
         FragmentShader GLSL120 : tonegod/gui/shaders/Particle.frag
 
         WorldParameters {
@@ -42,8 +42,8 @@ MaterialDef Point Sprite {
 
     Technique {
 
-        VertexShader   GLSL100 : tonegod/gui/shaders/Particle.vert
-        FragmentShader GLSL100 : tonegod/gui/shaders/Particle.frag
+        VertexShader   GLSL100 GLSL150: tonegod/gui/shaders/Particle.vert
+        FragmentShader GLSL100 GLSL150: tonegod/gui/shaders/Particle.frag
 
         WorldParameters {
             WorldViewProjectionMatrix
@@ -64,8 +64,8 @@ MaterialDef Point Sprite {
 
     Technique SoftParticles{
 
-        VertexShader   GLSL100 : Common/MatDefs/Misc/SoftParticle.vert
-        FragmentShader GLSL100 : Common/MatDefs/Misc/SoftParticle.frag
+        VertexShader   GLSL100 GLSL150: Common/MatDefs/Misc/SoftParticle.vert
+        FragmentShader GLSL100 GLSL150: Common/MatDefs/Misc/SoftParticle.frag
 
         WorldParameters {
             WorldViewProjectionMatrix
@@ -94,8 +94,8 @@ MaterialDef Point Sprite {
 
    Technique Glow {
 
-        VertexShader GLSL100:   Common/MatDefs/Misc/Unshaded.vert
-        FragmentShader GLSL100: Common/MatDefs/Light/Glow.frag
+        VertexShader GLSL100 GLSL150:   Common/MatDefs/Misc/Unshaded.vert
+        FragmentShader GLSL100 GLSL150: Common/MatDefs/Light/Glow.frag
 
         WorldParameters {
             WorldViewProjectionMatrix
