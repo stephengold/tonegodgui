@@ -1,3 +1,5 @@
+#import "Common/ShaderLib/GLSLCompat.glsllib"
+
 #if defined(HAS_ALPHAMAP)
 	uniform sampler2D m_AlphaMap;
 #endif

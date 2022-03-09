@@ -1,3 +1,5 @@
+#import "Common/ShaderLib/GLSLCompat.glsllib"
+
 #ifdef USE_TEXTURE
 uniform sampler2D m_Texture;
 varying vec4 texCoord;
