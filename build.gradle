@@ -58,14 +58,14 @@ task('release') {
 jar {
     archiveBaseName = project.ext.baseName
 }
-task javadocJar(type: Jar) {
+task('javadocJar', type: Jar) {
     archiveBaseName = project.ext.baseName
     archiveClassifier = 'javadoc'
     dependsOn 'javadoc'
     description 'Creates a JAR of javadoc.'
     from javadoc.destinationDir
 }
-task sourcesJar(type: Jar) {
+task('sourcesJar', type: Jar) {
     archiveBaseName = project.ext.baseName
     archiveClassifier = 'sources'
     description 'Creates a JAR of sourcecode.'
