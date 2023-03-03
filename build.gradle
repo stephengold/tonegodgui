@@ -11,7 +11,7 @@ ext {
     artifact = 'tonegodgui'
     version = '0.1.8-SNAPSHOT'
     baseName = "${artifact}-${version}" // for POM and class JAR
-    jme3Version='3.6.0-beta2'
+    jme3Version='3.6.0-beta3'
     websiteUrl = 'https://github.com/stephengold/tonegodgui'
 }
 
@@ -46,6 +46,7 @@ javadoc {
 repositories {
     //mavenLocal() // to find local SNAPSHOTs of libraries
     mavenCentral()
+    //maven { url 'https://s01.oss.sonatype.org/content/groups/staging' } // to find libraries staged but not yet released
 }
 
 // publishing tasks:
