@@ -30,7 +30,7 @@ https://wiki.jmonkeyengine.org/docs/3.3/contributions/gui/tonegodgui/tonegodgui.
 
 ## open-source tests
 
-https://github.com/meltzow/tonegodgui-test (January 2016)
+https://github.com/meltzow/tonegodgui-test (January 2016) (archived)
 
 Also here:  https://sourceforge.net/projects/tonegodemitter/files (June 2014)
 
@@ -46,7 +46,7 @@ Also here:  https://sourceforge.net/projects/tonegodemitter/files (June 2014)
 * https://github.com/JavaSaBr/tonegodgui (June 2016)
 * https://github.com/GoDieBawb/tonegod-3.1 (June 2016)
 * https://github.com/h1ghst0r3y/tonegodgui (March 2016)
-* https://github.com/meltzow/tonegodgui (January 2016)
+* https://github.com/meltzow/tonegodgui (January 2016) (archived)
 * https://github.com/atomixnmc/tonegodgui (September 2015)
 * https://github.com/tricj/TonegodGUI (September 2015)
 * https://github.com/saeid1/tonegodgui (August 2014)
