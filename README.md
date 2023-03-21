@@ -8,7 +8,7 @@ This project's repository (at https://github.com/stephengold/tonegodgui)
 was forked from https://github.com/meltzow/tonegodgui
 which was exported from https://code.google.com/p/tonegodgui
 
-The project currently targets jMonkeyEngine 3.5.0-stable and JDK 1.8.
+The project currently targets jMonkeyEngine 3.6.0-stable and JDK 1.8.
 
 ## releases
 
