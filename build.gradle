@@ -10,7 +10,7 @@ ext {
     group = 'com.github.stephengold'
     artifact = 'tonegodgui'
     version = '0.1.9-SNAPSHOT'
-    baseName = "${artifact}-${version}" // for POM and class JAR
+    baseName = "${artifact}-${version}" // for artifacts
     jme3Version='3.6.0-stable'
     websiteUrl = 'https://github.com/stephengold/tonegodgui'
 }
