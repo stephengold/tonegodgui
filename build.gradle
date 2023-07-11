@@ -15,8 +15,10 @@ ext {
     websiteUrl = 'https://github.com/stephengold/tonegodgui'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_7
-targetCompatibility = JavaVersion.VERSION_1_8
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 dependencies {
     api 'org.jmonkeyengine:jme3-core:' + jme3Version
