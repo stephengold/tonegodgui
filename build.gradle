@@ -48,11 +48,6 @@ javadoc {
 configurations.all {
    resolutionStrategy.cacheChangingModulesFor 0, 'seconds' // to disable caching of SNAPSHOTs
 }
-repositories {
-    //mavenLocal() // to find local SNAPSHOTs of libraries
-    mavenCentral()
-    //maven { url 'https://s01.oss.sonatype.org/content/groups/staging' } // to find libraries staged but not yet released
-}
 
 // publishing tasks:
 
