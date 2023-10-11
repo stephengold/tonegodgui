@@ -14,6 +14,11 @@ import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector2f;
 import com.jme3.math.Vector3f;
 import com.jme3.math.Vector4f;
+import com.jme3.texture.Image;
+import com.jme3.texture.Texture;
+import com.jme3.util.BufferUtils;
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -151,7 +156,7 @@ public class StyleManager {
 						{
 							Texture cursorTexture = app.getAssetManager().loadTexture(curPath);		
 						    Image image = cursorTexture.getImage();
-						    imgByteBuff = (ByteBuffer) image.getData(0).rewind();
+						    ByteBuffer imgByteBuff = (ByteBuffer) image.getData(0).rewind();
 						    IntBuffer curIntBuff = BufferUtils.createIntBuffer(image.getHeight() * image.getWidth());
 						    while (imgByteBuff.hasRemaining()) {
 						        int rgba = imgByteBuff.getInt();
