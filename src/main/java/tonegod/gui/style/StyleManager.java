@@ -144,8 +144,31 @@ public class StyleManager {
 					if (fstNode.getNodeType() == Node.ELEMENT_NODE) {
 						String key = XMLHelper.getNodeAttributeValue(fstNode, "type");
 						String curPath = XMLHelper.getNodeAttributeValue(fstNode, "path");
+						String imgType = XMLHelper.getNodeAttributeValue(fstNode, "imgType");
 						
-						JmeCursor jmeCursor = (JmeCursor)app.getAssetManager().loadAsset(curPath);//new JmeCursor();
+						JmeCursor jmeCursor = null;
+						if (!imgType.equals("cur") && imgType.length() > 0)
+						{
+							Texture cursorTexture = app.getAssetManager().loadTexture(curPath);		
+						    Image image = cursorTexture.getImage();
+						    imgByteBuff = (ByteBuffer) image.getData(0).rewind();
+						    IntBuffer curIntBuff = BufferUtils.createIntBuffer(image.getHeight() * image.getWidth());
+						    while (imgByteBuff.hasRemaining()) {
+						        int rgba = imgByteBuff.getInt();
+						        int argb = ((rgba & 255) << 24) | (rgba >> 8);
+						        curIntBuff.put(argb);
+						    }	
+
+						    jmeCursor = new JmeCursor();
+						    jmeCursor.setHeight(image.getHeight());
+						    jmeCursor.setWidth(image.getWidth());
+						    jmeCursor.setNumImages(1);
+						    jmeCursor.setImagesData((IntBuffer) curIntBuff.rewind());
+						} else {
+							jmeCursor = (JmeCursor)app.getAssetManager().loadAsset(curPath);//new JmeCursor();
+							
+						}						
+
 						try {
 							int hsX = Integer.valueOf(XMLHelper.getNodeAttributeValue(fstNode, "x"));
 							int hsY = Integer.valueOf(XMLHelper.getNodeAttributeValue(fstNode, "y"));
