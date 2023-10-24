@@ -11,7 +11,7 @@ ext {
     artifact = 'tonegodgui'
     version = '0.1.9-SNAPSHOT'
     baseName = "${artifact}-${version}" // for artifacts
-    jme3Version='3.6.1-stable'
+    jme3Version='3.6.1-stable' // current version of JMonkeyEngine
     websiteUrl = 'https://github.com/stephengold/tonegodgui'
 }
 
@@ -46,7 +46,7 @@ javadoc {
 }
 
 configurations.configureEach {
-   resolutionStrategy.cacheChangingModulesFor 0, 'seconds' // to disable caching of SNAPSHOTs
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds' // to disable caching of SNAPSHOTs
 }
 
 // publishing tasks:
