@@ -1,4 +1,4 @@
-// global settings for the tonegodgui project
+// global build settings for the tonegodgui project
 
 rootProject.name = 'tonegodgui'
 
