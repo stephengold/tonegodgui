@@ -11,7 +11,6 @@ ext {
     artifact = 'tonegodgui'
     version = '0.1.9-SNAPSHOT'
     baseName = "${artifact}-${version}" // for artifacts
-    jme3Version='3.7.0-beta1' // current version of JMonkeyEngine
     websiteUrl = 'https://github.com/stephengold/tonegodgui'
 }
 
@@ -21,7 +20,7 @@ java {
 }
 
 dependencies {
-    api 'org.jmonkeyengine:jme3-core:' + jme3Version
+    api 'org.jmonkeyengine:jme3-core:3.7.0-beta1'
 }
 
 tasks.withType(JavaCompile).configureEach { // Java compile-time options:
