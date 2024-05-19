@@ -1,6 +1,4 @@
-/*
- * settings.gradle: global settings for the tonegodgui project
- */
+// global settings for the tonegodgui project
 
 dependencyResolutionManagement {
     repositories {
