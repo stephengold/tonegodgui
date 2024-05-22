@@ -17,7 +17,6 @@ ext {
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_8
-    withJavadocJar()
 }
 
 dependencies {
@@ -70,6 +69,7 @@ jar {
     }
 }
 
+java.withJavadocJar()
 javadocJar { archiveBaseName = project.ext.baseName }
 tasks.register('sourcesJar', Jar) {
     archiveBaseName = project.ext.baseName
@@ -171,7 +171,7 @@ publishMavenPublicationToOSSRHRepository.dependsOn('assemble')
 signing {
     sign publishing.publications.maven
 }
-tasks.withType(Sign).configureEach {
+tasks.withType(Sign) {
     onlyIf { project.hasProperty('signing.keyId') }
 }
 signMavenPublication.dependsOn('module')
