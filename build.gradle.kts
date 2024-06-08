@@ -9,7 +9,7 @@ plugins {
 val group = "com.github.stephengold"
 val artifact = "tonegodgui"
 val libraryVersion = "0.1.9-SNAPSHOT"
-val baseName = "$artifact-$libraryVersion" // for artifacts
+val baseName = "${artifact}-${libraryVersion}" // for artifacts
 val websiteUrl = "https://github.com/stephengold/tonegodgui"
 val javaVendor = System.getProperty("java.vendor")
 val javaVersion = JavaVersion.current()
@@ -125,7 +125,7 @@ publishing {
                         url = "https://opensource.org/licenses/BSD-2-Clause"
                     }
                 }
-                name = "$group:$artifact"
+                name = "${group}:${artifact}"
                 scm {
                     connection = "scm:git:git://github.com/stephengold/tonegodgui.git"
                     developerConnection = "scm:git:ssh://github.com:stephengold/tonegodgui.git"
@@ -153,13 +153,9 @@ publishing {
 tasks.named("generateMetadataFileForMavenPublication") { dependsOn("pom") }
 tasks.named("publishMavenPublicationToMavenLocal") {
     dependsOn("assemble")
-    doLast {
-        println("installed locally as " + baseName)
-    }
+    doLast { println("installed locally as " + baseName) }
 }
-tasks.named("publishMavenPublicationToOSSRHRepository") {
-    dependsOn("assemble")
-}
+tasks.named("publishMavenPublicationToOSSRHRepository") { dependsOn("assemble") }
 
 // Register signing tasks:
 
