@@ -573,7 +573,15 @@ public class ScrollPanel extends Element {
 	}
 	
 	public void setHThumbPositionToScrollArea() {
-		float relX = (FastMath.abs(scrollableArea.getX())/getHorizontalScrollDistance());
+		float xNumerator = FastMath.abs(scrollableArea.getX());
+		float xDenominator = getHorizontalScrollDistance();
+		float relX;
+		if (xNumerator == xDenominator) {
+			relX = 1f; // avoid NaN for 0/0
+		} else {
+			assert xDenominator != 0f;
+			relX = xNumerator/xDenominator;
+		}
 		hScrollBar.getScrollThumb().setX((hScrollBar.getScrollTrack().getWidth()-hScrollBar.getScrollThumb().getWidth())*relX);
 	}
 	
