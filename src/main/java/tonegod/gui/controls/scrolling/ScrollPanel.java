@@ -479,7 +479,15 @@ public class ScrollPanel extends Element {
 	}
 	
 	public void setVThumbPositionToScrollArea() {
-		float relY = (FastMath.abs(scrollableArea.getY())/getVerticalScrollDistance());
+		float yNumerator = FastMath.abs(scrollableArea.getY());
+		float yDenominator = getVerticalScrollDistance();
+		float relY;
+		if (yNumerator == yDenominator) {
+			relY = 1f; // avoid NaN for 0/0
+		} else {
+			assert yDenominator != 0f;
+			relY = yNumerator/yDenominator;
+		}
 		vScrollBar.getScrollThumb().setY((vScrollBar.getScrollTrack().getHeight()-vScrollBar.getScrollThumb().getHeight())*relY);
 	}
 	
