@@ -8,7 +8,7 @@ plugins {
 
 val group = "com.github.stephengold"
 val artifact = "tonegodgui"
-val libraryVersion = "0.1.9-SNAPSHOT"
+val libraryVersion = "0.1.10"
 val baseName = "${artifact}-${libraryVersion}" // for artifacts
 val websiteUrl = "https://github.com/stephengold/tonegodgui"
 val javaVendor = System.getProperty("java.vendor")
