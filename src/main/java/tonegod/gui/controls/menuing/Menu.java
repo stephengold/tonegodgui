@@ -466,7 +466,7 @@ public abstract class Menu extends ScrollArea implements AutoHide, MouseMovement
 	}
 	
 	/**
-	 * Forces the Menu to rebuild all MenuItems.  This does not need to be called, however it will not effect anything negatively if it is.
+	 * Forces the Menu to rebuild all MenuItems.  This does not need to be called, however it will not affect anything negatively if it is.
 	 */
 	public void pack() {
 		String finalString = "";

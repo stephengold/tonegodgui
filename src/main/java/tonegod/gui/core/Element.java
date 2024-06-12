@@ -1519,7 +1519,7 @@ public class Element extends Node {
 	
 	//<editor-fold desc="Resize & Move">
 	/**
-	 * The preferred method for resizing Elements if the resize must effect nested
+	 * The preferred method for resizing Elements if the resize must affect nested
 	 * Elements as well.
 	 * 
 	 * @param x the absolute x coordinate from screen x 0

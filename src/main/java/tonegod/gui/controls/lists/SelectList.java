@@ -457,7 +457,7 @@ public abstract class SelectList extends ScrollArea implements MouseMovementList
 		return this.listItemHeight;
 	}
 	/**
-	 * Forces the SelectList to rebuild all ListItems.  This does not need to be called, however it will not effect anything negatively if it is.
+	 * Forces the SelectList to rebuild all ListItems.  This does not need to be called, however it will not affect anything negatively if it is.
 	 */
 	public void pack() {
 		String finalString = "";
