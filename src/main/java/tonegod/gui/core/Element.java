@@ -1244,7 +1244,7 @@ public class Element extends Node {
 	 * Set the x,y coordinates of the Element.  X and y are relative to the parent
 	 * Element.
 	 * 
-	 * @param position Vector2f screen poisition of Element
+	 * @param position Vector2f screen position of Element
 	 */
 	public void setPosition(Vector2f position) {
 		this.position.set(position);
@@ -1255,8 +1255,8 @@ public class Element extends Node {
 	 * Set the x,y coordinates of the Element.  X and y are relative to the parent
 	 * Element.
 	 * 
-	 * @param x The x coordinate screen poisition of Element
-	 * @param y The y coordinate screen poisition of Element
+	 * @param x The x coordinate screen position of Element
+	 * @param y The y coordinate screen position of Element
 	 */
 	public void setPosition(float x, float y) {
 		this.position.setX(x);
@@ -1267,7 +1267,7 @@ public class Element extends Node {
 	/**
 	 * Set the x coordinates of the Element.  X is relative to the parent Element.
 	 * 
-	 * @param x The x coordinate screen poisition of Element
+	 * @param x The x coordinate screen position of Element
 	 */
 	public void setX(float x) {
 		this.position.setX(x);
@@ -1277,7 +1277,7 @@ public class Element extends Node {
 	/**
 	 * Set the y coordinates of the Element.  Y is relative to the parent Element.
 	 * 
-	 * @param y The y coordinate screen poisition of Element
+	 * @param y The y coordinate screen position of Element
 	 */
 	public void setY(float y) {
 		this.position.setY(y);
