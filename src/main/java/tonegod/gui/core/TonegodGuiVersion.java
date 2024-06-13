@@ -33,6 +33,6 @@ public class TonegodGuiVersion {
      * @return branch and revision (not null, not empty)
      */
     public static String versionShort() {
-        return "master 0.1.11";
+        return "master 0.1.12-SNAPSHOT";
     }
 }
