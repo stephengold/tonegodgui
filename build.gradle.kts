@@ -37,7 +37,14 @@ tasks.withType<JavaCompile>().all { // Java compile-time options:
     }
 }
 
-// TODO Disable doclint for JDK15+ to avoid "no comment" warnings
+tasks.withType<Javadoc>().all {
+    // Disable doclint for JDK15+ to avoid "no comment" warnings.
+    if (javaVersion.isCompatibleWith(JavaVersion.VERSION_15)) {
+        (options as CoreJavadocOptions).apply {
+            addStringOption("Xdoclint:none", "-quiet")
+        }
+    }
+}
 
 configurations.all {
     resolutionStrategy.cacheChangingModulesFor(0, "seconds") // to disable caching of snapshots
