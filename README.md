@@ -5,8 +5,8 @@
 Tonegodgui is a native graphical user-interface library for jMonkeyEngine3.
 
 This project's repository (at https://github.com/stephengold/tonegodgui)
-was forked from https://github.com/meltzow/tonegodgui
-which was exported from https://code.google.com/p/tonegodgui
+was forked from a GitHub repo
+that was exported from https://code.google.com/p/tonegodgui
 
 The project currently targets jMonkeyEngine 3.8.0-alpha3 and JDK 1.8.
 
@@ -30,9 +30,7 @@ https://wiki.jmonkeyengine.org/docs/3.3/contributions/gui/tonegodgui/tonegodgui.
 
 ## open-source tests
 
-https://github.com/meltzow/tonegodgui-test (January 2016) (archived)
-
-Also here:  https://sourceforge.net/projects/tonegodemitter/files (June 2014)
+https://sourceforge.net/projects/tonegodemitter/files (June 2014)
 
 ## open-source applications that use tonegodgui
 
@@ -46,9 +44,7 @@ Also here:  https://sourceforge.net/projects/tonegodemitter/files (June 2014)
 * https://github.com/JavaSaBr/tonegodgui (June 2016)
 * https://github.com/GoDieBawb/tonegod-3.1 (June 2016)
 * https://github.com/h1ghst0r3y/tonegodgui (March 2016)
-* https://github.com/meltzow/tonegodgui (January 2016) (archived)
 * https://github.com/atomixnmc/tonegodgui (September 2015)
-* https://github.com/tricj/TonegodGUI (September 2015)
 * https://github.com/saeid1/tonegodgui (August 2014)
 * https://github.com/AnthonyWilshaw/tonegodgui (August 2014)
 * https://github.com/thecastawaydev/tonegodgui (August 2014)
