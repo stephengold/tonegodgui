@@ -38,7 +38,7 @@ https://sourceforge.net/projects/tonegodemitter/files (June 2014)
 
 ## other known versions/forks
 
-* https://github.com/ihmcrobotics/tonegodgui (October 2019)
+* https://github.com/ihmcrobotics/tonegodgui (November 2024)
 * https://github.com/marianne-butaye/tonegodgui (May 2017)
 * https://github.com/jPonyEngine/tonegodgui (January 2017)
 * https://github.com/JavaSaBr/tonegodgui (June 2016)
