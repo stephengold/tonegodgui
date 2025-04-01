@@ -1685,21 +1685,45 @@ public class Element extends Node {
 			}
 		}
 	}
-	
-	// TODO: enforce minimum size
+
+	private float calcNewHeight(float diffY) {
+		float minHeight = 10f;
+		if (minDimensions != null) {
+			minHeight = minDimensions.x;
+		}
+		float height = getHeight() - diffY;
+		if  (height < minHeight) height = minHeight;
+
+		return height;
+	}
+
+	private float calcNewWidth(float diffX) {
+		float minWidth = 10f;
+		if (minDimensions != null) {
+			minWidth = minDimensions.y;
+		}
+
+		float width = getWidth() - diffX;
+		if (minWidth > width) width = minWidth;
+		return width;
+	}
+
 	private void childResize(float diffX, float diffY, Borders dir) {
+		float height = calcNewHeight(diffY);
 		if (dir == Borders.NW || dir == Borders.N || dir == Borders.NE) {
-			if (getScaleNS()) setHeight(getHeight()-diffY);
+			if (getScaleNS()) setHeight(height);
 			if ((getDocking() == Docking.NW || getDocking() == Docking.NE) && !getScaleNS()) setY(getY()-diffY);
 		} else if (dir == Borders.SW || dir == Borders.S || dir == Borders.SE) {
-			if (getScaleNS()) setHeight(getHeight()-diffY);
+			if (getScaleNS()) setHeight(height);
 			if ((getDocking() == Docking.NW || getDocking() == Docking.NE) && !getScaleNS()) setY(getY()-diffY);
 		}
+
+		float width = calcNewWidth(diffX);
 		if (dir == Borders.NW || dir == Borders.W || dir == Borders.SW) {
-			if (getScaleEW()) setWidth(getWidth()-diffX);
+			if (getScaleEW()) setWidth(width);
 			if ((getDocking() == Docking.NE || getDocking() == Docking.SE) && !getScaleEW()) setX(getX()-diffX);
 		} else if (dir == Borders.NE || dir == Borders.E || dir == Borders.SE) {
-			if (getScaleEW()) setWidth(getWidth()-diffX);
+			if (getScaleEW()) setWidth(width);
 			if ((getDocking() == Docking.NE || getDocking() == Docking.SE) && !getScaleEW()) setX(getX()-diffX);
 		}
 		for (Element el : elementChildren.values()) {
@@ -1707,7 +1731,7 @@ public class Element extends Node {
 			el.controlResizeHook();
 		}
 	}
-	
+
 	/**
 	 * Overridable method for extending the resize event
 	 */
