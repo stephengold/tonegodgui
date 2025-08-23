@@ -10,9 +10,9 @@ val group = "com.github.stephengold"
 val artifact = "tonegodgui"
 val libraryVersion = "0.1.12-SNAPSHOT"
 val baseName = "${artifact}-${libraryVersion}" // for artifacts
-val websiteUrl = "https://github.com/stephengold/tonegodgui"
 val javaVendor = System.getProperty("java.vendor")
 val javaVersion = JavaVersion.current()
+val websiteUrl = "https://github.com/stephengold/tonegodgui"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
