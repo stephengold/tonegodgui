@@ -25,24 +25,20 @@ dependencies {
 
 tasks.withType<JavaCompile>().all { // Java compile-time options:
     options.compilerArgs.add("-Xdiags:verbose")
-    if (javaVersion.isCompatibleWith(JavaVersion.VERSION_14)) {
-        // Suppress warnings that source value 7 is obsolete.
-        options.compilerArgs.add("-Xlint:-options")
-    }
+
+    // Suppress warnings that source value 7 is obsolete:
+    options.compilerArgs.add("-Xlint:-options")
+
     options.compilerArgs.add("-Xlint:unchecked")
     //options.setDeprecation(true) // to provide detailed deprecation warnings
     options.encoding = "UTF-8"
-    if (javaVersion.isCompatibleWith(JavaVersion.VERSION_1_10)) {
-        options.release = 8
-    }
+    options.release = 8
 }
 
 tasks.withType<Javadoc>().all {
-    // Disable doclint for JDK15+ to avoid "no comment" warnings.
-    if (javaVersion.isCompatibleWith(JavaVersion.VERSION_15)) {
-        (options as CoreJavadocOptions).apply {
-            addStringOption("Xdoclint:none", "-quiet")
-        }
+    // Disable doclint to avoid "no comment" warnings:
+    (options as CoreJavadocOptions).apply {
+        addStringOption("Xdoclint:none", "-quiet")
     }
 }
 
