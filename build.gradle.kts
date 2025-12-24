@@ -20,7 +20,7 @@ java {
 }
 
 dependencies {
-    api("org.jmonkeyengine:jme3-core:3.9.0-alpha5")
+    api("org.jmonkeyengine:jme3-core:3.9.0-beta1")
 }
 
 tasks.withType<JavaCompile>().all { // Java compile-time options:
