@@ -17,14 +17,14 @@ jobs:
       - uses: gradle/actions/wrapper-validation@v5
       - run: ./gradlew build install javadoc --console=plain --stacktrace
 
-  Java17-MacOS:
+  Java21-MacOS:
     if: contains(toJson(github.event.commits), '[ci skip] ') == false
     runs-on: macos-26
     steps:
       - uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
-          java-version: 17
+          java-version: 21
       - uses: actions/checkout@v6
       - run: ./gradlew build install javadoc --console=plain --stacktrace
 
