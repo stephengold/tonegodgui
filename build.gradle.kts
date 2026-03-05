@@ -23,7 +23,7 @@ dependencies {
     api("org.jmonkeyengine:jme3-core:3.10.0-alpha1")
 }
 
-tasks.withType<JavaCompile>().all { // Java compile-time options:
+tasks.withType<JavaCompile>().configureEach { // Java compile-time options:
     options.compilerArgs.add("-Xdiags:verbose")
 
     // Suppress warnings that source value 7 is obsolete:
@@ -35,14 +35,14 @@ tasks.withType<JavaCompile>().all { // Java compile-time options:
     options.release = 8
 }
 
-tasks.withType<Javadoc>().all {
+tasks.withType<Javadoc>().configureEach {
     // Disable doclint to avoid "no comment" warnings:
     (options as CoreJavadocOptions).apply {
         addStringOption("Xdoclint:none", "-quiet")
     }
 }
 
-configurations.all {
+configurations.configureEach {
     resolutionStrategy.cacheChangingModulesFor(0, "seconds") // to disable caching of snapshots
 }
 
@@ -171,7 +171,7 @@ tasks.named("publishMavenPublicationToCentralRepository") { dependsOn("assemble"
 signing {
     sign(publishing.publications["maven"])
 }
-tasks.withType<Sign>().all {
+tasks.withType<Sign>().configureEach {
     onlyIf { project.hasProperty("signing.keyId") }
 }
 tasks.named("signMavenPublication") { dependsOn("module") }
