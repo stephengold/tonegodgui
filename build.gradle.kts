@@ -16,7 +16,7 @@ val websiteUrl = "https://github.com/stephengold/tonegodgui"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 dependencies {
@@ -32,7 +32,7 @@ tasks.withType<JavaCompile>().configureEach { // Java compile-time options:
     options.compilerArgs.add("-Xlint:unchecked")
     //options.setDeprecation(true) // to provide detailed deprecation warnings
     options.encoding = "UTF-8"
-    options.release = 8
+    options.release = 11
 }
 
 tasks.withType<Javadoc>().configureEach {
