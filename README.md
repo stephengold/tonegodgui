@@ -2,7 +2,8 @@
 
 # tonegodgui project
 
-Tonegodgui is a native graphical user-interface library for jMonkeyEngine3.
+Tonegodgui is a native graphical user-interface library for
+[jMonkeyEngine](https://jmonkeyengine.org/).
 
 This project's repository (at https://github.com/stephengold/tonegodgui)
 was forked from a GitHub repo
@@ -12,7 +13,7 @@ The project currently targets jMonkeyEngine 3.10.0-beta3 and Java 11 .
 
 ## releases
 
-Recent builds can be downloaded from:
+Pre-built libraries can be downloaded from:
 
 * https://github.com/stephengold/tonegodgui/releases
 * https://repo1.maven.org/maven2/com/github/stephengold/tonegodgui
