@@ -4,6 +4,7 @@
 
 Tonegodgui is a native graphical user-interface library for
 [jMonkeyEngine](https://jmonkeyengine.org/).
+It was originally developed by Cris (aka t0neg0d).
 
 This project's repository (at https://github.com/stephengold/tonegodgui)
 was forked from a GitHub repo
